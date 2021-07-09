@@ -1,0 +1,81 @@
+# Substitutions
+substitutions:
+  # Device Names
+  device_name: "poolmon"
+  friendly_name: "Pool Monitor"
+
+esphome:
+  name: "${device_name}"
+  platform: ESP32
+  board: nodemcu-32s
+
+wifi:
+  ssid: !secret wifi_ssid
+  password: !secret wifi_password
+
+  # Enable fallback hotspot (captive portal) in case wifi connection fails
+  ap:
+    ssid: "${device_name} Fallback Hotspot"
+    password: !secret hotspot_wifi_password
+
+captive_portal:
+
+# Enable logging
+logger:
+
+# Enable Home Assistant API
+api:
+
+ota:
+
+web_server:
+  port: 80
+
+# Device Specific Config
+binary_sensor:
+  # Push Button (Toggles All Relays When Pressed)
+  - platform: gpio
+    pin:
+      number: GPIO0
+      mode: INPUT_PULLUP
+      inverted: true
+    name: "${friendly_name} Button"
+
+dallas:
+  - pin: GPIO18
+
+sensor:
+  # WiFi Signal Sensor
+  - platform: wifi_signal
+    name: "${friendly_name} WiFi Status"
+    update_interval: 60s
+
+  - platform: dallas
+    address: 0x79000005E4BC3928
+    name: "In Temperature"
+
+  - platform: dallas
+    address: 0x67000007FFEF2528
+    name: "Out Temperature"
+
+  - platform: dallas
+    address: 0xB5000005E58E4D28
+    name: "Pool Temperature"
+
+  - platform: pulse_counter
+    pin: GPIO25
+    name: 'Flow rate'
+    unit_of_measurement: 'L/min'
+    filters:
+      - multiply: 0.222222222  # (60s/270 pulses per l)
+    total:
+      unit_of_measurement: 'L'
+      name: 'Total flow'
+      filters:
+        - multiply: 0.003703704  # (1/270 pulses per L)
+
+status_led:
+  pin:
+    number: GPIO16
+    inverted: true
+

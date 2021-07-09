@@ -1,0 +1,10 @@
+- platform: emoncms
+  api_key: !secret emoncms_api_key
+  url: https://emoncms.org
+  id: 1
+- platform: openevse
+  host: openevse.lan
+  monitored_variables:
+    - status
+- platform: google_wifi
+- platform: octopusagile

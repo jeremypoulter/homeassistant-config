@@ -1,0 +1,200 @@
+# TCP Smart 4AC+USB Power Strip WPS4WUK
+
+# Substitutions
+substitutions:
+  # Device Names
+  device_name: "greenhouse"
+  friendly_name: "Green House"
+  # Icon
+  main_icon: "power-socket-uk"
+  # Default Relay State
+  # Aka: `restore_mode` in documentation
+  # Options: `RESTORE_DEFAULT_OFF`, `RESTORE_DEFAULT_ON`, `ALWAYS_ON` & `ALWAYS_OFF`
+  default_state: "RESTORE_DEFAULT_OFF"
+
+# Basic Config
+esphome:
+  name: "${device_name}"
+  platform: ESP8266
+  board: esp01_1m
+
+wifi:
+  ssid: !secret wifi_ssid
+  password: !secret wifi_password
+
+  # Enable fallback hotspot (captive portal) in case wifi connection fails
+  ap:
+    ssid: "${device_name} Fallback Hotspot"
+    password: !secret hotspot_wifi_password
+
+captive_portal:
+
+logger:
+
+api:
+
+ota:
+
+web_server:
+  port: 80
+
+time:
+  - platform: sntp
+    id: sntp_time
+
+globals:
+  - id: any_relay_on
+    type: bool
+    restore_value: no
+    initial_value: 'false'
+
+# Device Specific Config
+binary_sensor:
+  # Push Button (Toggles All Relays When Pressed)
+  - platform: gpio
+    pin:
+      number: GPIO14
+      mode: INPUT_PULLUP
+      inverted: true
+    name: "${friendly_name} Button"
+    on_press:
+      # Multi click / long press:  https://gist.github.com/albertnis/f33066b0b3623a9839a3429c8f19f4d4
+      if:
+        condition:
+          lambda: |-
+            return id(any_relay_on);
+        then:
+          - switch.turn_off: relay_socket_1
+          - switch.turn_off: relay_socket_2
+          - switch.turn_off: relay_socket_3
+          - switch.turn_off: relay_socket_4
+          - globals.set:
+              id: any_relay_on
+              value: 'false'
+        else:
+          - switch.turn_on: relay_socket_1
+          - switch.turn_on: relay_socket_2
+          - switch.turn_on: relay_socket_3
+          - switch.turn_on: relay_socket_4
+          - globals.set:
+              id: any_relay_on
+              value: 'true'
+  - platform: status
+    name: "${friendly_name} Server Status"
+
+switch:
+  # Relay - Socket 1 (As Switch)
+  - platform: gpio
+    name: "${friendly_name} socket 1"
+    icon: "mdi:${main_icon}"
+    pin: GPIO12
+    id: relay_socket_1
+    restore_mode: "${default_state}"
+    on_turn_on:
+      - globals.set:
+          id: any_relay_on
+          value: 'true'
+    on_turn_off:
+      if:
+        condition:
+          and:
+            - switch.is_off: relay_socket_1
+            - switch.is_off: relay_socket_2
+            - switch.is_off: relay_socket_3
+            - switch.is_off: relay_socket_4
+        then:
+          - globals.set:
+              id: any_relay_on
+              value: 'false'
+
+  # Relay - Socket 2 (As Switch)
+  - platform: gpio
+    name: "${friendly_name} socket 2"
+    icon: "mdi:${main_icon}"
+    pin: GPIO05
+    id: relay_socket_2
+    restore_mode: "${default_state}"
+    on_turn_on:
+      - globals.set:
+          id: any_relay_on
+          value: 'true'
+    on_turn_off:
+      if:
+        condition:
+          and:
+            - switch.is_off: relay_socket_1
+            - switch.is_off: relay_socket_2
+            - switch.is_off: relay_socket_3
+            - switch.is_off: relay_socket_4
+        then:
+          - globals.set:
+              id: any_relay_on
+              value: 'false'
+
+  # Relay - Socket 3 (As Switch)
+  - platform: gpio
+    name: "${friendly_name} socket 3"
+    icon: "mdi:${main_icon}"
+    pin: GPIO4
+    id: relay_socket_3
+    restore_mode: "${default_state}"
+    on_turn_on:
+      - globals.set:
+          id: any_relay_on
+          value: 'true'
+    on_turn_off:
+      if:
+        condition:
+          and:
+            - switch.is_off: relay_socket_1
+            - switch.is_off: relay_socket_2
+            - switch.is_off: relay_socket_3
+            - switch.is_off: relay_socket_4
+        then:
+          - globals.set:
+              id: any_relay_on
+              value: 'false'
+
+  # Relay - Socket 4 (As Switch)
+  - platform: gpio
+    name: "${friendly_name} socket 4"
+    icon: "mdi:${main_icon}"
+    pin: GPIO15
+    id: relay_socket_4
+    restore_mode: "${default_state}"
+    on_turn_on:
+      - globals.set:
+          id: any_relay_on
+          value: 'true'
+    on_turn_off:
+      if:
+        condition:
+          and:
+            - switch.is_off: relay_socket_1
+            - switch.is_off: relay_socket_2
+            - switch.is_off: relay_socket_3
+            - switch.is_off: relay_socket_4
+        then:
+          - globals.set:
+              id: any_relay_on
+              value: 'false'
+
+
+dallas:
+  - pin: GPIO03
+
+sensor:
+  # WiFi Signal Sensor
+  - platform: wifi_signal
+    name: "${friendly_name} WiFi Status"
+    update_interval: 60s
+
+  - platform: dallas
+    address: 0x0D0000080023A428
+    name: "Temperature #1"
+
+status_led:
+  pin:
+    number: GPIO13
+    inverted: true
+

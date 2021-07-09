@@ -1,0 +1,40 @@
+- id: '1610520380331'
+  alias: Turn on fishtank
+  description: ''
+  trigger:
+  - platform: sun
+    event: sunrise
+  condition: []
+  action:
+  - service: wled.preset
+    data:
+      entity_id: light.fishtank
+      preset: 2
+  mode: single
+- id: '1610520452720'
+  alias: Turn off fishtank
+  description: ''
+  trigger:
+  - platform: time
+    at: '23:00'
+  condition: []
+  action:
+  - service: wled.preset
+    data:
+      entity_id: light.fishtank
+      preset: 3
+  mode: single
+- id: '1614026220990'
+  alias: turn on office lights when in office
+  description: ''
+  trigger:
+  - platform: numeric_state
+    entity_id: binary_sensor.test_camera_pir
+    above: '0'
+  condition: []
+  action:
+  - domain: light
+    entity_id: light.office
+    device_id: c5793b822f5f378baa39ce239b241153
+    type: turn_on
+  mode: single

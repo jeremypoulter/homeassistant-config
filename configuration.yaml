@@ -1,0 +1,47 @@
+# Configure a default setup of Home Assistant (frontend, api, etc)
+default_config:
+
+homeassistant:
+  external_url: https://home.bigjungle.net:8443
+  internal_url: http://homeassistant.lan:8123
+
+# Text to speech
+tts:
+  - platform: google_translate
+
+stream:
+
+camera:
+  - name: ZeroCam
+    platform: mjpeg
+    still_image_url: http://zerocam.lan/cam_pic.php?time=1611183178153&pDelay=40000
+    mjpeg_url: http://zerocam.lan/cam_pic_new.php?time=1611182987625&pDelay=40000
+
+media_player:
+  - platform: lg_netcast
+    host: 172.16.1.206
+    access_token: 827247
+    turn_on_action:
+      service: wake_on_lan.send_magic_packet
+      data:
+        mac: E8-F2-E2-AC-02-D8
+
+octopusagile:
+  region_code: "H"
+  mpan: !secret octopus_mpan
+  serial: !secret octopus_serial
+  auth: !secret octopus_auth
+  startdate: "2020-05-08"
+
+http:
+  use_x_forwarded_for: true
+  trusted_proxies:
+    - 127.0.0.1
+    - 172.16.0.0/12
+    - ::1
+
+sensor: !include sensors.yaml
+group: !include groups.yaml
+automation: !include automations.yaml
+script: !include scripts.yaml
+scene: !include scenes.yaml
