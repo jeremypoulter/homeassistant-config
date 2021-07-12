@@ -76,6 +76,6 @@ sensor:
 
 status_led:
   pin:
-    number: GPIO16
+    number: GPIO02
     inverted: true
 
