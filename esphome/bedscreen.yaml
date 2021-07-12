@@ -1,0 +1,114 @@
+# TCP Smart 4AC+USB Power Strip WPS4WUK
+
+# Substitutions
+substitutions:
+  # Device Names
+  device_name: "bedscreen"
+  friendly_name: "Bed Screen"
+  # Icon
+  main_icon: "power-socket-uk"
+  # Default Relay State
+  # Aka: `restore_mode` in documentation
+  # Options: `RESTORE_DEFAULT_OFF`, `RESTORE_DEFAULT_ON`, `ALWAYS_ON` & `ALWAYS_OFF`
+  default_state: "RESTORE_DEFAULT_OFF"
+
+# Basic Config
+esphome:
+  name: "${device_name}"
+  platform: ESP8266
+  board: esp01_1m
+
+wifi:
+  ssid: !secret wifi_ssid
+  password: !secret wifi_password
+
+  # Enable fallback hotspot (captive portal) in case wifi connection fails
+  ap:
+    ssid: "${device_name} Fallback Hotspot"
+    password: !secret hotspot_wifi_password
+
+captive_portal:
+
+logger:
+
+api:
+
+ota:
+
+web_server:
+  port: 80
+
+time:
+  - platform: sntp
+    id: sntp_time
+
+globals:
+  - id: any_relay_on
+    type: bool
+    restore_value: no
+    initial_value: 'false'
+
+binary_sensor:
+  # Push Button (Toggles All Relays When Pressed)
+  - platform: gpio
+    pin:
+      number: GPIO00
+      mode: INPUT_PULLUP
+      inverted: true
+    name: "${friendly_name} Up"
+    on_press:
+      - cover.open: screen
+
+  - platform: gpio
+    pin:
+      number: GPIO09
+      mode: INPUT_PULLUP
+      inverted: true
+    name: "${friendly_name} Down"
+    on_press:
+      - cover.close: screen
+
+# Device Specific Config
+switch:
+  - platform: gpio
+    pin: GPIO05
+    name: "${friendly_name} Up Switch"
+    id: up_switch
+  - platform: gpio
+    pin: GPIO12
+    name: "${friendly_name} Down Switch"
+    id: down_switch
+
+cover:
+  - platform: template
+    name: "${friendly_name}"
+    open_action:
+      # Cancel any previous action
+      - switch.turn_off: down_switch
+      # Turn the OPEN switch on briefly
+      - switch.turn_on: up_switch
+      - delay: 0.2s
+      - switch.turn_off: up_switch
+    close_action:
+      - switch.turn_off: up_switch
+      - switch.turn_on: down_switch
+      - delay: 0.2s
+      - switch.turn_off: down_switch
+    stop_action:
+      - switch.turn_off: down_switch
+      - switch.turn_off: up_switch
+    optimistic: true
+    assumed_state: true
+    id: screen
+
+sensor:
+  # WiFi Signal Sensor
+  - platform: wifi_signal
+    name: "${friendly_name} WiFi Status"
+    update_interval: 60s
+
+status_led:
+  pin:
+    number: GPIO13
+    inverted: false
+
