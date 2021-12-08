@@ -1,5 +1,5 @@
 - id: '1610520380331'
-  alias: Turn on fishtank
+  alias: Fishtank day
   description: ''
   trigger:
   - platform: sun
@@ -12,7 +12,7 @@
       preset: 2
   mode: single
 - id: '1610520452720'
-  alias: Turn off fishtank
+  alias: Fishtank night
   description: ''
   trigger:
   - platform: time
@@ -37,4 +37,90 @@
     entity_id: light.office
     device_id: c5793b822f5f378baa39ce239b241153
     type: turn_on
+  mode: single
+- id: '1627494208126'
+  alias: Pool pump start
+  description: Turn the Main pool pump on if the heater is not on
+  trigger:
+  - platform: time
+    at: 0:00
+  condition:
+  - condition: device
+    type: is_off
+    device_id: c150f10fc417947965ddcf7d93f11533
+    entity_id: switch.socket_1
+    domain: switch
+  action:
+  - type: turn_on
+    device_id: c150f10fc417947965ddcf7d93f11533
+    entity_id: switch.socket_2
+    domain: switch
+  mode: single
+- id: '1627494316118'
+  alias: Pool pump stop
+  description: Turn off the pool pump when sufficient water has been filtered
+  trigger:
+  - type: value
+    platform: device
+    device_id: 5ae23a566eda0ad757b32e1baeb1e36c
+    entity_id: sensor.daily_flow
+    domain: sensor
+    above: 8000
+  condition:
+  - condition: device
+    type: is_off
+    device_id: c150f10fc417947965ddcf7d93f11533
+    entity_id: switch.socket_1
+    domain: switch
+  action:
+  - type: turn_off
+    device_id: c150f10fc417947965ddcf7d93f11533
+    entity_id: switch.socket_2
+    domain: switch
+  mode: single
+- id: '1628113145425'
+  alias: bed screen up
+  description: ''
+  trigger:
+  - platform: device
+    device_id: 14f6a5afc0a043491406010c89dd919d
+    domain: media_player
+    entity_id: media_player.kitchen_sky_q_4
+    type: playing
+  condition: []
+  action:
+  - device_id: f6a1f9e41155b73a7d330021e6815e35
+    domain: cover
+    entity_id: cover.bed_screen
+    type: open
+  mode: single
+- id: '1628113225529'
+  alias: bed screen down
+  description: ''
+  trigger:
+  - platform: device
+    device_id: 14f6a5afc0a043491406010c89dd919d
+    domain: media_player
+    entity_id: media_player.kitchen_sky_q_4
+    type: turned_off
+  condition: []
+  action:
+  - device_id: f6a1f9e41155b73a7d330021e6815e35
+    domain: cover
+    entity_id: cover.bed_screen
+    type: close
+  mode: single
+- id: '1630334936678'
+  alias: Fishtank evening
+  description: ''
+  trigger:
+  - platform: sun
+    event: sunset
+  condition: []
+  action:
+  - service: wled.preset
+    data:
+      preset: 4
+    target:
+      entity_id: light.fishtank
   mode: single
