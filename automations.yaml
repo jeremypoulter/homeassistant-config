@@ -124,3 +124,24 @@
     target:
       entity_id: light.fishtank
   mode: single
+- id: '1638922858499'
+  alias: Christmas on
+  description: ''
+  trigger:
+  - platform: sun
+    event: sunset
+    offset: '0'
+  condition: []
+  action:
+  - scene: scene.christmas_on
+  mode: single
+- id: '1638922910713'
+  alias: Christmas off
+  description: ''
+  trigger:
+  - platform: time
+    at: '23:30'
+  condition: []
+  action:
+  - scene: scene.christmas_off
+  mode: single

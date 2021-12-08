@@ -11,12 +11,6 @@ tts:
 
 stream:
 
-camera:
-  - name: ZeroCam
-    platform: mjpeg
-    still_image_url: http://zerocam.lan/cam_pic.php?time=1611183178153&pDelay=40000
-    mjpeg_url: http://zerocam.lan/cam_pic_new.php?time=1611182987625&pDelay=40000
-
 media_player:
   - platform: lg_netcast
     host: 172.16.1.206
@@ -39,6 +33,11 @@ http:
     - 127.0.0.1
     - 172.16.0.0/12
     - ::1
+
+recorder:
+  purge_keep_days: 30
+
+switch: !include switches.yaml
 
 sensor: !include sensors.yaml
 group: !include groups.yaml

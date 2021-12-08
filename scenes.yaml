@@ -1,0 +1,572 @@
+- id: '1638922618009'
+  name: Christmas On
+  entities:
+    switch.socket_1:
+      friendly_name: Pool Heat
+      state: 'on'
+    switch.socket_2:
+      friendly_name: Pool Main Pump
+      state: 'on'
+    switch.socket_3:
+      friendly_name: Pool Aux Pump
+      state: 'on'
+    switch.socket_4:
+      friendly_name: Pool Spare
+      state: 'on'
+    switch.usb:
+      friendly_name: Pool USB
+      state: 'off'
+    switch.plug1:
+      friendly_name: Christmas Tree
+      state: 'on'
+    light.christmas:
+      effect_list:
+      - Android
+      - Aurora
+      - Blends
+      - Blink
+      - Blink Rainbow
+      - Bouncing Balls
+      - Bpm
+      - Breathe
+      - Candle
+      - Candle Multi
+      - Candy Cane
+      - Chase
+      - Chase Flash
+      - Chase Flash Rnd
+      - Chase Rainbow
+      - Chase Random
+      - Chunchun
+      - Colorful
+      - Colorloop
+      - Colortwinkles
+      - Colorwaves
+      - Dancing Shadows
+      - Dissolve
+      - Dissolve Rnd
+      - Drip
+      - Dynamic
+      - Dynamic Smooth
+      - Fade
+      - Fill Noise
+      - Fire 2012
+      - Fire Flicker
+      - Fireworks
+      - Fireworks 1D
+      - Fireworks Starburst
+      - Flow
+      - Glitter
+      - Gradient
+      - Halloween
+      - Halloween Eyes
+      - Heartbeat
+      - ICU
+      - Juggle
+      - Lake
+      - Lighthouse
+      - Lightning
+      - Loading
+      - Meteor
+      - Meteor Smooth
+      - Multi Comet
+      - Noise 1
+      - Noise 2
+      - Noise 3
+      - Noise 4
+      - Noise Pal
+      - Oscillate
+      - Pacifica
+      - Palette
+      - Percent
+      - Phased
+      - Phased Noise
+      - Plasma
+      - Police
+      - Police All
+      - Popcorn
+      - Pride 2015
+      - Railway
+      - Rain
+      - Rainbow
+      - Rainbow Runner
+      - Random Colors
+      - Ripple
+      - Ripple Rainbow
+      - Running
+      - Running 2
+      - Running Dual
+      - Saw
+      - Scan
+      - Scan Dual
+      - Scanner
+      - Scanner Dual
+      - Sine
+      - Sinelon
+      - Sinelon Dual
+      - Sinelon Rainbow
+      - Solid
+      - Solid Glitter
+      - Solid Pattern
+      - Solid Pattern Tri
+      - Sparkle
+      - Sparkle Dark
+      - Sparkle+
+      - Spots
+      - Spots Fade
+      - Stream
+      - Stream 2
+      - Strobe
+      - Strobe Mega
+      - Strobe Rainbow
+      - Sunrise
+      - Sweep
+      - Sweep Random
+      - TV Simulator
+      - Tetrix
+      - Theater
+      - Theater Rainbow
+      - Traffic Light
+      - Tri Chase
+      - Tri Fade
+      - Tri Wipe
+      - Twinkle
+      - Twinklecat
+      - Twinklefox
+      - Twinkleup
+      - Two Areas
+      - Two Dots
+      - Washing Machine
+      - Wipe
+      - Wipe Random
+      supported_color_modes:
+      - rgb
+      color_mode: rgb
+      brightness: 255
+      hs_color:
+      - 0
+      - 0
+      rgb_color:
+      - 255
+      - 255
+      - 255
+      xy_color:
+      - 0.323
+      - 0.329
+      effect: Solid
+      intensity: 128
+      palette: Default
+      reverse: false
+      speed: 128
+      friendly_name: Christmas
+      icon: mdi:led-strip-variant
+      supported_features: 36
+      state: 'on'
+    select.christmas_playlist:
+      options: []
+      friendly_name: Christmas Playlist
+      icon: mdi:play-speed
+      state: unavailable
+    select.christmas_preset:
+      options:
+      - Flashing
+      - 'Off'
+      - Static
+      friendly_name: Christmas Preset
+      icon: mdi:playlist-play
+      state: Static
+    select.christmas_color_palette:
+      options:
+      - '* Color 1'
+      - '* Color Gradient'
+      - '* Colors 1&2'
+      - '* Colors Only'
+      - '* Random Cycle'
+      - Analogous
+      - April Night
+      - Aqua Flash
+      - Atlantica
+      - Aurora
+      - Aurora 2
+      - Autumn
+      - Beach
+      - Beech
+      - Blink Red
+      - Breeze
+      - C9
+      - C9 2
+      - C9 New
+      - Candy
+      - Candy2
+      - Cloud
+      - Cyane
+      - Default
+      - Departure
+      - Drywet
+      - Fairy Reaf
+      - Fire
+      - Forest
+      - Grintage
+      - Hult
+      - Hult 64
+      - Icefire
+      - Jul
+      - Landscape
+      - Lava
+      - Light Pink
+      - Lite Light
+      - Magenta
+      - Magred
+      - Ocean
+      - Orange & Teal
+      - Orangery
+      - Party
+      - Pastel
+      - Pink Candy
+      - Rainbow
+      - Rainbow Bands
+      - Red & Blue
+      - Red Flash
+      - Red Reaf
+      - Red Shift
+      - Red Tide
+      - Retro Clown
+      - Rewhi
+      - Rivendell
+      - Sakura
+      - Semi Blue
+      - Sherbet
+      - Splash
+      - Sunset
+      - Sunset 2
+      - Temperature
+      - Tertiary
+      - Tiamat
+      - Toxy Reaf
+      - Vintage
+      - Yelblu
+      - Yelblu Hot
+      - Yellowout
+      - Yelmag
+      friendly_name: Christmas Color Palette
+      icon: mdi:palette-outline
+      state: Default
+    switch.christmas_nightlight:
+      duration: 60
+      fade: true
+      target_brightness: 0
+      friendly_name: Christmas Nightlight
+      icon: mdi:weather-night
+      state: 'off'
+    switch.christmas_sync_send:
+      udp_port: 21324
+      friendly_name: Christmas Sync Send
+      icon: mdi:upload-network-outline
+      state: 'off'
+    switch.christmas_sync_receive:
+      udp_port: 21324
+      friendly_name: Christmas Sync Receive
+      icon: mdi:download-network-outline
+      state: 'on'
+    number.christmas_speed:
+      min: 0
+      max: 255
+      step: 1
+      mode: auto
+      friendly_name: Christmas Speed
+      icon: mdi:speedometer
+      state: '128'
+    number.christmas_intensity:
+      min: 0
+      max: 255
+      step: 1
+      mode: auto
+      friendly_name: Christmas Intensity
+      state: '128'
+  icon: mdi:string-lights
+- id: '1638922719036'
+  name: Christmas Off
+  entities:
+    switch.socket_1:
+      friendly_name: Pool Heat
+      state: 'off'
+    switch.socket_2:
+      friendly_name: Pool Main Pump
+      state: 'off'
+    switch.socket_3:
+      friendly_name: Pool Aux Pump
+      state: 'off'
+    switch.socket_4:
+      friendly_name: Pool Spare
+      state: 'off'
+    switch.usb:
+      friendly_name: Pool USB
+      state: 'off'
+    switch.plug1:
+      friendly_name: Christmas Tree
+      state: 'off'
+    light.christmas:
+      effect_list:
+      - Android
+      - Aurora
+      - Blends
+      - Blink
+      - Blink Rainbow
+      - Bouncing Balls
+      - Bpm
+      - Breathe
+      - Candle
+      - Candle Multi
+      - Candy Cane
+      - Chase
+      - Chase Flash
+      - Chase Flash Rnd
+      - Chase Rainbow
+      - Chase Random
+      - Chunchun
+      - Colorful
+      - Colorloop
+      - Colortwinkles
+      - Colorwaves
+      - Dancing Shadows
+      - Dissolve
+      - Dissolve Rnd
+      - Drip
+      - Dynamic
+      - Dynamic Smooth
+      - Fade
+      - Fill Noise
+      - Fire 2012
+      - Fire Flicker
+      - Fireworks
+      - Fireworks 1D
+      - Fireworks Starburst
+      - Flow
+      - Glitter
+      - Gradient
+      - Halloween
+      - Halloween Eyes
+      - Heartbeat
+      - ICU
+      - Juggle
+      - Lake
+      - Lighthouse
+      - Lightning
+      - Loading
+      - Meteor
+      - Meteor Smooth
+      - Multi Comet
+      - Noise 1
+      - Noise 2
+      - Noise 3
+      - Noise 4
+      - Noise Pal
+      - Oscillate
+      - Pacifica
+      - Palette
+      - Percent
+      - Phased
+      - Phased Noise
+      - Plasma
+      - Police
+      - Police All
+      - Popcorn
+      - Pride 2015
+      - Railway
+      - Rain
+      - Rainbow
+      - Rainbow Runner
+      - Random Colors
+      - Ripple
+      - Ripple Rainbow
+      - Running
+      - Running 2
+      - Running Dual
+      - Saw
+      - Scan
+      - Scan Dual
+      - Scanner
+      - Scanner Dual
+      - Sine
+      - Sinelon
+      - Sinelon Dual
+      - Sinelon Rainbow
+      - Solid
+      - Solid Glitter
+      - Solid Pattern
+      - Solid Pattern Tri
+      - Sparkle
+      - Sparkle Dark
+      - Sparkle+
+      - Spots
+      - Spots Fade
+      - Stream
+      - Stream 2
+      - Strobe
+      - Strobe Mega
+      - Strobe Rainbow
+      - Sunrise
+      - Sweep
+      - Sweep Random
+      - TV Simulator
+      - Tetrix
+      - Theater
+      - Theater Rainbow
+      - Traffic Light
+      - Tri Chase
+      - Tri Fade
+      - Tri Wipe
+      - Twinkle
+      - Twinklecat
+      - Twinklefox
+      - Twinkleup
+      - Two Areas
+      - Two Dots
+      - Washing Machine
+      - Wipe
+      - Wipe Random
+      supported_color_modes:
+      - rgb
+      color_mode: rgb
+      brightness: 255
+      hs_color:
+      - 0
+      - 0
+      rgb_color:
+      - 0
+      - 0
+      - 0
+      xy_color:
+      - 0
+      - 0
+      effect: Solid
+      intensity: 128
+      palette: Default
+      reverse: false
+      speed: 128
+      friendly_name: Christmas
+      icon: mdi:led-strip-variant
+      supported_features: 36
+      state: 'on'
+    select.christmas_playlist:
+      options: []
+      friendly_name: Christmas Playlist
+      icon: mdi:play-speed
+      state: unavailable
+    select.christmas_preset:
+      options:
+      - Flashing
+      - 'Off'
+      - Static
+      friendly_name: Christmas Preset
+      icon: mdi:playlist-play
+      state: 'Off'
+    select.christmas_color_palette:
+      options:
+      - '* Color 1'
+      - '* Color Gradient'
+      - '* Colors 1&2'
+      - '* Colors Only'
+      - '* Random Cycle'
+      - Analogous
+      - April Night
+      - Aqua Flash
+      - Atlantica
+      - Aurora
+      - Aurora 2
+      - Autumn
+      - Beach
+      - Beech
+      - Blink Red
+      - Breeze
+      - C9
+      - C9 2
+      - C9 New
+      - Candy
+      - Candy2
+      - Cloud
+      - Cyane
+      - Default
+      - Departure
+      - Drywet
+      - Fairy Reaf
+      - Fire
+      - Forest
+      - Grintage
+      - Hult
+      - Hult 64
+      - Icefire
+      - Jul
+      - Landscape
+      - Lava
+      - Light Pink
+      - Lite Light
+      - Magenta
+      - Magred
+      - Ocean
+      - Orange & Teal
+      - Orangery
+      - Party
+      - Pastel
+      - Pink Candy
+      - Rainbow
+      - Rainbow Bands
+      - Red & Blue
+      - Red Flash
+      - Red Reaf
+      - Red Shift
+      - Red Tide
+      - Retro Clown
+      - Rewhi
+      - Rivendell
+      - Sakura
+      - Semi Blue
+      - Sherbet
+      - Splash
+      - Sunset
+      - Sunset 2
+      - Temperature
+      - Tertiary
+      - Tiamat
+      - Toxy Reaf
+      - Vintage
+      - Yelblu
+      - Yelblu Hot
+      - Yellowout
+      - Yelmag
+      friendly_name: Christmas Color Palette
+      icon: mdi:palette-outline
+      state: Default
+    switch.christmas_nightlight:
+      duration: 60
+      fade: true
+      target_brightness: 0
+      friendly_name: Christmas Nightlight
+      icon: mdi:weather-night
+      state: 'off'
+    switch.christmas_sync_send:
+      udp_port: 21324
+      friendly_name: Christmas Sync Send
+      icon: mdi:upload-network-outline
+      state: 'off'
+    switch.christmas_sync_receive:
+      udp_port: 21324
+      friendly_name: Christmas Sync Receive
+      icon: mdi:download-network-outline
+      state: 'on'
+    number.christmas_speed:
+      min: 0
+      max: 255
+      step: 1
+      mode: auto
+      friendly_name: Christmas Speed
+      icon: mdi:speedometer
+      state: '128'
+    number.christmas_intensity:
+      min: 0
+      max: 255
+      step: 1
+      mode: auto
+      friendly_name: Christmas Intensity
+      state: '128'
+  icon: mdi:string-lights-off
