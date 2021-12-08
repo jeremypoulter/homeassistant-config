@@ -3,12 +3,11 @@ substitutions:
   friendly_name: "Fishtank"
 
 esphome:
-  name: $device_name
-
-platform: ESP8266
+  name: "${device_name}"
+  platform: ESP8266
   board: huzzah
 
-  wifi:
+wifi:
   ssid: !secret wifi_ssid
   password: !secret wifi_password
 

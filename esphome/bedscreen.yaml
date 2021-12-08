@@ -73,12 +73,12 @@ binary_sensor:
 # Device Specific Config
 switch:
   - platform: gpio
-    pin: GPIO05
     name: "${friendly_name} Up Switch"
+    pin: GPIO12
     id: up_switch
   - platform: gpio
-    pin: GPIO12
     name: "${friendly_name} Down Switch"
+    pin: GPIO05
     id: down_switch
 
 cover:
@@ -91,14 +91,19 @@ cover:
       - switch.turn_on: up_switch
       - delay: 0.2s
       - switch.turn_off: up_switch
+      - delay: 0.5s
+      - switch.turn_on: up_switch
+      - delay: 0.2s
+      - switch.turn_off: up_switch
     close_action:
       - switch.turn_off: up_switch
       - switch.turn_on: down_switch
       - delay: 0.2s
       - switch.turn_off: down_switch
-    stop_action:
+      - delay: 0.5s
+      - switch.turn_on: down_switch
+      - delay: 0.2s
       - switch.turn_off: down_switch
-      - switch.turn_off: up_switch
     optimistic: true
     assumed_state: true
     id: screen
