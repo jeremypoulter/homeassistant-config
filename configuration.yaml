@@ -37,8 +37,6 @@ http:
 recorder:
   purge_keep_days: 30
 
-switch: !include switches.yaml
-
 sensor: !include sensors.yaml
 group: !include groups.yaml
 automation: !include automations.yaml
