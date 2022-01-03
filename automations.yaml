@@ -6,10 +6,11 @@
     event: sunrise
   condition: []
   action:
-  - service: wled.preset
-    data:
-      entity_id: light.fishtank
-      preset: 2
+  - device_id: 28d4df6625bc4fdaed286535e55a7bba
+    domain: select
+    entity_id: select.fishtank_preset
+    type: select_option
+    option: Day
   mode: single
 - id: '1610520452720'
   alias: Fishtank night
@@ -19,10 +20,11 @@
     at: '23:00'
   condition: []
   action:
-  - service: wled.preset
-    data:
-      entity_id: light.fishtank
-      preset: 3
+  - device_id: 28d4df6625bc4fdaed286535e55a7bba
+    domain: select
+    entity_id: select.fishtank_preset
+    type: select_option
+    option: Night
   mode: single
 - id: '1614026220990'
   alias: turn on office lights when in office
@@ -85,7 +87,7 @@
   - platform: device
     device_id: 14f6a5afc0a043491406010c89dd919d
     domain: media_player
-    entity_id: media_player.kitchen_sky_q_4
+    entity_id: media_player.sky_q_bedroom
     type: playing
   condition: []
   action:
@@ -101,7 +103,7 @@
   - platform: device
     device_id: 14f6a5afc0a043491406010c89dd919d
     domain: media_player
-    entity_id: media_player.kitchen_sky_q_4
+    entity_id: media_player.sky_q_bedroom
     type: turned_off
   condition: []
   action:
@@ -118,11 +120,11 @@
     event: sunset
   condition: []
   action:
-  - service: wled.preset
-    data:
-      preset: 4
-    target:
-      entity_id: light.fishtank
+  - device_id: 28d4df6625bc4fdaed286535e55a7bba
+    domain: select
+    entity_id: select.fishtank_preset
+    type: select_option
+    option: Evening
   mode: single
 - id: '1638922858499'
   alias: Christmas on
@@ -131,6 +133,11 @@
   - platform: sun
     event: sunset
     offset: '0'
+  - platform: state
+    entity_id: input_boolean.christmas_lights
+    to: 'on'
+  - platform: time
+    at: 07:00
   condition: []
   action:
   - scene: scene.christmas_on
@@ -141,7 +148,21 @@
   trigger:
   - platform: time
     at: '23:30'
+  - platform: state
+    entity_id: input_boolean.christmas_lights
+    to: 'off'
   condition: []
   action:
   - scene: scene.christmas_off
+  mode: single
+- id: '1640167513478'
+  alias: Christmas inside
+  description: ''
+  trigger:
+  - platform: sun
+    event: sunrise
+    offset: '0'
+  condition: []
+  action:
+  - scene: scene.christmas_inside
   mode: single
