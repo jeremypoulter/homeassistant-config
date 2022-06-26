@@ -59,6 +59,8 @@ binary_sensor:
 
 dallas:
   - pin: GPIO18
+  
+esp32_ble_tracker:
 
 sensor:
   # WiFi Signal Sensor
@@ -76,7 +78,7 @@ sensor:
 
   - platform: dallas
     address: 0xB5000005E58E4D28
-    name: "Pool Temperature"
+    name: "External Temperature"
 
   - platform: pulse_counter
     id: flow
@@ -105,6 +107,13 @@ sensor:
     name: "Daily flow"
     power_id: flow
     unit_of_measurement: 'L'
+
+  - platform: inkbird_ibsth1_mini
+    mac_address: "49:22:02:11:02:38"
+    temperature:
+      name: "Pool Temperature"
+    battery_level:
+      name: "Pool Temperature Battery Level"
 
 status_led:
   pin:
