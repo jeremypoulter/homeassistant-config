@@ -81,7 +81,7 @@
     domain: switch
   mode: single
 - id: '1628113145425'
-  alias: bed screen up
+  alias: Bedroom TV on
   description: ''
   trigger:
   - platform: device
@@ -89,15 +89,16 @@
     domain: media_player
     entity_id: media_player.sky_q_bedroom
     type: playing
+  - platform: state
+    entity_id: input_boolean.bedroom_tv
+    from: 'off'
+    to: 'on'
   condition: []
   action:
-  - device_id: f6a1f9e41155b73a7d330021e6815e35
-    domain: cover
-    entity_id: cover.bed_screen
-    type: open
+  - scene: scene.bedroom_tv_on
   mode: single
 - id: '1628113225529'
-  alias: bed screen down
+  alias: Bedroom TV off
   description: ''
   trigger:
   - platform: device
@@ -105,12 +106,13 @@
     domain: media_player
     entity_id: media_player.sky_q_bedroom
     type: turned_off
+  - platform: state
+    entity_id: input_boolean.bedroom_tv
+    from: 'on'
+    to: 'off'
   condition: []
   action:
-  - device_id: f6a1f9e41155b73a7d330021e6815e35
-    domain: cover
-    entity_id: cover.bed_screen
-    type: close
+  - scene: scene.bedroom_tv_off
   mode: single
 - id: '1630334936678'
   alias: Fishtank evening
@@ -165,4 +167,30 @@
   condition: []
   action:
   - scene: scene.christmas_inside
+  mode: single
+- id: '1643562844829'
+  alias: Charlie light on
+  description: ''
+  trigger:
+  - platform: time
+    at: 08:00
+  condition: []
+  action:
+  - type: turn_on
+    device_id: 76a1f8c6de87052b75e574641ccd6f4a
+    entity_id: switch.tasmota_4
+    domain: switch
+  mode: single
+- id: '1643562874503'
+  alias: Charlie light off
+  description: ''
+  trigger:
+  - platform: time
+    at: '20:00'
+  condition: []
+  action:
+  - type: turn_off
+    device_id: 76a1f8c6de87052b75e574641ccd6f4a
+    entity_id: switch.tasmota_4
+    domain: switch
   mode: single

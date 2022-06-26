@@ -2487,3 +2487,38 @@
       friendly_name: Plug 3
       state: 'on'
   icon: mdi:string-lights
+- id: '1641942024843'
+  name: Bedroom TV On
+  entities:
+    cover.bed_screen:
+      assumed_state: true
+      friendly_name: Bed Screen
+      supported_features: 11
+      state: open
+    input_boolean.bedroom_tv:
+      editable: true
+      icon: mdi:television
+      friendly_name: Bedroom TV
+      state: 'on'
+  icon: mdi:television
+- id: '1641942130800'
+  name: Bedroom TV Off
+  entities:
+    media_player.sky_q_bedroom:
+      skyq_media_type: 'off'
+      device_class: tv
+      icon: mdi:television
+      friendly_name: Sky Q - Bedroom
+      supported_features: 23475
+      state: 'off'
+    cover.bed_screen:
+      assumed_state: true
+      friendly_name: Bed Screen
+      supported_features: 11
+      state: closed
+    input_boolean.bedroom_tv:
+      editable: true
+      icon: mdi:television
+      friendly_name: Bedroom TV
+      state: 'off'
+  icon: mdi:television-off

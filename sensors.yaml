@@ -2,33 +2,10 @@
   api_key: !secret emoncms_api_key
   url: https://emoncms.org
   id: 1
-- platform: openevse
-  host: openevse.lan
-  monitored_variables:
-    - status
-- platform: google_wifi
 - platform: octopusagile
 - platform: solis
   name: "My Solis Inverter"
   portal_domain: "m.ginlong.com"
-  portal_username: "!secret solis_portal_username"
-  portal_password: "!secret solis_portal_password"
-  portal_plant_id: 1105253
-  inverter_serial: "160AA0206050016"
-  sensors:
-    actualpower:
-    energytoday:
-    status:
-    temperature:
-    dcinputvoltagepv1:
-    dcinputcurrentpv1:
-    dcinputpowerpv1:
-    dcinputvoltagepv2:
-    dcinputcurrentpv2:
-    dcinputpowerpv2:
-    acoutputvoltage1:
-    acoutputcurrent1:
-    energylastmonth:
-    energythismonth:
-    energythisyear:
-    energytotal:
+  portal_username: !secret solis_portal_username
+  portal_password: !secret solis_portal_password
+  portal_plant_id: "811650"
