@@ -17,13 +17,13 @@ wifi:
     ssid: "${esp_name} Fallback Hotspot"
     password: !secret hotspot_wifi_password
 
-#deep_sleep:
-#  run_duration: ${run_time}
-#  sleep_duration: ${sleep_time}
-#  id: deep_sleep_1
-#  esp32_ext1_wakeup:
-#    pins: GPIO39
-#    mode: ALL_LOW
+deep_sleep:
+  run_duration: ${run_time}
+  sleep_duration: ${sleep_time}
+  id: deep_sleep_1
+  esp32_ext1_wakeup:
+    pins: GPIO39
+    mode: ALL_LOW
 
 captive_portal:
 
@@ -236,28 +236,28 @@ script:
       - component.update: batt_volt
       - component.update: batt
       - component.update: t5_display
-#      - script.execute: enter_sleep
+      - script.execute: enter_sleep
 
-#  - id: enter_sleep
-#    then:
-#      - if:
-#          condition:
-#            lambda: |-
-#              auto time = id(ntp).now();
-#              if (!time.is_valid()) {
-#                return false;
-#              }
-#              return (time.hour < 6);
-#          then:
-#            - logger.log: "It's nighttime, entering long sleep for ${night_sleep_time}"
-#            - deep_sleep.enter:
-#                id: deep_sleep_1
-#                sleep_duration: ${night_sleep_time}
-#          else:
-#            - logger.log: "It's daytime, entering short sleep for ${sleep_time}"
-#            - deep_sleep.enter:
-#                id: deep_sleep_1
-#                sleep_duration: ${sleep_time}
+  - id: enter_sleep
+    then:
+      - if:
+          condition:
+            lambda: |-
+              auto time = id(ntp).now();
+              if (!time.is_valid()) {
+                return false;
+              }
+              return (time.hour < 6);
+          then:
+            - logger.log: "It's nighttime, entering long sleep for ${night_sleep_time}"
+            - deep_sleep.enter:
+                id: deep_sleep_1
+                sleep_duration: ${night_sleep_time}
+          else:
+            - logger.log: "It's daytime, entering short sleep for ${sleep_time}"
+            - deep_sleep.enter:
+                id: deep_sleep_1
+                sleep_duration: ${sleep_time}
 
 external_components:
   - source:
@@ -271,6 +271,7 @@ display:
     id: t5_display
     rotation: 270
     update_interval: never
+    power_off_delay_enabled: true
     lambda: |-
       #define xres 540
       #define yres 960
