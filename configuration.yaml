@@ -37,6 +37,16 @@ http:
 recorder:
   purge_keep_days: 30
 
+climate:
+  - platform: generic_thermostat
+    name: Charlie temp
+    heater: switch.tasmota_4
+    target_sensor: sensor.test_camera_temperature
+    max_temp: 45
+    cold_tolerance: 2
+    min_cycle_duration:
+      minutes: 5
+
 sensor: !include sensors.yaml
 group: !include groups.yaml
 automation: !include automations.yaml

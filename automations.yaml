@@ -26,20 +26,6 @@
     type: select_option
     option: Night
   mode: single
-- id: '1614026220990'
-  alias: turn on office lights when in office
-  description: ''
-  trigger:
-  - platform: numeric_state
-    entity_id: binary_sensor.test_camera_pir
-    above: '0'
-  condition: []
-  action:
-  - domain: light
-    entity_id: light.office
-    device_id: c5793b822f5f378baa39ce239b241153
-    type: turn_on
-  mode: single
 - id: '1627494208126'
   alias: Pool pump start
   description: Turn the Main pool pump on if the heater is not on
@@ -176,10 +162,10 @@
     at: 08:00
   condition: []
   action:
-  - type: turn_on
-    device_id: 76a1f8c6de87052b75e574641ccd6f4a
-    entity_id: switch.tasmota_4
-    domain: switch
+  - service: climate.turn_on
+    data: {}
+    target:
+      entity_id: climate.charlie_temp
   mode: single
 - id: '1643562874503'
   alias: Charlie light off
@@ -189,8 +175,8 @@
     at: '20:00'
   condition: []
   action:
-  - type: turn_off
-    device_id: 76a1f8c6de87052b75e574641ccd6f4a
-    entity_id: switch.tasmota_4
-    domain: switch
+  - service: climate.turn_off
+    data: {}
+    target:
+      entity_id: climate.charlie_temp
   mode: single
