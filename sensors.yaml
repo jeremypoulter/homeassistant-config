@@ -2,10 +2,3 @@
   api_key: !secret emoncms_api_key
   url: https://emoncms.org
   id: 1
-- platform: octopusagile
-- platform: solis
-  name: "My Solis Inverter"
-  portal_domain: "m.ginlong.com"
-  portal_username: !secret solis_portal_username
-  portal_password: !secret solis_portal_password
-  portal_plant_id: "811650"

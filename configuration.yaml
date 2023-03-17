@@ -1,9 +1,9 @@
 # Configure a default setup of Home Assistant (frontend, api, etc)
 default_config:
 
-homeassistant:
-  external_url: https://home.bigjungle.net:8443
-  internal_url: http://homeassistant.lan:8123
+#homeassistant:
+#  external_url: https://home.bigjungle.net:8443
+#  internal_url: http://homeassistant.lan:8123
 
 # Text to speech
 tts:
@@ -20,13 +20,6 @@ media_player:
       data:
         mac: E8-F2-E2-AC-02-D8
 
-octopusagile:
-  region_code: "H"
-  mpan: !secret octopus_mpan
-  serial: !secret octopus_serial
-  auth: !secret octopus_auth
-  startdate: "2020-05-08"
-
 http:
   use_x_forwarded_for: true
   trusted_proxies:
@@ -36,16 +29,6 @@ http:
 
 recorder:
   purge_keep_days: 30
-
-climate:
-  - platform: generic_thermostat
-    name: Charlie temp
-    heater: switch.tasmota_4
-    target_sensor: sensor.test_camera_temperature
-    max_temp: 45
-    cold_tolerance: 2
-    min_cycle_duration:
-      minutes: 5
 
 sensor: !include sensors.yaml
 group: !include groups.yaml

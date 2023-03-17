@@ -22,7 +22,36 @@
       friendly_name: Christmas Tree
       supported_features: 0
       state: unavailable
-    light.christmas:
+    switch.tasmota_2:
+      friendly_name: Tasmota
+      state: 'off'
+    switch.tasmota2_2:
+      friendly_name: Tasmota2
+      state: 'off'
+    switch.tasmota3_2:
+      friendly_name: Tasmota3
+      state: 'off'
+    switch.tasmota4_2:
+      friendly_name: Tasmota4
+      state: 'on'
+    switch.tasmota5:
+      friendly_name: Tasmota5
+      state: 'off'
+    switch.tasmota_3:
+      friendly_name: Plug 1
+      state: 'on'
+    switch.tasmota_4:
+      friendly_name: Plug 2
+      state: 'on'
+    input_boolean.christmas_lights:
+      editable: true
+      icon: mdi:string-lights
+      friendly_name: Christmas lights
+      state: 'on'
+    switch.tasmota_5:
+      friendly_name: Plug 3
+      state: 'on'
+    light.front_door:
       effect_list:
       - Android
       - Aurora
@@ -36,6 +65,8 @@
       - Candle Multi
       - Candy Cane
       - Chase
+      - Chase 2
+      - Chase 3
       - Chase Flash
       - Chase Flash Rnd
       - Chase Rainbow
@@ -52,6 +83,8 @@
       - Dynamic
       - Dynamic Smooth
       - Fade
+      - Fairy
+      - Fairytwinkle
       - Fill Noise
       - Fire 2012
       - Fire Flicker
@@ -86,7 +119,6 @@
       - Phased Noise
       - Plasma
       - Police
-      - Police All
       - Popcorn
       - Pride 2015
       - Railway
@@ -97,7 +129,6 @@
       - Ripple
       - Ripple Rainbow
       - Running
-      - Running 2
       - Running Dual
       - Saw
       - Scan
@@ -130,14 +161,12 @@
       - Theater
       - Theater Rainbow
       - Traffic Light
-      - Tri Chase
       - Tri Fade
       - Tri Wipe
       - Twinkle
       - Twinklecat
       - Twinklefox
       - Twinkleup
-      - Two Areas
       - Two Dots
       - Washing Machine
       - Wipe
@@ -150,138 +179,34 @@
       - 0
       - 0
       rgb_color:
-      - 255
-      - 255
-      - 255
+      - 89
+      - 89
+      - 89
       xy_color:
       - 0.323
       - 0.329
-      effect: Solid
+      effect: Solid Glitter
       icon: mdi:led-strip-variant
-      friendly_name: Christmas
+      friendly_name: Front Door
       supported_features: 36
       state: 'on'
-    select.christmas_playlist:
+    select.front_door_playlist:
       options: []
       icon: mdi:play-speed
-      friendly_name: Christmas Playlist
+      friendly_name: Front Door Playlist
       state: unavailable
-    select.christmas_preset:
+    select.front_door_preset:
       options:
-      - Flashing
+      - 'Candles '
+      - Eyes
+      - Fireworks
+      - Green
+      - 'Lighting '
       - 'Off'
-      - Static
+      - 'Sparkle '
       icon: mdi:playlist-play
-      friendly_name: Christmas Preset
-      state: Static
-    select.christmas_color_palette:
-      options:
-      - '* Color 1'
-      - '* Color Gradient'
-      - '* Colors 1&2'
-      - '* Colors Only'
-      - '* Random Cycle'
-      - Analogous
-      - April Night
-      - Aqua Flash
-      - Atlantica
-      - Aurora
-      - Aurora 2
-      - Autumn
-      - Beach
-      - Beech
-      - Blink Red
-      - Breeze
-      - C9
-      - C9 2
-      - C9 New
-      - Candy
-      - Candy2
-      - Cloud
-      - Cyane
-      - Default
-      - Departure
-      - Drywet
-      - Fairy Reaf
-      - Fire
-      - Forest
-      - Grintage
-      - Hult
-      - Hult 64
-      - Icefire
-      - Jul
-      - Landscape
-      - Lava
-      - Light Pink
-      - Lite Light
-      - Magenta
-      - Magred
-      - Ocean
-      - Orange & Teal
-      - Orangery
-      - Party
-      - Pastel
-      - Pink Candy
-      - Rainbow
-      - Rainbow Bands
-      - Red & Blue
-      - Red Flash
-      - Red Reaf
-      - Red Shift
-      - Red Tide
-      - Retro Clown
-      - Rewhi
-      - Rivendell
-      - Sakura
-      - Semi Blue
-      - Sherbet
-      - Splash
-      - Sunset
-      - Sunset 2
-      - Temperature
-      - Tertiary
-      - Tiamat
-      - Toxy Reaf
-      - Vintage
-      - Yelblu
-      - Yelblu Hot
-      - Yellowout
-      - Yelmag
-      icon: mdi:palette-outline
-      friendly_name: Christmas Color Palette
-      state: Default
-    switch.christmas_nightlight:
-      duration: 60
-      fade: true
-      target_brightness: 0
-      icon: mdi:weather-night
-      friendly_name: Christmas Nightlight
-      state: 'off'
-    switch.christmas_sync_send:
-      udp_port: 21324
-      icon: mdi:upload-network-outline
-      friendly_name: Christmas Sync Send
-      state: 'off'
-    switch.christmas_sync_receive:
-      udp_port: 21324
-      icon: mdi:download-network-outline
-      friendly_name: Christmas Sync Receive
-      state: 'on'
-    number.christmas_speed:
-      min: 0
-      max: 255
-      step: 1
-      mode: auto
-      icon: mdi:speedometer
-      friendly_name: Christmas Speed
-      state: '128'
-    number.christmas_intensity:
-      min: 0
-      max: 255
-      step: 1
-      mode: auto
-      friendly_name: Christmas Intensity
-      state: '128'
+      friendly_name: Front Door Preset
+      state: 'Sparkle '
     light.night_tree:
       effect_list:
       - Android
@@ -296,6 +221,8 @@
       - Candle Multi
       - Candy Cane
       - Chase
+      - Chase 2
+      - Chase 3
       - Chase Flash
       - Chase Flash Rnd
       - Chase Rainbow
@@ -312,6 +239,8 @@
       - Dynamic
       - Dynamic Smooth
       - Fade
+      - Fairy
+      - Fairytwinkle
       - Fill Noise
       - Fire 2012
       - Fire Flicker
@@ -346,7 +275,6 @@
       - Phased Noise
       - Plasma
       - Police
-      - Police All
       - Popcorn
       - Pride 2015
       - Railway
@@ -357,7 +285,6 @@
       - Ripple
       - Ripple Rainbow
       - Running
-      - Running 2
       - Running Dual
       - Saw
       - Scan
@@ -390,14 +317,12 @@
       - Theater
       - Theater Rainbow
       - Traffic Light
-      - Tri Chase
       - Tri Fade
       - Tri Wipe
       - Twinkle
       - Twinklecat
       - Twinklefox
       - Twinkleup
-      - Two Areas
       - Two Dots
       - Washing Machine
       - Wipe
@@ -431,108 +356,227 @@
       - Christmas
       icon: mdi:playlist-play
       friendly_name: Night Tree Preset
-      state: unknown
-    select.night_tree_color_palette:
-      options:
-      - '* Color 1'
-      - '* Color Gradient'
-      - '* Colors 1&2'
-      - '* Colors Only'
-      - '* Random Cycle'
-      - Analogous
-      - April Night
-      - Atlantica
+      state: Christmas
+    light.christmas:
+      effect_list:
+      - Akemi
+      - Android
       - Aurora
-      - Aurora 2
-      - Autumn
-      - Beach
-      - Beech
-      - Breeze
-      - C9
-      - C9 2
-      - C9 New
-      - Cloud
-      - Cyane
-      - Default
-      - Departure
-      - Drywet
-      - Fire
-      - Forest
-      - Grintage
-      - Hult
-      - Hult 64
-      - Icefire
-      - Jul
-      - Landscape
-      - Lava
-      - Light Pink
-      - Magenta
-      - Magred
-      - Ocean
-      - Orange & Teal
-      - Orangery
-      - Party
-      - Pastel
+      - Black Hole
+      - Blends
+      - Blink
+      - Blink Rainbow
+      - Blobs
+      - Blurz
+      - Bouncing Balls
+      - Bpm
+      - Breathe
+      - Candle
+      - Candle Multi
+      - Chase
+      - Chase 2
+      - Chase 3
+      - Chase Flash
+      - Chase Flash Rnd
+      - Chase Rainbow
+      - Chase Random
+      - Chunchun
+      - Colored Bursts
+      - Colorful
+      - Colorloop
+      - Colortwinkles
+      - Colorwaves
+      - Crazy Bees
+      - DJ Light
+      - DNA
+      - DNA Spiral
+      - Dancing Shadows
+      - Dissolve
+      - Dissolve Rnd
+      - Drift
+      - Drift Rose
+      - Drip
+      - Dynamic
+      - Dynamic Smooth
+      - Fade
+      - Fairy
+      - Fairytwinkle
+      - Fill Noise
+      - Fire 2012
+      - Fire Flicker
+      - Firenoise
+      - Fireworks
+      - Fireworks 1D
+      - Fireworks Starburst
+      - Flow
+      - Flow Stripe
+      - Freqmap
+      - Freqmatrix
+      - Freqpixels
+      - Freqwave
+      - Frizzles
+      - Funky Plank
+      - GEQ
+      - Game Of Life
+      - Ghost Rider
+      - Glitter
+      - Gradient
+      - Gravcenter
+      - Gravcentric
+      - Gravfreq
+      - Gravimeter
+      - Halloween Eyes
+      - Heartbeat
+      - Hiphotic
+      - ICU
+      - Juggle
+      - Juggles
+      - Julia
+      - Lake
+      - Lighthouse
+      - Lightning
+      - Lissajous
+      - Loading
+      - Matripix
+      - Matrix
+      - Metaballs
+      - Meteor
+      - Meteor Smooth
+      - Midnoise
+      - Multi Comet
+      - Noise 1
+      - Noise 2
+      - Noise 3
+      - Noise 4
+      - Noise Pal
+      - Noise2D
+      - Noisefire
+      - Noisemeter
+      - Noisemove
+      - Oscillate
+      - Pacifica
+      - Palette
+      - Percent
+      - Perlin Move
+      - Phased
+      - Phased Noise
+      - Pixels
+      - Pixelwave
+      - Plasma
+      - Plasma Ball
+      - Plasmoid
+      - Polar Lights
+      - Popcorn
+      - Pride 2015
+      - Puddlepeak
+      - Puddles
+      - Pulser
+      - RSVD
+      - RSVD
+      - RSVD
+      - RSVD
+      - RSVD
+      - RSVD
+      - RSVD
+      - RSVD
+      - RSVD
+      - RSVD
+      - RSVD
+      - RSVD
+      - RSVD
+      - Railway
+      - Rain
       - Rainbow
-      - Rainbow Bands
-      - Red & Blue
-      - Rewhi
-      - Rivendell
-      - Sakura
-      - Sherbet
-      - Splash
-      - Sunset
-      - Sunset 2
-      - Temperature
-      - Tertiary
-      - Tiamat
-      - Vintage
-      - Yelblu
-      - Yellowout
-      - Yelmag
-      icon: mdi:palette-outline
-      friendly_name: Night Tree Color Palette
-      state: Default
-    switch.night_tree_nightlight:
-      duration: 60
-      fade: true
-      target_brightness: 0
-      icon: mdi:weather-night
-      friendly_name: Night Tree Nightlight
-      state: 'off'
-    switch.night_tree_sync_send:
-      udp_port: 21324
-      icon: mdi:upload-network-outline
-      friendly_name: Night Tree Sync Send
-      state: 'off'
-    switch.night_tree_sync_receive:
-      udp_port: 21324
-      icon: mdi:download-network-outline
-      friendly_name: Night Tree Sync Receive
+      - Rainbow Runner
+      - Random Colors
+      - Ripple
+      - Ripple Peak
+      - Ripple Rainbow
+      - Rocktaves
+      - Running
+      - Running Dual
+      - Saw
+      - Scan
+      - Scan Dual
+      - Scanner
+      - Scanner Dual
+      - Scrolling Text
+      - Sindots
+      - Sine
+      - Sinelon
+      - Sinelon Dual
+      - Sinelon Rainbow
+      - Solid
+      - Solid Glitter
+      - Solid Pattern
+      - Solid Pattern Tri
+      - Spaceships
+      - Sparkle
+      - Sparkle Dark
+      - Sparkle+
+      - Spots
+      - Spots Fade
+      - Squared Swirl
+      - Stream
+      - Stream 2
+      - Strobe
+      - Strobe Mega
+      - Strobe Rainbow
+      - Sun Radiation
+      - Sunrise
+      - Sweep
+      - Sweep Random
+      - Swirl
+      - TV Simulator
+      - Tartan
+      - Tetrix
+      - Theater
+      - Theater Rainbow
+      - Traffic Light
+      - Tri Fade
+      - Tri Wipe
+      - Twinkle
+      - Twinklecat
+      - Twinklefox
+      - Twinkleup
+      - Two Dots
+      - Washing Machine
+      - Waterfall
+      - Waverly
+      - Wavesins
+      - Wipe
+      - Wipe Random
+      supported_color_modes:
+      - rgb
+      color_mode: rgb
+      brightness: 255
+      hs_color:
+      - 0
+      - 0
+      rgb_color:
+      - 255
+      - 255
+      - 255
+      xy_color:
+      - 0.323
+      - 0.329
+      effect: Solid
+      icon: mdi:led-strip-variant
+      friendly_name: Christmas
+      supported_features: 36
       state: 'on'
-    number.night_tree_speed:
-      min: 0
-      max: 255
-      step: 1
-      mode: auto
-      icon: mdi:speedometer
-      friendly_name: Night Tree Speed
-      state: '18'
-    number.night_tree_intensity:
-      min: 0
-      max: 255
-      step: 1
-      mode: auto
-      friendly_name: Night Tree Intensity
-      state: '7'
-    button.christmas_5_restart:
-      device_class: restart
-      friendly_name: Christmas-5 Restart
-      state: unknown
-    button.christmas_5_update:
-      device_class: update
-      friendly_name: Christmas-5 Update
+    select.christmas_playlist:
+      options: []
+      icon: mdi:play-speed
+      friendly_name: Christmas Playlist
       state: unavailable
+    select.christmas_preset:
+      options:
+      - 'Off'
+      - 'On'
+      icon: mdi:playlist-play
+      friendly_name: Christmas Preset
+      state: 'On'
     light.christmas_5:
       effect_list:
       - Android
@@ -656,51 +700,27 @@
       supported_color_modes:
       - rgbw
       color_mode: rgbw
-      brightness: 128
+      brightness: 46
       hs_color:
-      - 37.647
-      - 100
+      - 221.538
+      - 20.392
       rgb_color:
+      - 203
+      - 219
       - 255
-      - 160
-      - 0
       rgbw_color:
+      - 203
+      - 219
       - 255
-      - 160
-      - 0
       - 0
       xy_color:
-      - 0.569
-      - 0.411
+      - 0.279
+      - 0.288
       effect: Solid
       icon: mdi:led-strip-variant
       friendly_name: Christmas-5
       supported_features: 36
       state: 'on'
-    number.christmas_5_speed:
-      min: 0
-      max: 255
-      step: 1
-      mode: auto
-      icon: mdi:speedometer
-      friendly_name: Christmas-5 Speed
-      state: '128'
-    number.christmas_5_intensity:
-      min: 0
-      max: 255
-      step: 1
-      mode: auto
-      friendly_name: Christmas-5 Intensity
-      state: '255'
-    select.christmas_5_live_override:
-      options:
-      - '0'
-      - '1'
-      - '2'
-      device_class: wled__live_override
-      icon: mdi:theater
-      friendly_name: Christmas-5 Live Override
-      state: '0'
     select.christmas_5_playlist:
       options: []
       icon: mdi:play-speed
@@ -711,133 +731,8 @@
       icon: mdi:playlist-play
       friendly_name: Christmas-5 Preset
       state: unavailable
-    select.christmas_5_color_palette:
-      options:
-      - '* Color 1'
-      - '* Color Gradient'
-      - '* Colors 1&2'
-      - '* Colors Only'
-      - '* Random Cycle'
-      - Analogous
-      - April Night
-      - Aqua Flash
-      - Atlantica
-      - Aurora
-      - Aurora 2
-      - Autumn
-      - Beach
-      - Beech
-      - Blink Red
-      - Breeze
-      - C9
-      - C9 2
-      - C9 New
-      - Candy
-      - Candy2
-      - Cloud
-      - Cyane
-      - Default
-      - Departure
-      - Drywet
-      - Fairy Reaf
-      - Fire
-      - Forest
-      - Grintage
-      - Hult
-      - Hult 64
-      - Icefire
-      - Jul
-      - Landscape
-      - Lava
-      - Light Pink
-      - Lite Light
-      - Magenta
-      - Magred
-      - Ocean
-      - Orange & Teal
-      - Orangery
-      - Party
-      - Pastel
-      - Pink Candy
-      - Rainbow
-      - Rainbow Bands
-      - Red & Blue
-      - Red Flash
-      - Red Reaf
-      - Red Shift
-      - Red Tide
-      - Retro Clown
-      - Rewhi
-      - Rivendell
-      - Sakura
-      - Semi Blue
-      - Sherbet
-      - Splash
-      - Sunset
-      - Sunset 2
-      - Temperature
-      - Tertiary
-      - Tiamat
-      - Toxy Reaf
-      - Vintage
-      - Yelblu
-      - Yelblu Hot
-      - Yellowout
-      - Yelmag
-      icon: mdi:palette-outline
-      friendly_name: Christmas-5 Color Palette
-      state: Default
-    switch.christmas_5_nightlight:
-      duration: 60
-      fade: true
-      target_brightness: 0
-      icon: mdi:weather-night
-      friendly_name: Christmas-5 Nightlight
-      state: 'off'
-    switch.christmas_5_sync_send:
-      udp_port: 21324
-      icon: mdi:upload-network-outline
-      friendly_name: Christmas-5 Sync Send
-      state: 'off'
-    switch.christmas_5_sync_receive:
-      udp_port: 21324
-      icon: mdi:download-network-outline
-      friendly_name: Christmas-5 Sync Receive
-      state: 'on'
-    switch.christmas_5_reverse:
-      icon: mdi:swap-horizontal-bold
-      friendly_name: Christmas-5 Reverse
-      state: 'off'
-    switch.tasmota_2:
-      friendly_name: Tasmota
-      state: 'off'
-    switch.tasmota2_2:
-      friendly_name: Tasmota2
-      state: 'off'
-    switch.tasmota3_2:
-      friendly_name: Tasmota3
-      state: 'off'
-    switch.tasmota4_2:
-      friendly_name: Tasmota4
-      state: 'on'
-    switch.tasmota5:
-      friendly_name: Tasmota5
-      state: 'off'
-    switch.tasmota_3:
-      friendly_name: Plug 1
-      state: 'on'
-    switch.tasmota_4:
-      friendly_name: Plug 2
-      state: 'on'
-    input_boolean.christmas_lights:
-      editable: true
-      icon: mdi:string-lights
-      friendly_name: Christmas lights
-      state: 'on'
-    switch.tasmota_5:
-      friendly_name: Plug 3
-      state: 'on'
   icon: mdi:string-lights
+  metadata: {}
 - id: '1638922719036'
   name: Christmas Off
   entities:
@@ -856,13 +751,36 @@
     switch.usb:
       friendly_name: Pool USB
       state: 'off'
-    switch.plug1:
-      restored: true
-      icon: mdi:pine-tree
-      friendly_name: Christmas Tree
-      supported_features: 0
-      state: unavailable
-    light.christmas:
+    switch.tasmota_2:
+      friendly_name: Tasmota
+      state: 'off'
+    switch.tasmota2_2:
+      friendly_name: Tasmota2
+      state: 'off'
+    switch.tasmota3_2:
+      friendly_name: Tasmota3
+      state: 'off'
+    switch.tasmota4_2:
+      friendly_name: Tasmota4
+      state: 'off'
+    switch.tasmota5:
+      friendly_name: Tasmota5
+      state: 'off'
+    switch.tasmota_3:
+      friendly_name: Plug 1
+      state: 'off'
+    switch.tasmota_4:
+      friendly_name: Plug 2
+      state: 'off'
+    input_boolean.christmas_lights:
+      editable: true
+      icon: mdi:string-lights
+      friendly_name: Christmas lights
+      state: 'off'
+    switch.tasmota_5:
+      friendly_name: Plug 3
+      state: 'off'
+    light.front_door:
       effect_list:
       - Android
       - Aurora
@@ -876,6 +794,8 @@
       - Candle Multi
       - Candy Cane
       - Chase
+      - Chase 2
+      - Chase 3
       - Chase Flash
       - Chase Flash Rnd
       - Chase Rainbow
@@ -892,6 +812,8 @@
       - Dynamic
       - Dynamic Smooth
       - Fade
+      - Fairy
+      - Fairytwinkle
       - Fill Noise
       - Fire 2012
       - Fire Flicker
@@ -926,7 +848,6 @@
       - Phased Noise
       - Plasma
       - Police
-      - Police All
       - Popcorn
       - Pride 2015
       - Railway
@@ -937,7 +858,6 @@
       - Ripple
       - Ripple Rainbow
       - Running
-      - Running 2
       - Running Dual
       - Saw
       - Scan
@@ -970,16 +890,363 @@
       - Theater
       - Theater Rainbow
       - Traffic Light
-      - Tri Chase
       - Tri Fade
       - Tri Wipe
       - Twinkle
       - Twinklecat
       - Twinklefox
       - Twinkleup
-      - Two Areas
       - Two Dots
       - Washing Machine
+      - Wipe
+      - Wipe Random
+      supported_color_modes:
+      - rgb
+      icon: mdi:led-strip-variant
+      friendly_name: Front Door
+      supported_features: 36
+      state: 'off'
+    select.front_door_playlist:
+      options: []
+      icon: mdi:play-speed
+      friendly_name: Front Door Playlist
+      state: unavailable
+    select.front_door_preset:
+      options:
+      - 'Candles '
+      - Eyes
+      - Fireworks
+      - Green
+      - 'Lighting '
+      - 'Off'
+      - 'Sparkle '
+      icon: mdi:playlist-play
+      friendly_name: Front Door Preset
+      state: 'Off'
+    light.night_tree:
+      effect_list:
+      - Android
+      - Aurora
+      - Blends
+      - Blink
+      - Blink Rainbow
+      - Bouncing Balls
+      - Bpm
+      - Breathe
+      - Candle
+      - Candle Multi
+      - Candy Cane
+      - Chase
+      - Chase 2
+      - Chase 3
+      - Chase Flash
+      - Chase Flash Rnd
+      - Chase Rainbow
+      - Chase Random
+      - Chunchun
+      - Colorful
+      - Colorloop
+      - Colortwinkles
+      - Colorwaves
+      - Dancing Shadows
+      - Dissolve
+      - Dissolve Rnd
+      - Drip
+      - Dynamic
+      - Dynamic Smooth
+      - Fade
+      - Fairy
+      - Fairytwinkle
+      - Fill Noise
+      - Fire 2012
+      - Fire Flicker
+      - Fireworks
+      - Fireworks 1D
+      - Fireworks Starburst
+      - Flow
+      - Glitter
+      - Gradient
+      - Halloween
+      - Halloween Eyes
+      - Heartbeat
+      - ICU
+      - Juggle
+      - Lake
+      - Lighthouse
+      - Lightning
+      - Loading
+      - Meteor
+      - Meteor Smooth
+      - Multi Comet
+      - Noise 1
+      - Noise 2
+      - Noise 3
+      - Noise 4
+      - Noise Pal
+      - Oscillate
+      - Pacifica
+      - Palette
+      - Percent
+      - Phased
+      - Phased Noise
+      - Plasma
+      - Police
+      - Popcorn
+      - Pride 2015
+      - Railway
+      - Rain
+      - Rainbow
+      - Rainbow Runner
+      - Random Colors
+      - Ripple
+      - Ripple Rainbow
+      - Running
+      - Running Dual
+      - Saw
+      - Scan
+      - Scan Dual
+      - Scanner
+      - Scanner Dual
+      - Sine
+      - Sinelon
+      - Sinelon Dual
+      - Sinelon Rainbow
+      - Solid
+      - Solid Glitter
+      - Solid Pattern
+      - Solid Pattern Tri
+      - Sparkle
+      - Sparkle Dark
+      - Sparkle+
+      - Spots
+      - Spots Fade
+      - Stream
+      - Stream 2
+      - Strobe
+      - Strobe Mega
+      - Strobe Rainbow
+      - Sunrise
+      - Sweep
+      - Sweep Random
+      - TV Simulator
+      - Tetrix
+      - Theater
+      - Theater Rainbow
+      - Traffic Light
+      - Tri Fade
+      - Tri Wipe
+      - Twinkle
+      - Twinklecat
+      - Twinklefox
+      - Twinkleup
+      - Two Dots
+      - Washing Machine
+      - Wipe
+      - Wipe Random
+      supported_color_modes:
+      - rgb
+      icon: mdi:led-strip-variant
+      friendly_name: Night Tree
+      supported_features: 36
+      state: 'off'
+    select.night_tree_playlist:
+      options: []
+      icon: mdi:play-speed
+      friendly_name: Night Tree Playlist
+      state: unavailable
+    select.night_tree_preset:
+      options:
+      - Christmas
+      icon: mdi:playlist-play
+      friendly_name: Night Tree Preset
+      state: Christmas
+    light.christmas:
+      effect_list:
+      - Akemi
+      - Android
+      - Aurora
+      - Black Hole
+      - Blends
+      - Blink
+      - Blink Rainbow
+      - Blobs
+      - Blurz
+      - Bouncing Balls
+      - Bpm
+      - Breathe
+      - Candle
+      - Candle Multi
+      - Chase
+      - Chase 2
+      - Chase 3
+      - Chase Flash
+      - Chase Flash Rnd
+      - Chase Rainbow
+      - Chase Random
+      - Chunchun
+      - Colored Bursts
+      - Colorful
+      - Colorloop
+      - Colortwinkles
+      - Colorwaves
+      - Crazy Bees
+      - DJ Light
+      - DNA
+      - DNA Spiral
+      - Dancing Shadows
+      - Dissolve
+      - Dissolve Rnd
+      - Drift
+      - Drift Rose
+      - Drip
+      - Dynamic
+      - Dynamic Smooth
+      - Fade
+      - Fairy
+      - Fairytwinkle
+      - Fill Noise
+      - Fire 2012
+      - Fire Flicker
+      - Firenoise
+      - Fireworks
+      - Fireworks 1D
+      - Fireworks Starburst
+      - Flow
+      - Flow Stripe
+      - Freqmap
+      - Freqmatrix
+      - Freqpixels
+      - Freqwave
+      - Frizzles
+      - Funky Plank
+      - GEQ
+      - Game Of Life
+      - Ghost Rider
+      - Glitter
+      - Gradient
+      - Gravcenter
+      - Gravcentric
+      - Gravfreq
+      - Gravimeter
+      - Halloween Eyes
+      - Heartbeat
+      - Hiphotic
+      - ICU
+      - Juggle
+      - Juggles
+      - Julia
+      - Lake
+      - Lighthouse
+      - Lightning
+      - Lissajous
+      - Loading
+      - Matripix
+      - Matrix
+      - Metaballs
+      - Meteor
+      - Meteor Smooth
+      - Midnoise
+      - Multi Comet
+      - Noise 1
+      - Noise 2
+      - Noise 3
+      - Noise 4
+      - Noise Pal
+      - Noise2D
+      - Noisefire
+      - Noisemeter
+      - Noisemove
+      - Oscillate
+      - Pacifica
+      - Palette
+      - Percent
+      - Perlin Move
+      - Phased
+      - Phased Noise
+      - Pixels
+      - Pixelwave
+      - Plasma
+      - Plasma Ball
+      - Plasmoid
+      - Polar Lights
+      - Popcorn
+      - Pride 2015
+      - Puddlepeak
+      - Puddles
+      - Pulser
+      - RSVD
+      - RSVD
+      - RSVD
+      - RSVD
+      - RSVD
+      - RSVD
+      - RSVD
+      - RSVD
+      - RSVD
+      - RSVD
+      - RSVD
+      - RSVD
+      - RSVD
+      - Railway
+      - Rain
+      - Rainbow
+      - Rainbow Runner
+      - Random Colors
+      - Ripple
+      - Ripple Peak
+      - Ripple Rainbow
+      - Rocktaves
+      - Running
+      - Running Dual
+      - Saw
+      - Scan
+      - Scan Dual
+      - Scanner
+      - Scanner Dual
+      - Scrolling Text
+      - Sindots
+      - Sine
+      - Sinelon
+      - Sinelon Dual
+      - Sinelon Rainbow
+      - Solid
+      - Solid Glitter
+      - Solid Pattern
+      - Solid Pattern Tri
+      - Spaceships
+      - Sparkle
+      - Sparkle Dark
+      - Sparkle+
+      - Spots
+      - Spots Fade
+      - Squared Swirl
+      - Stream
+      - Stream 2
+      - Strobe
+      - Strobe Mega
+      - Strobe Rainbow
+      - Sun Radiation
+      - Sunrise
+      - Sweep
+      - Sweep Random
+      - Swirl
+      - TV Simulator
+      - Tartan
+      - Tetrix
+      - Theater
+      - Theater Rainbow
+      - Traffic Light
+      - Tri Fade
+      - Tri Wipe
+      - Twinkle
+      - Twinklecat
+      - Twinklefox
+      - Twinkleup
+      - Two Dots
+      - Washing Machine
+      - Waterfall
+      - Waverly
+      - Wavesins
       - Wipe
       - Wipe Random
       supported_color_modes:
@@ -1008,358 +1275,11 @@
       state: unavailable
     select.christmas_preset:
       options:
-      - Flashing
       - 'Off'
-      - Static
+      - 'On'
       icon: mdi:playlist-play
       friendly_name: Christmas Preset
       state: 'Off'
-    select.christmas_color_palette:
-      options:
-      - '* Color 1'
-      - '* Color Gradient'
-      - '* Colors 1&2'
-      - '* Colors Only'
-      - '* Random Cycle'
-      - Analogous
-      - April Night
-      - Aqua Flash
-      - Atlantica
-      - Aurora
-      - Aurora 2
-      - Autumn
-      - Beach
-      - Beech
-      - Blink Red
-      - Breeze
-      - C9
-      - C9 2
-      - C9 New
-      - Candy
-      - Candy2
-      - Cloud
-      - Cyane
-      - Default
-      - Departure
-      - Drywet
-      - Fairy Reaf
-      - Fire
-      - Forest
-      - Grintage
-      - Hult
-      - Hult 64
-      - Icefire
-      - Jul
-      - Landscape
-      - Lava
-      - Light Pink
-      - Lite Light
-      - Magenta
-      - Magred
-      - Ocean
-      - Orange & Teal
-      - Orangery
-      - Party
-      - Pastel
-      - Pink Candy
-      - Rainbow
-      - Rainbow Bands
-      - Red & Blue
-      - Red Flash
-      - Red Reaf
-      - Red Shift
-      - Red Tide
-      - Retro Clown
-      - Rewhi
-      - Rivendell
-      - Sakura
-      - Semi Blue
-      - Sherbet
-      - Splash
-      - Sunset
-      - Sunset 2
-      - Temperature
-      - Tertiary
-      - Tiamat
-      - Toxy Reaf
-      - Vintage
-      - Yelblu
-      - Yelblu Hot
-      - Yellowout
-      - Yelmag
-      icon: mdi:palette-outline
-      friendly_name: Christmas Color Palette
-      state: Default
-    switch.christmas_nightlight:
-      duration: 60
-      fade: true
-      target_brightness: 0
-      icon: mdi:weather-night
-      friendly_name: Christmas Nightlight
-      state: 'off'
-    switch.christmas_sync_send:
-      udp_port: 21324
-      icon: mdi:upload-network-outline
-      friendly_name: Christmas Sync Send
-      state: 'off'
-    switch.christmas_sync_receive:
-      udp_port: 21324
-      icon: mdi:download-network-outline
-      friendly_name: Christmas Sync Receive
-      state: 'on'
-    number.christmas_speed:
-      min: 0
-      max: 255
-      step: 1
-      mode: auto
-      icon: mdi:speedometer
-      friendly_name: Christmas Speed
-      state: '128'
-    number.christmas_intensity:
-      min: 0
-      max: 255
-      step: 1
-      mode: auto
-      friendly_name: Christmas Intensity
-      state: '128'
-    light.night_tree:
-      effect_list:
-      - Android
-      - Aurora
-      - Blends
-      - Blink
-      - Blink Rainbow
-      - Bouncing Balls
-      - Bpm
-      - Breathe
-      - Candle
-      - Candle Multi
-      - Candy Cane
-      - Chase
-      - Chase Flash
-      - Chase Flash Rnd
-      - Chase Rainbow
-      - Chase Random
-      - Chunchun
-      - Colorful
-      - Colorloop
-      - Colortwinkles
-      - Colorwaves
-      - Dancing Shadows
-      - Dissolve
-      - Dissolve Rnd
-      - Drip
-      - Dynamic
-      - Dynamic Smooth
-      - Fade
-      - Fill Noise
-      - Fire 2012
-      - Fire Flicker
-      - Fireworks
-      - Fireworks 1D
-      - Fireworks Starburst
-      - Flow
-      - Glitter
-      - Gradient
-      - Halloween
-      - Halloween Eyes
-      - Heartbeat
-      - ICU
-      - Juggle
-      - Lake
-      - Lighthouse
-      - Lightning
-      - Loading
-      - Meteor
-      - Meteor Smooth
-      - Multi Comet
-      - Noise 1
-      - Noise 2
-      - Noise 3
-      - Noise 4
-      - Noise Pal
-      - Oscillate
-      - Pacifica
-      - Palette
-      - Percent
-      - Phased
-      - Phased Noise
-      - Plasma
-      - Police
-      - Police All
-      - Popcorn
-      - Pride 2015
-      - Railway
-      - Rain
-      - Rainbow
-      - Rainbow Runner
-      - Random Colors
-      - Ripple
-      - Ripple Rainbow
-      - Running
-      - Running 2
-      - Running Dual
-      - Saw
-      - Scan
-      - Scan Dual
-      - Scanner
-      - Scanner Dual
-      - Sine
-      - Sinelon
-      - Sinelon Dual
-      - Sinelon Rainbow
-      - Solid
-      - Solid Glitter
-      - Solid Pattern
-      - Solid Pattern Tri
-      - Sparkle
-      - Sparkle Dark
-      - Sparkle+
-      - Spots
-      - Spots Fade
-      - Stream
-      - Stream 2
-      - Strobe
-      - Strobe Mega
-      - Strobe Rainbow
-      - Sunrise
-      - Sweep
-      - Sweep Random
-      - TV Simulator
-      - Tetrix
-      - Theater
-      - Theater Rainbow
-      - Traffic Light
-      - Tri Chase
-      - Tri Fade
-      - Tri Wipe
-      - Twinkle
-      - Twinklecat
-      - Twinklefox
-      - Twinkleup
-      - Two Areas
-      - Two Dots
-      - Washing Machine
-      - Wipe
-      - Wipe Random
-      supported_color_modes:
-      - rgb
-      icon: mdi:led-strip-variant
-      friendly_name: Night Tree
-      supported_features: 36
-      state: 'off'
-    select.night_tree_playlist:
-      options: []
-      icon: mdi:play-speed
-      friendly_name: Night Tree Playlist
-      state: unavailable
-    select.night_tree_preset:
-      options:
-      - Christmas
-      icon: mdi:playlist-play
-      friendly_name: Night Tree Preset
-      state: unknown
-    select.night_tree_color_palette:
-      options:
-      - '* Color 1'
-      - '* Color Gradient'
-      - '* Colors 1&2'
-      - '* Colors Only'
-      - '* Random Cycle'
-      - Analogous
-      - April Night
-      - Atlantica
-      - Aurora
-      - Aurora 2
-      - Autumn
-      - Beach
-      - Beech
-      - Breeze
-      - C9
-      - C9 2
-      - C9 New
-      - Cloud
-      - Cyane
-      - Default
-      - Departure
-      - Drywet
-      - Fire
-      - Forest
-      - Grintage
-      - Hult
-      - Hult 64
-      - Icefire
-      - Jul
-      - Landscape
-      - Lava
-      - Light Pink
-      - Magenta
-      - Magred
-      - Ocean
-      - Orange & Teal
-      - Orangery
-      - Party
-      - Pastel
-      - Rainbow
-      - Rainbow Bands
-      - Red & Blue
-      - Rewhi
-      - Rivendell
-      - Sakura
-      - Sherbet
-      - Splash
-      - Sunset
-      - Sunset 2
-      - Temperature
-      - Tertiary
-      - Tiamat
-      - Vintage
-      - Yelblu
-      - Yellowout
-      - Yelmag
-      icon: mdi:palette-outline
-      friendly_name: Night Tree Color Palette
-      state: Default
-    switch.night_tree_nightlight:
-      duration: 60
-      fade: true
-      target_brightness: 0
-      icon: mdi:weather-night
-      friendly_name: Night Tree Nightlight
-      state: 'off'
-    switch.night_tree_sync_send:
-      udp_port: 21324
-      icon: mdi:upload-network-outline
-      friendly_name: Night Tree Sync Send
-      state: 'off'
-    switch.night_tree_sync_receive:
-      udp_port: 21324
-      icon: mdi:download-network-outline
-      friendly_name: Night Tree Sync Receive
-      state: 'on'
-    number.night_tree_speed:
-      min: 0
-      max: 255
-      step: 1
-      mode: auto
-      icon: mdi:speedometer
-      friendly_name: Night Tree Speed
-      state: '18'
-    number.night_tree_intensity:
-      min: 0
-      max: 255
-      step: 1
-      mode: auto
-      friendly_name: Night Tree Intensity
-      state: '7'
-    button.christmas_5_restart:
-      device_class: restart
-      friendly_name: Christmas-5 Restart
-      state: unknown
-    button.christmas_5_update:
-      device_class: update
-      friendly_name: Christmas-5 Update
-      state: unknown
     light.christmas_5:
       effect_list:
       - Android
@@ -1486,30 +1406,6 @@
       friendly_name: Christmas-5
       supported_features: 36
       state: 'off'
-    number.christmas_5_speed:
-      min: 0
-      max: 255
-      step: 1
-      mode: auto
-      icon: mdi:speedometer
-      friendly_name: Christmas-5 Speed
-      state: '128'
-    number.christmas_5_intensity:
-      min: 0
-      max: 255
-      step: 1
-      mode: auto
-      friendly_name: Christmas-5 Intensity
-      state: '255'
-    select.christmas_5_live_override:
-      options:
-      - '0'
-      - '1'
-      - '2'
-      device_class: wled__live_override
-      icon: mdi:theater
-      friendly_name: Christmas-5 Live Override
-      state: '0'
     select.christmas_5_playlist:
       options: []
       icon: mdi:play-speed
@@ -1520,133 +1416,8 @@
       icon: mdi:playlist-play
       friendly_name: Christmas-5 Preset
       state: unavailable
-    select.christmas_5_color_palette:
-      options:
-      - '* Color 1'
-      - '* Color Gradient'
-      - '* Colors 1&2'
-      - '* Colors Only'
-      - '* Random Cycle'
-      - Analogous
-      - April Night
-      - Aqua Flash
-      - Atlantica
-      - Aurora
-      - Aurora 2
-      - Autumn
-      - Beach
-      - Beech
-      - Blink Red
-      - Breeze
-      - C9
-      - C9 2
-      - C9 New
-      - Candy
-      - Candy2
-      - Cloud
-      - Cyane
-      - Default
-      - Departure
-      - Drywet
-      - Fairy Reaf
-      - Fire
-      - Forest
-      - Grintage
-      - Hult
-      - Hult 64
-      - Icefire
-      - Jul
-      - Landscape
-      - Lava
-      - Light Pink
-      - Lite Light
-      - Magenta
-      - Magred
-      - Ocean
-      - Orange & Teal
-      - Orangery
-      - Party
-      - Pastel
-      - Pink Candy
-      - Rainbow
-      - Rainbow Bands
-      - Red & Blue
-      - Red Flash
-      - Red Reaf
-      - Red Shift
-      - Red Tide
-      - Retro Clown
-      - Rewhi
-      - Rivendell
-      - Sakura
-      - Semi Blue
-      - Sherbet
-      - Splash
-      - Sunset
-      - Sunset 2
-      - Temperature
-      - Tertiary
-      - Tiamat
-      - Toxy Reaf
-      - Vintage
-      - Yelblu
-      - Yelblu Hot
-      - Yellowout
-      - Yelmag
-      icon: mdi:palette-outline
-      friendly_name: Christmas-5 Color Palette
-      state: Default
-    switch.christmas_5_nightlight:
-      duration: 60
-      fade: true
-      target_brightness: 0
-      icon: mdi:weather-night
-      friendly_name: Christmas-5 Nightlight
-      state: 'off'
-    switch.christmas_5_sync_send:
-      udp_port: 21324
-      icon: mdi:upload-network-outline
-      friendly_name: Christmas-5 Sync Send
-      state: 'off'
-    switch.christmas_5_sync_receive:
-      udp_port: 21324
-      icon: mdi:download-network-outline
-      friendly_name: Christmas-5 Sync Receive
-      state: 'on'
-    switch.christmas_5_reverse:
-      icon: mdi:swap-horizontal-bold
-      friendly_name: Christmas-5 Reverse
-      state: 'off'
-    switch.tasmota_2:
-      friendly_name: Tasmota
-      state: 'off'
-    switch.tasmota2_2:
-      friendly_name: Tasmota2
-      state: 'off'
-    switch.tasmota3_2:
-      friendly_name: Tasmota3
-      state: 'off'
-    switch.tasmota4_2:
-      friendly_name: Tasmota4
-      state: 'off'
-    switch.tasmota5:
-      friendly_name: Tasmota5
-      state: 'off'
-    switch.tasmota_3:
-      friendly_name: Tasmota
-      state: 'off'
-    switch.tasmota_4:
-      friendly_name: Tasmota
-      state: 'off'
-    input_boolean.christmas_lights:
-      editable: true
-      icon: mdi:string-lights
-      friendly_name: Christmas lights
-      state: 'off'
-    switch.tasmota_5:
-      friendly_name: Tasmota
-      state: 'off'
   icon: mdi:string-lights-off
+  metadata: {}
 - id: '1640167202019'
   name: Christmas Inside
   entities:
@@ -1671,7 +1442,7 @@
       friendly_name: Christmas Tree
       supported_features: 0
       state: unavailable
-    light.christmas:
+    light.night_tree:
       effect_list:
       - Android
       - Aurora
@@ -1685,6 +1456,8 @@
       - Candle Multi
       - Candy Cane
       - Chase
+      - Chase 2
+      - Chase 3
       - Chase Flash
       - Chase Flash Rnd
       - Chase Rainbow
@@ -1701,6 +1474,8 @@
       - Dynamic
       - Dynamic Smooth
       - Fade
+      - Fairy
+      - Fairytwinkle
       - Fill Noise
       - Fire 2012
       - Fire Flicker
@@ -1735,7 +1510,6 @@
       - Phased Noise
       - Plasma
       - Police
-      - Police All
       - Popcorn
       - Pride 2015
       - Railway
@@ -1746,7 +1520,6 @@
       - Ripple
       - Ripple Rainbow
       - Running
-      - Running 2
       - Running Dual
       - Saw
       - Scan
@@ -1779,14 +1552,12 @@
       - Theater
       - Theater Rainbow
       - Traffic Light
-      - Tri Chase
       - Tri Fade
       - Tri Wipe
       - Twinkle
       - Twinklecat
       - Twinklefox
       - Twinkleup
-      - Two Areas
       - Two Dots
       - Washing Machine
       - Wipe
@@ -1796,34 +1567,32 @@
       color_mode: rgb
       brightness: 255
       hs_color:
-      - 0
-      - 0
+      - 118.118
+      - 100
       rgb_color:
+      - 8
       - 255
-      - 255
-      - 255
+      - 0
       xy_color:
-      - 0.323
-      - 0.329
-      effect: Solid
+      - 0.174
+      - 0.746
+      effect: Fade
       icon: mdi:led-strip-variant
-      friendly_name: Christmas
+      friendly_name: Night Tree
       supported_features: 36
       state: 'on'
-    select.christmas_playlist:
+    select.night_tree_playlist:
       options: []
       icon: mdi:play-speed
-      friendly_name: Christmas Playlist
+      friendly_name: Night Tree Playlist
       state: unavailable
-    select.christmas_preset:
+    select.night_tree_preset:
       options:
-      - Flashing
-      - 'Off'
-      - Static
+      - Christmas
       icon: mdi:playlist-play
-      friendly_name: Christmas Preset
-      state: Static
-    select.christmas_color_palette:
+      friendly_name: Night Tree Preset
+      state: Christmas
+    select.night_tree_color_palette:
       options:
       - '* Color 1'
       - '* Color Gradient'
@@ -1897,41 +1666,290 @@
       - Yellowout
       - Yelmag
       icon: mdi:palette-outline
-      friendly_name: Christmas Color Palette
+      friendly_name: Night Tree Color palette
       state: Default
-    switch.christmas_nightlight:
+    switch.night_tree_nightlight:
       duration: 60
       fade: true
       target_brightness: 0
       icon: mdi:weather-night
-      friendly_name: Christmas Nightlight
+      friendly_name: Night Tree Nightlight
       state: 'off'
-    switch.christmas_sync_send:
+    switch.night_tree_sync_send:
       udp_port: 21324
       icon: mdi:upload-network-outline
-      friendly_name: Christmas Sync Send
+      friendly_name: Night Tree Sync send
       state: 'off'
-    switch.christmas_sync_receive:
+    switch.night_tree_sync_receive:
       udp_port: 21324
       icon: mdi:download-network-outline
-      friendly_name: Christmas Sync Receive
+      friendly_name: Night Tree Sync receive
       state: 'on'
-    number.christmas_speed:
+    number.night_tree_speed:
       min: 0
       max: 255
       step: 1
       mode: auto
       icon: mdi:speedometer
-      friendly_name: Christmas Speed
-      state: '128'
-    number.christmas_intensity:
+      friendly_name: Night Tree Speed
+      state: '18'
+    number.night_tree_intensity:
       min: 0
       max: 255
       step: 1
       mode: auto
-      friendly_name: Christmas Intensity
-      state: '128'
-    light.night_tree:
+      friendly_name: Night Tree Intensity
+      state: '7'
+    switch.tasmota_2:
+      friendly_name: Tasmota
+      state: 'off'
+    switch.tasmota2_2:
+      friendly_name: Tasmota2
+      state: 'off'
+    switch.tasmota3_2:
+      friendly_name: Tasmota3
+      state: 'off'
+    switch.tasmota4_2:
+      friendly_name: Tasmota4
+      state: 'on'
+    switch.tasmota5:
+      friendly_name: Tasmota5
+      state: 'off'
+    switch.tasmota_3:
+      friendly_name: Plug 1
+      state: 'on'
+    switch.tasmota_4:
+      friendly_name: Plug 2
+      state: 'on'
+    input_boolean.christmas_lights:
+      editable: true
+      icon: mdi:string-lights
+      friendly_name: Christmas lights
+      state: 'on'
+    switch.tasmota_5:
+      friendly_name: Plug 3
+      state: 'on'
+    light.christmas:
+      effect_list:
+      - Akemi
+      - Android
+      - Aurora
+      - Black Hole
+      - Blends
+      - Blink
+      - Blink Rainbow
+      - Blobs
+      - Blurz
+      - Bouncing Balls
+      - Bpm
+      - Breathe
+      - Candle
+      - Candle Multi
+      - Chase
+      - Chase 2
+      - Chase 3
+      - Chase Flash
+      - Chase Flash Rnd
+      - Chase Rainbow
+      - Chase Random
+      - Chunchun
+      - Colored Bursts
+      - Colorful
+      - Colorloop
+      - Colortwinkles
+      - Colorwaves
+      - Crazy Bees
+      - DJ Light
+      - DNA
+      - DNA Spiral
+      - Dancing Shadows
+      - Dissolve
+      - Dissolve Rnd
+      - Drift
+      - Drift Rose
+      - Drip
+      - Dynamic
+      - Dynamic Smooth
+      - Fade
+      - Fairy
+      - Fairytwinkle
+      - Fill Noise
+      - Fire 2012
+      - Fire Flicker
+      - Firenoise
+      - Fireworks
+      - Fireworks 1D
+      - Fireworks Starburst
+      - Flow
+      - Flow Stripe
+      - Freqmap
+      - Freqmatrix
+      - Freqpixels
+      - Freqwave
+      - Frizzles
+      - Funky Plank
+      - GEQ
+      - Game Of Life
+      - Ghost Rider
+      - Glitter
+      - Gradient
+      - Gravcenter
+      - Gravcentric
+      - Gravfreq
+      - Gravimeter
+      - Halloween Eyes
+      - Heartbeat
+      - Hiphotic
+      - ICU
+      - Juggle
+      - Juggles
+      - Julia
+      - Lake
+      - Lighthouse
+      - Lightning
+      - Lissajous
+      - Loading
+      - Matripix
+      - Matrix
+      - Metaballs
+      - Meteor
+      - Meteor Smooth
+      - Midnoise
+      - Multi Comet
+      - Noise 1
+      - Noise 2
+      - Noise 3
+      - Noise 4
+      - Noise Pal
+      - Noise2D
+      - Noisefire
+      - Noisemeter
+      - Noisemove
+      - Oscillate
+      - Pacifica
+      - Palette
+      - Percent
+      - Perlin Move
+      - Phased
+      - Phased Noise
+      - Pixels
+      - Pixelwave
+      - Plasma
+      - Plasma Ball
+      - Plasmoid
+      - Polar Lights
+      - Popcorn
+      - Pride 2015
+      - Puddlepeak
+      - Puddles
+      - Pulser
+      - RSVD
+      - RSVD
+      - RSVD
+      - RSVD
+      - RSVD
+      - RSVD
+      - RSVD
+      - RSVD
+      - RSVD
+      - RSVD
+      - RSVD
+      - RSVD
+      - RSVD
+      - Railway
+      - Rain
+      - Rainbow
+      - Rainbow Runner
+      - Random Colors
+      - Ripple
+      - Ripple Peak
+      - Ripple Rainbow
+      - Rocktaves
+      - Running
+      - Running Dual
+      - Saw
+      - Scan
+      - Scan Dual
+      - Scanner
+      - Scanner Dual
+      - Scrolling Text
+      - Sindots
+      - Sine
+      - Sinelon
+      - Sinelon Dual
+      - Sinelon Rainbow
+      - Solid
+      - Solid Glitter
+      - Solid Pattern
+      - Solid Pattern Tri
+      - Spaceships
+      - Sparkle
+      - Sparkle Dark
+      - Sparkle+
+      - Spots
+      - Spots Fade
+      - Squared Swirl
+      - Stream
+      - Stream 2
+      - Strobe
+      - Strobe Mega
+      - Strobe Rainbow
+      - Sun Radiation
+      - Sunrise
+      - Sweep
+      - Sweep Random
+      - Swirl
+      - TV Simulator
+      - Tartan
+      - Tetrix
+      - Theater
+      - Theater Rainbow
+      - Traffic Light
+      - Tri Fade
+      - Tri Wipe
+      - Twinkle
+      - Twinklecat
+      - Twinklefox
+      - Twinkleup
+      - Two Dots
+      - Washing Machine
+      - Waterfall
+      - Waverly
+      - Wavesins
+      - Wipe
+      - Wipe Random
+      supported_color_modes:
+      - rgb
+      color_mode: rgb
+      brightness: 255
+      hs_color:
+      - 0
+      - 0
+      rgb_color:
+      - 255
+      - 255
+      - 255
+      xy_color:
+      - 0.323
+      - 0.329
+      effect: Solid
+      icon: mdi:led-strip-variant
+      friendly_name: Christmas
+      supported_features: 36
+      state: 'on'
+    select.christmas_playlist:
+      options: []
+      icon: mdi:play-speed
+      friendly_name: Christmas Playlist
+      state: unavailable
+    select.christmas_preset:
+      options:
+      - 'Off'
+      - 'On'
+      icon: mdi:playlist-play
+      friendly_name: Christmas Preset
+      state: 'On'
+    light.front_door:
       effect_list:
       - Android
       - Aurora
@@ -1945,6 +1963,8 @@
       - Candle Multi
       - Candy Cane
       - Chase
+      - Chase 2
+      - Chase 3
       - Chase Flash
       - Chase Flash Rnd
       - Chase Rainbow
@@ -1961,6 +1981,8 @@
       - Dynamic
       - Dynamic Smooth
       - Fade
+      - Fairy
+      - Fairytwinkle
       - Fill Noise
       - Fire 2012
       - Fire Flicker
@@ -1995,7 +2017,6 @@
       - Phased Noise
       - Plasma
       - Police
-      - Police All
       - Popcorn
       - Pride 2015
       - Railway
@@ -2006,7 +2027,6 @@
       - Ripple
       - Ripple Rainbow
       - Running
-      - Running 2
       - Running Dual
       - Saw
       - Scan
@@ -2039,14 +2059,12 @@
       - Theater
       - Theater Rainbow
       - Traffic Light
-      - Tri Chase
       - Tri Fade
       - Tri Wipe
       - Twinkle
       - Twinklecat
       - Twinklefox
       - Twinkleup
-      - Two Areas
       - Two Dots
       - Washing Machine
       - Wipe
@@ -2056,132 +2074,37 @@
       color_mode: rgb
       brightness: 255
       hs_color:
-      - 118.118
-      - 100
-      rgb_color:
-      - 8
-      - 255
       - 0
+      - 0
+      rgb_color:
+      - 89
+      - 89
+      - 89
       xy_color:
-      - 0.174
-      - 0.746
-      effect: Fade
+      - 0.323
+      - 0.329
+      effect: Solid Glitter
       icon: mdi:led-strip-variant
-      friendly_name: Night Tree
+      friendly_name: Front Door
       supported_features: 36
       state: 'on'
-    select.night_tree_playlist:
+    select.front_door_playlist:
       options: []
       icon: mdi:play-speed
-      friendly_name: Night Tree Playlist
+      friendly_name: Front Door Playlist
       state: unavailable
-    select.night_tree_preset:
+    select.front_door_preset:
       options:
-      - Christmas
+      - 'Candles '
+      - Eyes
+      - Fireworks
+      - Green
+      - 'Lighting '
+      - 'Off'
+      - 'Sparkle '
       icon: mdi:playlist-play
-      friendly_name: Night Tree Preset
-      state: unknown
-    select.night_tree_color_palette:
-      options:
-      - '* Color 1'
-      - '* Color Gradient'
-      - '* Colors 1&2'
-      - '* Colors Only'
-      - '* Random Cycle'
-      - Analogous
-      - April Night
-      - Atlantica
-      - Aurora
-      - Aurora 2
-      - Autumn
-      - Beach
-      - Beech
-      - Breeze
-      - C9
-      - C9 2
-      - C9 New
-      - Cloud
-      - Cyane
-      - Default
-      - Departure
-      - Drywet
-      - Fire
-      - Forest
-      - Grintage
-      - Hult
-      - Hult 64
-      - Icefire
-      - Jul
-      - Landscape
-      - Lava
-      - Light Pink
-      - Magenta
-      - Magred
-      - Ocean
-      - Orange & Teal
-      - Orangery
-      - Party
-      - Pastel
-      - Rainbow
-      - Rainbow Bands
-      - Red & Blue
-      - Rewhi
-      - Rivendell
-      - Sakura
-      - Sherbet
-      - Splash
-      - Sunset
-      - Sunset 2
-      - Temperature
-      - Tertiary
-      - Tiamat
-      - Vintage
-      - Yelblu
-      - Yellowout
-      - Yelmag
-      icon: mdi:palette-outline
-      friendly_name: Night Tree Color Palette
-      state: Default
-    switch.night_tree_nightlight:
-      duration: 60
-      fade: true
-      target_brightness: 0
-      icon: mdi:weather-night
-      friendly_name: Night Tree Nightlight
-      state: 'off'
-    switch.night_tree_sync_send:
-      udp_port: 21324
-      icon: mdi:upload-network-outline
-      friendly_name: Night Tree Sync Send
-      state: 'off'
-    switch.night_tree_sync_receive:
-      udp_port: 21324
-      icon: mdi:download-network-outline
-      friendly_name: Night Tree Sync Receive
-      state: 'on'
-    number.night_tree_speed:
-      min: 0
-      max: 255
-      step: 1
-      mode: auto
-      icon: mdi:speedometer
-      friendly_name: Night Tree Speed
-      state: '18'
-    number.night_tree_intensity:
-      min: 0
-      max: 255
-      step: 1
-      mode: auto
-      friendly_name: Night Tree Intensity
-      state: '7'
-    button.christmas_5_restart:
-      device_class: restart
-      friendly_name: Christmas-5 Restart
-      state: unknown
-    button.christmas_5_update:
-      device_class: update
-      friendly_name: Christmas-5 Update
-      state: unknown
+      friendly_name: Front Door Preset
+      state: 'Sparkle '
     light.christmas_5:
       effect_list:
       - Android
@@ -2305,51 +2228,27 @@
       supported_color_modes:
       - rgbw
       color_mode: rgbw
-      brightness: 128
+      brightness: 46
       hs_color:
-      - 37.647
-      - 100
+      - 221.538
+      - 20.392
       rgb_color:
+      - 203
+      - 219
       - 255
-      - 160
-      - 0
       rgbw_color:
+      - 203
+      - 219
       - 255
-      - 160
-      - 0
       - 0
       xy_color:
-      - 0.569
-      - 0.411
+      - 0.279
+      - 0.288
       effect: Solid
       icon: mdi:led-strip-variant
       friendly_name: Christmas-5
       supported_features: 36
       state: 'on'
-    number.christmas_5_speed:
-      min: 0
-      max: 255
-      step: 1
-      mode: auto
-      icon: mdi:speedometer
-      friendly_name: Christmas-5 Speed
-      state: '128'
-    number.christmas_5_intensity:
-      min: 0
-      max: 255
-      step: 1
-      mode: auto
-      friendly_name: Christmas-5 Intensity
-      state: '255'
-    select.christmas_5_live_override:
-      options:
-      - '0'
-      - '1'
-      - '2'
-      device_class: wled__live_override
-      icon: mdi:theater
-      friendly_name: Christmas-5 Live Override
-      state: '0'
     select.christmas_5_playlist:
       options: []
       icon: mdi:play-speed
@@ -2360,133 +2259,8 @@
       icon: mdi:playlist-play
       friendly_name: Christmas-5 Preset
       state: unavailable
-    select.christmas_5_color_palette:
-      options:
-      - '* Color 1'
-      - '* Color Gradient'
-      - '* Colors 1&2'
-      - '* Colors Only'
-      - '* Random Cycle'
-      - Analogous
-      - April Night
-      - Aqua Flash
-      - Atlantica
-      - Aurora
-      - Aurora 2
-      - Autumn
-      - Beach
-      - Beech
-      - Blink Red
-      - Breeze
-      - C9
-      - C9 2
-      - C9 New
-      - Candy
-      - Candy2
-      - Cloud
-      - Cyane
-      - Default
-      - Departure
-      - Drywet
-      - Fairy Reaf
-      - Fire
-      - Forest
-      - Grintage
-      - Hult
-      - Hult 64
-      - Icefire
-      - Jul
-      - Landscape
-      - Lava
-      - Light Pink
-      - Lite Light
-      - Magenta
-      - Magred
-      - Ocean
-      - Orange & Teal
-      - Orangery
-      - Party
-      - Pastel
-      - Pink Candy
-      - Rainbow
-      - Rainbow Bands
-      - Red & Blue
-      - Red Flash
-      - Red Reaf
-      - Red Shift
-      - Red Tide
-      - Retro Clown
-      - Rewhi
-      - Rivendell
-      - Sakura
-      - Semi Blue
-      - Sherbet
-      - Splash
-      - Sunset
-      - Sunset 2
-      - Temperature
-      - Tertiary
-      - Tiamat
-      - Toxy Reaf
-      - Vintage
-      - Yelblu
-      - Yelblu Hot
-      - Yellowout
-      - Yelmag
-      icon: mdi:palette-outline
-      friendly_name: Christmas-5 Color Palette
-      state: Default
-    switch.christmas_5_nightlight:
-      duration: 60
-      fade: true
-      target_brightness: 0
-      icon: mdi:weather-night
-      friendly_name: Christmas-5 Nightlight
-      state: 'off'
-    switch.christmas_5_sync_send:
-      udp_port: 21324
-      icon: mdi:upload-network-outline
-      friendly_name: Christmas-5 Sync Send
-      state: 'off'
-    switch.christmas_5_sync_receive:
-      udp_port: 21324
-      icon: mdi:download-network-outline
-      friendly_name: Christmas-5 Sync Receive
-      state: 'on'
-    switch.christmas_5_reverse:
-      icon: mdi:swap-horizontal-bold
-      friendly_name: Christmas-5 Reverse
-      state: 'off'
-    switch.tasmota_2:
-      friendly_name: Tasmota
-      state: 'off'
-    switch.tasmota2_2:
-      friendly_name: Tasmota2
-      state: 'off'
-    switch.tasmota3_2:
-      friendly_name: Tasmota3
-      state: 'off'
-    switch.tasmota4_2:
-      friendly_name: Tasmota4
-      state: 'on'
-    switch.tasmota5:
-      friendly_name: Tasmota5
-      state: 'off'
-    switch.tasmota_3:
-      friendly_name: Plug 1
-      state: 'on'
-    switch.tasmota_4:
-      friendly_name: Plug 2
-      state: 'on'
-    input_boolean.christmas_lights:
-      editable: true
-      icon: mdi:string-lights
-      friendly_name: Christmas lights
-      state: 'on'
-    switch.tasmota_5:
-      friendly_name: Plug 3
-      state: 'on'
   icon: mdi:string-lights
+  metadata: {}
 - id: '1641942024843'
   name: Bedroom TV On
   entities:
@@ -2522,3 +2296,318 @@
       friendly_name: Bedroom TV
       state: 'off'
   icon: mdi:television-off
+- id: '1674515181403'
+  name: Heating off
+  entities:
+    climate.bathroom:
+      hvac_modes:
+      - 'off'
+      - heat
+      min_temp: 7
+      max_temp: 35
+      target_temp_step: 1
+      current_temperature: 19.7
+      hvac_action: idle
+      low_battery: false
+      offline: false
+      standby: true
+      hold_on: false
+      hold_time: 0:00:00
+      hold_temp: 22
+      floor_temperature: 23
+      preheat_active: false
+      friendly_name: Bathroom
+      supported_features: 0
+      state: 'off'
+    climate.benedict_room:
+      hvac_modes:
+      - 'off'
+      - heat
+      min_temp: 7
+      max_temp: 35
+      target_temp_step: 1
+      current_temperature: 18.4
+      hvac_action: idle
+      low_battery: false
+      offline: false
+      standby: true
+      hold_on: false
+      hold_time: 0:00:00
+      hold_temp: 16
+      floor_temperature: 16
+      preheat_active: false
+      friendly_name: Benedict Room
+      supported_features: 0
+      state: 'off'
+    climate.conservatory:
+      hvac_modes:
+      - 'off'
+      - heat
+      min_temp: 7
+      max_temp: 35
+      target_temp_step: 1
+      current_temperature: 13.8
+      hvac_action: idle
+      low_battery: false
+      offline: false
+      standby: true
+      hold_on: false
+      hold_time: 0:00:00
+      hold_temp: 22
+      floor_temperature: 16
+      preheat_active: false
+      friendly_name: Conservatory
+      supported_features: 0
+      state: 'off'
+    climate.hive:
+      hvac_modes:
+      - auto
+      - heat
+      - 'off'
+      min_temp: 5
+      max_temp: 32
+      preset_modes:
+      - boost
+      - none
+      current_temperature: 18.2
+      temperature: 7
+      hvac_action: idle
+      preset_mode: none
+      friendly_name: Hive
+      supported_features: 17
+      state: 'off'
+    climate.lillis_room:
+      hvac_modes:
+      - 'off'
+      - heat
+      min_temp: 7
+      max_temp: 35
+      target_temp_step: 1
+      current_temperature: 17.2
+      hvac_action: idle
+      low_battery: false
+      offline: false
+      standby: true
+      hold_on: false
+      hold_time: 0:00:00
+      hold_temp: 18
+      floor_temperature: 25
+      preheat_active: false
+      friendly_name: Lillis room
+      supported_features: 0
+      state: 'off'
+    climate.master_bedroom:
+      hvac_modes:
+      - 'off'
+      - heat
+      min_temp: 7
+      max_temp: 35
+      target_temp_step: 1
+      current_temperature: 19.5
+      hvac_action: idle
+      low_battery: false
+      offline: false
+      standby: true
+      hold_on: false
+      hold_time: 0:00:00
+      hold_temp: 16
+      floor_temperature: 19
+      preheat_active: false
+      friendly_name: Master Bedroom
+      supported_features: 0
+      state: 'off'
+    climate.tys_room:
+      hvac_modes:
+      - 'off'
+      - heat
+      min_temp: 7
+      max_temp: 35
+      target_temp_step: 1
+      current_temperature: 20
+      hvac_action: idle
+      low_battery: false
+      offline: false
+      standby: true
+      hold_on: false
+      hold_time: 0:00:00
+      hold_temp: 14
+      floor_temperature: 22
+      preheat_active: false
+      friendly_name: Tys Room
+      supported_features: 0
+      state: 'off'
+  icon: mdi:snowflake
+  metadata:
+    climate.bathroom:
+      entity_only: true
+    climate.benedict_room:
+      entity_only: true
+    climate.conservatory:
+      entity_only: true
+    climate.hive:
+      entity_only: true
+    climate.lillis_room:
+      entity_only: true
+    climate.master_bedroom:
+      entity_only: true
+    climate.tys_room:
+      entity_only: true
+- id: '1674515298805'
+  name: Heating on
+  entities:
+    climate.bathroom:
+      hvac_modes:
+      - 'off'
+      - heat
+      min_temp: 7
+      max_temp: 35
+      target_temp_step: 1
+      current_temperature: 19.7
+      hvac_action: idle
+      low_battery: false
+      offline: false
+      standby: true
+      hold_on: false
+      hold_time: 0:00:00
+      hold_temp: 22
+      floor_temperature: 23
+      preheat_active: false
+      friendly_name: Bathroom
+      supported_features: 0
+      state: 'off'
+    climate.benedict_room:
+      hvac_modes:
+      - 'off'
+      - heat
+      min_temp: 7
+      max_temp: 35
+      target_temp_step: 1
+      current_temperature: 18.4
+      hvac_action: idle
+      low_battery: false
+      offline: false
+      standby: true
+      hold_on: false
+      hold_time: 0:00:00
+      hold_temp: 16
+      floor_temperature: 16
+      preheat_active: false
+      friendly_name: Benedict Room
+      supported_features: 0
+      state: 'off'
+    climate.conservatory:
+      hvac_modes:
+      - 'off'
+      - heat
+      min_temp: 7
+      max_temp: 35
+      target_temp_step: 1
+      current_temperature: 13.8
+      hvac_action: heating
+      low_battery: false
+      offline: false
+      standby: false
+      hold_on: false
+      hold_time: 0:00:00
+      hold_temp: 22
+      floor_temperature: 16
+      preheat_active: false
+      friendly_name: Conservatory
+      supported_features: 1
+      temperature: 20
+      state: heat
+    climate.hive:
+      hvac_modes:
+      - auto
+      - heat
+      - 'off'
+      min_temp: 5
+      max_temp: 32
+      preset_modes:
+      - boost
+      - none
+      current_temperature: 18.2
+      temperature: 20
+      hvac_action: idle
+      preset_mode: none
+      friendly_name: Hive
+      supported_features: 17
+      state: auto
+    climate.lillis_room:
+      hvac_modes:
+      - 'off'
+      - heat
+      min_temp: 7
+      max_temp: 35
+      target_temp_step: 1
+      current_temperature: 17.2
+      hvac_action: idle
+      low_battery: false
+      offline: false
+      standby: true
+      hold_on: false
+      hold_time: 0:00:00
+      hold_temp: 18
+      floor_temperature: 25
+      preheat_active: false
+      friendly_name: Lillis room
+      supported_features: 0
+      state: 'off'
+    climate.master_bedroom:
+      hvac_modes:
+      - 'off'
+      - heat
+      min_temp: 7
+      max_temp: 35
+      target_temp_step: 1
+      current_temperature: 19.5
+      hvac_action: idle
+      low_battery: false
+      offline: false
+      standby: false
+      hold_on: false
+      hold_time: 0:00:00
+      hold_temp: 16
+      floor_temperature: 19
+      preheat_active: false
+      friendly_name: Master Bedroom
+      supported_features: 1
+      temperature: 14
+      state: heat
+    climate.tys_room:
+      hvac_modes:
+      - 'off'
+      - heat
+      min_temp: 7
+      max_temp: 35
+      target_temp_step: 1
+      current_temperature: 20
+      hvac_action: idle
+      low_battery: false
+      offline: false
+      standby: false
+      hold_on: false
+      hold_time: 0:00:00
+      hold_temp: 14
+      floor_temperature: 22
+      preheat_active: false
+      friendly_name: Tys Room
+      supported_features: 1
+      temperature: 20
+      state: heat
+  icon: mdi:heat-wave
+  metadata:
+    climate.bathroom:
+      entity_only: true
+    climate.benedict_room:
+      entity_only: true
+    climate.conservatory:
+      entity_only: true
+    climate.hive:
+      entity_only: true
+    climate.lillis_room:
+      entity_only: true
+    climate.master_bedroom:
+      entity_only: true
+    climate.tys_room:
+      entity_only: true

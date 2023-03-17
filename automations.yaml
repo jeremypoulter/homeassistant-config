@@ -180,3 +180,63 @@
     target:
       entity_id: climate.charlie_temp
   mode: single
+- id: '1663689525634'
+  alias: Send a camera snapshot when motion is detected
+  description: ''
+  use_blueprint:
+    path: vorion/send-camera-snapshot-notification-on-motion.yaml
+    input:
+      motion_sensor: binary_sensor.charlie_camera_pir
+      camera: camera.charlie_camera_camera
+      notify_device: feeedc77afcfbf6026780657d088d445
+- id: '1674337992210'
+  alias: Turn heating off when away
+  description: ''
+  trigger:
+  - platform: state
+    entity_id:
+    - input_boolean.google_home_away
+    from: 'off'
+    to: 'on'
+  condition: []
+  action:
+  - service: climate.set_hvac_mode
+    data:
+      hvac_mode: 'off'
+    target:
+      entity_id:
+      - climate.bathroom
+      - climate.benedict_room
+      - climate.conservatory
+      - climate.hive
+      - climate.lillis_room
+      - climate.master_bedroom
+      - climate.tys_room
+  mode: single
+- id: '1674338354468'
+  alias: Turn heating on when at home
+  description: ''
+  trigger:
+  - platform: state
+    entity_id:
+    - input_boolean.google_home_away
+    from: 'on'
+    to: 'off'
+  condition: []
+  action:
+  - service: climate.set_hvac_mode
+    data:
+      hvac_mode: heat
+    target:
+      entity_id:
+      - climate.conservatory
+      - climate.master_bedroom
+      - climate.tys_room
+      - climate.benedict_room
+      - climate.lillis_room
+  - service: climate.set_hvac_mode
+    data:
+      hvac_mode: auto
+    target:
+      entity_id: climate.hive
+  mode: single
