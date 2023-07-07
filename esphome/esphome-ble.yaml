@@ -18,7 +18,7 @@ logger:
 # Enable Home Assistant API
 api:
   encryption:
-    key: "ABoUt95T5k8Gs9NrJO7w0CGg42bFmaJ68c9hqIzdF0E="
+    key: !secret ble_proxy_api_encryption_key
 
 ota:
 
