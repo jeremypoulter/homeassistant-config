@@ -240,3 +240,35 @@
     target:
       entity_id: climate.hive
   mode: single
+- id: '1693946035795'
+  alias: Turn on pool pump with heater
+  description: ''
+  trigger:
+  - platform: state
+    entity_id:
+    - switch.socket_1
+    from: 'off'
+    to: 'on'
+  condition: []
+  action:
+  - service: switch.turn_on
+    data: {}
+    target:
+      entity_id: switch.socket_2
+  mode: single
+- id: '1693946083586'
+  alias: Turn Pool Pump off with heater
+  description: ''
+  trigger:
+  - platform: state
+    entity_id:
+    - switch.socket_1
+    from: 'on'
+    to: 'off'
+  condition: []
+  action:
+  - service: switch.turn_off
+    data: {}
+    target:
+      entity_id: switch.socket_2
+  mode: single
