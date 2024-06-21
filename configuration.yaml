@@ -11,15 +11,6 @@ tts:
 
 stream:
 
-media_player:
-  - platform: lg_netcast
-    host: 172.16.1.206
-    access_token: 827247
-    turn_on_action:
-      service: wake_on_lan.send_magic_packet
-      data:
-        mac: E8-F2-E2-AC-02-D8
-
 http:
   use_x_forwarded_for: true
   trusted_proxies:
