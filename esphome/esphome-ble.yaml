@@ -21,6 +21,7 @@ api:
     key: "ABoUt95T5k8Gs9NrJO7w0CGg42bFmaJ68c9hqIzdF0E="
 
 ota:
+  platform: esphome
 
 # Enable Home Assistant bluetooth proxy
 esp32_ble_tracker:
