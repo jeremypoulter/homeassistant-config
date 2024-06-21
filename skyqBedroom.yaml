@@ -1,0 +1,224 @@
+    skyq_pausebedroom:
+      value_template: '{{"off"}}'
+      friendly_name: 'pause in the Bedroom'
+      turn_on:
+        - service: media_player.media_pause
+          data:
+            entity_id: media_player.sky_q_bedroom
+        - delay:
+            seconds: 10
+      turn_off:
+        stop:
+    skyq_playbedroom:
+      value_template: '{{"off"}}'
+      friendly_name: 'play in the Bedroom'
+      turn_on:
+        - service: media_player.media_play
+          data:
+            entity_id: media_player.sky_q_bedroom
+        - delay:
+            seconds: 10
+      turn_off:
+        stop:
+    skyq_ffbedroom:
+      value_template: '{{"off"}}'
+      friendly_name: 'fastforward in the Bedroom'
+      turn_on:
+        - service: media_player.media_next_track
+          data:
+            entity_id: media_player.sky_q_bedroom
+        - delay:
+            seconds: 10
+      turn_off:
+        stop:
+    skyq_rwbedroom:
+      value_template: '{{"off"}}'
+      friendly_name: 'rewind in the Bedroom'
+      turn_on:
+        - service: media_player.media_previous_track
+          data:
+            entity_id: media_player.sky_q_bedroom
+        - delay:
+            seconds: 10
+      turn_off:
+        stop:
+    skyq_bbctwohdbedroom:
+      value_template: '{{"off"}}'
+      friendly_name: 'BBC Two HD in the Bedroom'
+      turn_on:
+        - service: media_player.select_source
+          data:
+            entity_id: media_player.sky_q_bedroom
+            source: 'BBC Two HD'
+        - delay:
+            seconds: 10
+      turn_off:
+        stop:
+    skyq_itv1hdbedroom:
+      value_template: '{{"off"}}'
+      friendly_name: 'ITV1 HD in the Bedroom'
+      turn_on:
+        - service: media_player.select_source
+          data:
+            entity_id: media_player.sky_q_bedroom
+            source: 'ITV1 HD'
+        - delay:
+            seconds: 10
+      turn_off:
+        stop:
+    skyq_channel4hdbedroom:
+      value_template: '{{"off"}}'
+      friendly_name: 'Channel 4 HD in the Bedroom'
+      turn_on:
+        - service: media_player.select_source
+          data:
+            entity_id: media_player.sky_q_bedroom
+            source: 'Channel 4 HD'
+        - delay:
+            seconds: 10
+      turn_off:
+        stop:
+    skyq_channel5hdbedroom:
+      value_template: '{{"off"}}'
+      friendly_name: 'Channel 5 HD in the Bedroom'
+      turn_on:
+        - service: media_player.select_source
+          data:
+            entity_id: media_player.sky_q_bedroom
+            source: 'Channel 5 HD'
+        - delay:
+            seconds: 10
+      turn_off:
+        stop:
+    skyq_skyshowcasehdbedroom:
+      value_template: '{{"off"}}'
+      friendly_name: 'SkyShowcaseHD in the Bedroom'
+      turn_on:
+        - service: media_player.select_source
+          data:
+            entity_id: media_player.sky_q_bedroom
+            source: 'SkyShowcaseHD'
+        - delay:
+            seconds: 10
+      turn_off:
+        stop:
+    skyq_bbconesthhdbedroom:
+      value_template: '{{"off"}}'
+      friendly_name: 'BBC One Sth HD in the Bedroom'
+      turn_on:
+        - service: media_player.select_source
+          data:
+            entity_id: media_player.sky_q_bedroom
+            source: 'BBC One Sth HD'
+        - delay:
+            seconds: 10
+      turn_off:
+        stop:
+    skyq_skywitnesshdbedroom:
+      value_template: '{{"off"}}'
+      friendly_name: 'Sky Witness HD in the Bedroom'
+      turn_on:
+        - service: media_player.select_source
+          data:
+            entity_id: media_player.sky_q_bedroom
+            source: 'Sky Witness HD'
+        - delay:
+            seconds: 10
+      turn_off:
+        stop:
+    skyq_skyatlantichdbedroom:
+      value_template: '{{"off"}}'
+      friendly_name: 'Sky Atlantic HD in the Bedroom'
+      turn_on:
+        - service: media_player.select_source
+          data:
+            entity_id: media_player.sky_q_bedroom
+            source: 'Sky Atlantic HD'
+        - delay:
+            seconds: 10
+      turn_off:
+        stop:
+    skyq_skymaxhdbedroom:
+      value_template: '{{"off"}}'
+      friendly_name: 'Sky Max HD in the Bedroom'
+      turn_on:
+        - service: media_player.select_source
+          data:
+            entity_id: media_player.sky_q_bedroom
+            source: 'Sky Max HD'
+        - delay:
+            seconds: 10
+      turn_off:
+        stop:
+    skyq_skycomedyhdbedroom:
+      value_template: '{{"off"}}'
+      friendly_name: 'Sky Comedy HD in the Bedroom'
+      turn_on:
+        - service: media_player.select_source
+          data:
+            entity_id: media_player.sky_q_bedroom
+            source: 'Sky Comedy HD'
+        - delay:
+            seconds: 10
+      turn_off:
+        stop:
+    skyq_bbcthreehdbedroom:
+      value_template: '{{"off"}}'
+      friendly_name: 'BBC Three HD in the Bedroom'
+      turn_on:
+        - service: media_player.select_source
+          data:
+            entity_id: media_player.sky_q_bedroom
+            source: 'BBC Three HD'
+        - delay:
+            seconds: 10
+      turn_off:
+        stop:
+    skyq_bbcfourhdbedroom:
+      value_template: '{{"off"}}'
+      friendly_name: 'BBC Four HD in the Bedroom'
+      turn_on:
+        - service: media_player.select_source
+          data:
+            entity_id: media_player.sky_q_bedroom
+            source: 'BBC Four HD'
+        - delay:
+            seconds: 10
+      turn_off:
+        stop:
+    skyq_itv2hdbedroom:
+      value_template: '{{"off"}}'
+      friendly_name: 'ITV2 HD in the Bedroom'
+      turn_on:
+        - service: media_player.select_source
+          data:
+            entity_id: media_player.sky_q_bedroom
+            source: 'ITV2 HD'
+        - delay:
+            seconds: 10
+      turn_off:
+        stop:
+    skyq_itv3hdbedroom:
+      value_template: '{{"off"}}'
+      friendly_name: 'ITV3 HD in the Bedroom'
+      turn_on:
+        - service: media_player.select_source
+          data:
+            entity_id: media_player.sky_q_bedroom
+            source: 'ITV3 HD'
+        - delay:
+            seconds: 10
+      turn_off:
+        stop:
+    skyq_itv4hdbedroom:
+      value_template: '{{"off"}}'
+      friendly_name: 'ITV4 HD in the Bedroom'
+      turn_on:
+        - service: media_player.select_source
+          data:
+            entity_id: media_player.sky_q_bedroom
+            source: 'ITV4 HD'
+        - delay:
+            seconds: 10
+      turn_off:
+        stop:
