@@ -1,31 +1,3 @@
-- id: '1610520380331'
-  alias: Fishtank day
-  description: ''
-  trigger:
-  - platform: sun
-    event: sunrise
-  condition: []
-  action:
-  - device_id: 28d4df6625bc4fdaed286535e55a7bba
-    domain: select
-    entity_id: select.fishtank_preset
-    type: select_option
-    option: Day
-  mode: single
-- id: '1610520452720'
-  alias: Fishtank night
-  description: ''
-  trigger:
-  - platform: time
-    at: '23:00'
-  condition: []
-  action:
-  - device_id: 28d4df6625bc4fdaed286535e55a7bba
-    domain: select
-    entity_id: select.fishtank_preset
-    type: select_option
-    option: Night
-  mode: single
 - id: '1627494208126'
   alias: Pool pump start
   description: Turn the Main pool pump on if the heater is not on
@@ -73,12 +45,8 @@
   - platform: device
     device_id: 14f6a5afc0a043491406010c89dd919d
     domain: media_player
-    entity_id: media_player.sky_q_bedroom
+    entity_id: 8345d906622e29e4aacddf8a694e7853
     type: playing
-  - platform: state
-    entity_id: input_boolean.bedroom_tv
-    from: 'off'
-    to: 'on'
   condition: []
   action:
   - scene: scene.bedroom_tv_on
@@ -92,27 +60,9 @@
     domain: media_player
     entity_id: media_player.sky_q_bedroom
     type: turned_off
-  - platform: state
-    entity_id: input_boolean.bedroom_tv
-    from: 'on'
-    to: 'off'
   condition: []
   action:
   - scene: scene.bedroom_tv_off
-  mode: single
-- id: '1630334936678'
-  alias: Fishtank evening
-  description: ''
-  trigger:
-  - platform: sun
-    event: sunset
-  condition: []
-  action:
-  - device_id: 28d4df6625bc4fdaed286535e55a7bba
-    domain: select
-    entity_id: select.fishtank_preset
-    type: select_option
-    option: Evening
   mode: single
 - id: '1638922858499'
   alias: Christmas on
@@ -154,41 +104,6 @@
   action:
   - scene: scene.christmas_inside
   mode: single
-- id: '1643562844829'
-  alias: Charlie light on
-  description: ''
-  trigger:
-  - platform: time
-    at: 08:00
-  condition: []
-  action:
-  - service: climate.turn_on
-    data: {}
-    target:
-      entity_id: climate.charlie_temp
-  mode: single
-- id: '1643562874503'
-  alias: Charlie light off
-  description: ''
-  trigger:
-  - platform: time
-    at: '20:00'
-  condition: []
-  action:
-  - service: climate.turn_off
-    data: {}
-    target:
-      entity_id: climate.charlie_temp
-  mode: single
-- id: '1663689525634'
-  alias: Send a camera snapshot when motion is detected
-  description: ''
-  use_blueprint:
-    path: vorion/send-camera-snapshot-notification-on-motion.yaml
-    input:
-      motion_sensor: binary_sensor.charlie_camera_pir
-      camera: camera.charlie_camera_camera
-      notify_device: feeedc77afcfbf6026780657d088d445
 - id: '1674337992210'
   alias: Turn heating off when away
   description: ''

@@ -2,19 +2,19 @@
   name: Christmas On
   entities:
     switch.socket_1:
-      friendly_name: Pool Heat
+      friendly_name: Pool Control Pool Heat
       state: 'on'
     switch.socket_2:
-      friendly_name: Pool Main Pump
+      friendly_name: Pool Control Pool Main Pump
       state: 'on'
     switch.socket_3:
-      friendly_name: Pool Aux Pump
+      friendly_name: Pool Control Pool Aux Pump
       state: 'on'
     switch.socket_4:
-      friendly_name: Pool Spare
+      friendly_name: Pool Control Pool Spare
       state: 'on'
     switch.usb:
-      friendly_name: Pool USB
+      friendly_name: Pool Control Pool USB
       state: 'off'
     switch.plug1:
       restored: true
@@ -24,22 +24,22 @@
       state: unavailable
     switch.tasmota_2:
       friendly_name: Tasmota
-      state: 'off'
+      state: unavailable
     switch.tasmota2_2:
-      friendly_name: Tasmota2
-      state: 'off'
+      friendly_name: Tasmota Tasmota2
+      state: unavailable
     switch.tasmota3_2:
-      friendly_name: Tasmota3
-      state: 'off'
+      friendly_name: Tasmota Tasmota3
+      state: unavailable
     switch.tasmota4_2:
-      friendly_name: Tasmota4
-      state: 'on'
+      friendly_name: Tasmota Tasmota4
+      state: unavailable
     switch.tasmota5:
-      friendly_name: Tasmota5
-      state: 'off'
+      friendly_name: Tasmota Tasmota5
+      state: unavailable
     switch.tasmota_3:
       friendly_name: Plug 1
-      state: 'on'
+      state: unavailable
     switch.tasmota_4:
       friendly_name: Plug 2
       state: 'on'
@@ -50,314 +50,8 @@
       state: 'on'
     switch.tasmota_5:
       friendly_name: Plug 3
-      state: 'on'
+      state: 'off'
     light.front_door:
-      effect_list:
-      - Android
-      - Aurora
-      - Blends
-      - Blink
-      - Blink Rainbow
-      - Bouncing Balls
-      - Bpm
-      - Breathe
-      - Candle
-      - Candle Multi
-      - Candy Cane
-      - Chase
-      - Chase 2
-      - Chase 3
-      - Chase Flash
-      - Chase Flash Rnd
-      - Chase Rainbow
-      - Chase Random
-      - Chunchun
-      - Colorful
-      - Colorloop
-      - Colortwinkles
-      - Colorwaves
-      - Dancing Shadows
-      - Dissolve
-      - Dissolve Rnd
-      - Drip
-      - Dynamic
-      - Dynamic Smooth
-      - Fade
-      - Fairy
-      - Fairytwinkle
-      - Fill Noise
-      - Fire 2012
-      - Fire Flicker
-      - Fireworks
-      - Fireworks 1D
-      - Fireworks Starburst
-      - Flow
-      - Glitter
-      - Gradient
-      - Halloween
-      - Halloween Eyes
-      - Heartbeat
-      - ICU
-      - Juggle
-      - Lake
-      - Lighthouse
-      - Lightning
-      - Loading
-      - Meteor
-      - Meteor Smooth
-      - Multi Comet
-      - Noise 1
-      - Noise 2
-      - Noise 3
-      - Noise 4
-      - Noise Pal
-      - Oscillate
-      - Pacifica
-      - Palette
-      - Percent
-      - Phased
-      - Phased Noise
-      - Plasma
-      - Police
-      - Popcorn
-      - Pride 2015
-      - Railway
-      - Rain
-      - Rainbow
-      - Rainbow Runner
-      - Random Colors
-      - Ripple
-      - Ripple Rainbow
-      - Running
-      - Running Dual
-      - Saw
-      - Scan
-      - Scan Dual
-      - Scanner
-      - Scanner Dual
-      - Sine
-      - Sinelon
-      - Sinelon Dual
-      - Sinelon Rainbow
-      - Solid
-      - Solid Glitter
-      - Solid Pattern
-      - Solid Pattern Tri
-      - Sparkle
-      - Sparkle Dark
-      - Sparkle+
-      - Spots
-      - Spots Fade
-      - Stream
-      - Stream 2
-      - Strobe
-      - Strobe Mega
-      - Strobe Rainbow
-      - Sunrise
-      - Sweep
-      - Sweep Random
-      - TV Simulator
-      - Tetrix
-      - Theater
-      - Theater Rainbow
-      - Traffic Light
-      - Tri Fade
-      - Tri Wipe
-      - Twinkle
-      - Twinklecat
-      - Twinklefox
-      - Twinkleup
-      - Two Dots
-      - Washing Machine
-      - Wipe
-      - Wipe Random
-      supported_color_modes:
-      - rgb
-      color_mode: rgb
-      brightness: 255
-      hs_color:
-      - 0
-      - 0
-      rgb_color:
-      - 89
-      - 89
-      - 89
-      xy_color:
-      - 0.323
-      - 0.329
-      effect: Solid Glitter
-      icon: mdi:led-strip-variant
-      friendly_name: Front Door
-      supported_features: 36
-      state: 'on'
-    select.front_door_playlist:
-      options: []
-      icon: mdi:play-speed
-      friendly_name: Front Door Playlist
-      state: unavailable
-    select.front_door_preset:
-      options:
-      - 'Candles '
-      - Eyes
-      - Fireworks
-      - Green
-      - 'Lighting '
-      - 'Off'
-      - 'Sparkle '
-      icon: mdi:playlist-play
-      friendly_name: Front Door Preset
-      state: 'Sparkle '
-    light.night_tree:
-      effect_list:
-      - Android
-      - Aurora
-      - Blends
-      - Blink
-      - Blink Rainbow
-      - Bouncing Balls
-      - Bpm
-      - Breathe
-      - Candle
-      - Candle Multi
-      - Candy Cane
-      - Chase
-      - Chase 2
-      - Chase 3
-      - Chase Flash
-      - Chase Flash Rnd
-      - Chase Rainbow
-      - Chase Random
-      - Chunchun
-      - Colorful
-      - Colorloop
-      - Colortwinkles
-      - Colorwaves
-      - Dancing Shadows
-      - Dissolve
-      - Dissolve Rnd
-      - Drip
-      - Dynamic
-      - Dynamic Smooth
-      - Fade
-      - Fairy
-      - Fairytwinkle
-      - Fill Noise
-      - Fire 2012
-      - Fire Flicker
-      - Fireworks
-      - Fireworks 1D
-      - Fireworks Starburst
-      - Flow
-      - Glitter
-      - Gradient
-      - Halloween
-      - Halloween Eyes
-      - Heartbeat
-      - ICU
-      - Juggle
-      - Lake
-      - Lighthouse
-      - Lightning
-      - Loading
-      - Meteor
-      - Meteor Smooth
-      - Multi Comet
-      - Noise 1
-      - Noise 2
-      - Noise 3
-      - Noise 4
-      - Noise Pal
-      - Oscillate
-      - Pacifica
-      - Palette
-      - Percent
-      - Phased
-      - Phased Noise
-      - Plasma
-      - Police
-      - Popcorn
-      - Pride 2015
-      - Railway
-      - Rain
-      - Rainbow
-      - Rainbow Runner
-      - Random Colors
-      - Ripple
-      - Ripple Rainbow
-      - Running
-      - Running Dual
-      - Saw
-      - Scan
-      - Scan Dual
-      - Scanner
-      - Scanner Dual
-      - Sine
-      - Sinelon
-      - Sinelon Dual
-      - Sinelon Rainbow
-      - Solid
-      - Solid Glitter
-      - Solid Pattern
-      - Solid Pattern Tri
-      - Sparkle
-      - Sparkle Dark
-      - Sparkle+
-      - Spots
-      - Spots Fade
-      - Stream
-      - Stream 2
-      - Strobe
-      - Strobe Mega
-      - Strobe Rainbow
-      - Sunrise
-      - Sweep
-      - Sweep Random
-      - TV Simulator
-      - Tetrix
-      - Theater
-      - Theater Rainbow
-      - Traffic Light
-      - Tri Fade
-      - Tri Wipe
-      - Twinkle
-      - Twinklecat
-      - Twinklefox
-      - Twinkleup
-      - Two Dots
-      - Washing Machine
-      - Wipe
-      - Wipe Random
-      supported_color_modes:
-      - rgb
-      color_mode: rgb
-      brightness: 255
-      hs_color:
-      - 118.118
-      - 100
-      rgb_color:
-      - 8
-      - 255
-      - 0
-      xy_color:
-      - 0.174
-      - 0.746
-      effect: Fade
-      icon: mdi:led-strip-variant
-      friendly_name: Night Tree
-      supported_features: 36
-      state: 'on'
-    select.night_tree_playlist:
-      options: []
-      icon: mdi:play-speed
-      friendly_name: Night Tree Playlist
-      state: unavailable
-    select.night_tree_preset:
-      options:
-      - Christmas
-      icon: mdi:playlist-play
-      friendly_name: Night Tree Preset
-      state: Christmas
-    light.christmas:
       effect_list:
       - Akemi
       - Android
@@ -393,6 +87,7 @@
       - Dancing Shadows
       - Dissolve
       - Dissolve Rnd
+      - Distortion Waves
       - Drift
       - Drift Rose
       - Drip
@@ -453,6 +148,7 @@
       - Noisefire
       - Noisemeter
       - Noisemove
+      - Octopus
       - Oscillate
       - Pacifica
       - Palette
@@ -479,11 +175,6 @@
       - RSVD
       - RSVD
       - RSVD
-      - RSVD
-      - RSVD
-      - RSVD
-      - RSVD
-      - RSVD
       - Railway
       - Rain
       - Rainbow
@@ -493,6 +184,7 @@
       - Ripple Peak
       - Ripple Rainbow
       - Rocktaves
+      - Rolling Balls
       - Running
       - Running Dual
       - Saw
@@ -506,6 +198,7 @@
       - Sinelon
       - Sinelon Dual
       - Sinelon Rainbow
+      - Soap
       - Solid
       - Solid Glitter
       - Solid Pattern
@@ -544,6 +237,368 @@
       - Waterfall
       - Waverly
       - Wavesins
+      - Waving Cell
+      - Wipe
+      - Wipe Random
+      supported_color_modes:
+      - rgb
+      color_mode: rgb
+      brightness: 255
+      hs_color:
+      - 0
+      - 0
+      rgb_color:
+      - 255
+      - 255
+      - 255
+      xy_color:
+      - 0.323
+      - 0.329
+      effect: Twinkleup
+      icon: mdi:led-strip-variant
+      friendly_name: Front Door
+      supported_features: 36
+      state: 'on'
+    select.front_door_playlist:
+      options: []
+      icon: mdi:play-speed
+      friendly_name: Front Door Playlist
+      state: unavailable
+    select.front_door_preset:
+      options:
+      - 'Off'
+      - Twinkle
+      icon: mdi:playlist-play
+      friendly_name: Front Door Preset
+      state: Twinkle
+    light.night_tree:
+      restored: true
+      effect_list:
+      - Android
+      - Aurora
+      - Blends
+      - Blink
+      - Blink Rainbow
+      - Bouncing Balls
+      - Bpm
+      - Breathe
+      - Candle
+      - Candle Multi
+      - Candy Cane
+      - Chase
+      - Chase 2
+      - Chase 3
+      - Chase Flash
+      - Chase Flash Rnd
+      - Chase Rainbow
+      - Chase Random
+      - Chunchun
+      - Colorful
+      - Colorloop
+      - Colortwinkles
+      - Colorwaves
+      - Dancing Shadows
+      - Dissolve
+      - Dissolve Rnd
+      - Drip
+      - Dynamic
+      - Dynamic Smooth
+      - Fade
+      - Fairy
+      - Fairytwinkle
+      - Fill Noise
+      - Fire 2012
+      - Fire Flicker
+      - Fireworks
+      - Fireworks 1D
+      - Fireworks Starburst
+      - Flow
+      - Glitter
+      - Gradient
+      - Halloween
+      - Halloween Eyes
+      - Heartbeat
+      - ICU
+      - Juggle
+      - Lake
+      - Lighthouse
+      - Lightning
+      - Loading
+      - Meteor
+      - Meteor Smooth
+      - Multi Comet
+      - Noise 1
+      - Noise 2
+      - Noise 3
+      - Noise 4
+      - Noise Pal
+      - Oscillate
+      - Pacifica
+      - Palette
+      - Percent
+      - Phased
+      - Phased Noise
+      - Plasma
+      - Police
+      - Popcorn
+      - Pride 2015
+      - Railway
+      - Rain
+      - Rainbow
+      - Rainbow Runner
+      - Random Colors
+      - Ripple
+      - Ripple Rainbow
+      - Running
+      - Running Dual
+      - Saw
+      - Scan
+      - Scan Dual
+      - Scanner
+      - Scanner Dual
+      - Sine
+      - Sinelon
+      - Sinelon Dual
+      - Sinelon Rainbow
+      - Solid
+      - Solid Glitter
+      - Solid Pattern
+      - Solid Pattern Tri
+      - Sparkle
+      - Sparkle Dark
+      - Sparkle+
+      - Spots
+      - Spots Fade
+      - Stream
+      - Stream 2
+      - Strobe
+      - Strobe Mega
+      - Strobe Rainbow
+      - Sunrise
+      - Sweep
+      - Sweep Random
+      - TV Simulator
+      - Tetrix
+      - Theater
+      - Theater Rainbow
+      - Traffic Light
+      - Tri Fade
+      - Tri Wipe
+      - Twinkle
+      - Twinklecat
+      - Twinklefox
+      - Twinkleup
+      - Two Dots
+      - Washing Machine
+      - Wipe
+      - Wipe Random
+      supported_color_modes:
+      - rgb
+      icon: mdi:led-strip-variant
+      supported_features: 36
+      state: unavailable
+    select.night_tree_playlist:
+      restored: true
+      options: []
+      icon: mdi:play-speed
+      friendly_name: Playlist
+      supported_features: 0
+      state: unavailable
+    select.night_tree_preset:
+      restored: true
+      options:
+      - Christmas
+      icon: mdi:playlist-play
+      friendly_name: Preset
+      supported_features: 0
+      state: unavailable
+    light.christmas:
+      effect_list:
+      - Akemi
+      - Android
+      - Aurora
+      - Black Hole
+      - Blends
+      - Blink
+      - Blink Rainbow
+      - Blobs
+      - Blurz
+      - Bouncing Balls
+      - Bpm
+      - Breathe
+      - Candle
+      - Candle Multi
+      - Chase
+      - Chase 2
+      - Chase 3
+      - Chase Flash
+      - Chase Flash Rnd
+      - Chase Rainbow
+      - Chase Random
+      - Chunchun
+      - Colored Bursts
+      - Colorful
+      - Colorloop
+      - Colortwinkles
+      - Colorwaves
+      - Crazy Bees
+      - DJ Light
+      - DNA
+      - DNA Spiral
+      - Dancing Shadows
+      - Dissolve
+      - Dissolve Rnd
+      - Distortion Waves
+      - Drift
+      - Drift Rose
+      - Drip
+      - Dynamic
+      - Dynamic Smooth
+      - Fade
+      - Fairy
+      - Fairytwinkle
+      - Fill Noise
+      - Fire 2012
+      - Fire Flicker
+      - Firenoise
+      - Fireworks
+      - Fireworks 1D
+      - Fireworks Starburst
+      - Flow
+      - Flow Stripe
+      - Freqmap
+      - Freqmatrix
+      - Freqpixels
+      - Freqwave
+      - Frizzles
+      - Funky Plank
+      - GEQ
+      - Game Of Life
+      - Ghost Rider
+      - Glitter
+      - Gradient
+      - Gravcenter
+      - Gravcentric
+      - Gravfreq
+      - Gravimeter
+      - Halloween Eyes
+      - Heartbeat
+      - Hiphotic
+      - ICU
+      - Juggle
+      - Juggles
+      - Julia
+      - Lake
+      - Lighthouse
+      - Lightning
+      - Lissajous
+      - Loading
+      - Matripix
+      - Matrix
+      - Metaballs
+      - Meteor
+      - Meteor Smooth
+      - Midnoise
+      - Multi Comet
+      - Noise 1
+      - Noise 2
+      - Noise 3
+      - Noise 4
+      - Noise Pal
+      - Noise2D
+      - Noisefire
+      - Noisemeter
+      - Noisemove
+      - Octopus
+      - Oscillate
+      - Pacifica
+      - Palette
+      - Percent
+      - Perlin Move
+      - Phased
+      - Phased Noise
+      - Pixels
+      - Pixelwave
+      - Plasma
+      - Plasma Ball
+      - Plasmoid
+      - Polar Lights
+      - Popcorn
+      - Pride 2015
+      - Puddlepeak
+      - Puddles
+      - Pulser
+      - RSVD
+      - RSVD
+      - RSVD
+      - RSVD
+      - RSVD
+      - RSVD
+      - RSVD
+      - RSVD
+      - Railway
+      - Rain
+      - Rainbow
+      - Rainbow Runner
+      - Random Colors
+      - Ripple
+      - Ripple Peak
+      - Ripple Rainbow
+      - Rocktaves
+      - Rolling Balls
+      - Running
+      - Running Dual
+      - Saw
+      - Scan
+      - Scan Dual
+      - Scanner
+      - Scanner Dual
+      - Scrolling Text
+      - Sindots
+      - Sine
+      - Sinelon
+      - Sinelon Dual
+      - Sinelon Rainbow
+      - Soap
+      - Solid
+      - Solid Glitter
+      - Solid Pattern
+      - Solid Pattern Tri
+      - Spaceships
+      - Sparkle
+      - Sparkle Dark
+      - Sparkle+
+      - Spots
+      - Spots Fade
+      - Squared Swirl
+      - Stream
+      - Stream 2
+      - Strobe
+      - Strobe Mega
+      - Strobe Rainbow
+      - Sun Radiation
+      - Sunrise
+      - Sweep
+      - Sweep Random
+      - Swirl
+      - TV Simulator
+      - Tartan
+      - Tetrix
+      - Theater
+      - Theater Rainbow
+      - Traffic Light
+      - Tri Fade
+      - Tri Wipe
+      - Twinkle
+      - Twinklecat
+      - Twinklefox
+      - Twinkleup
+      - Two Dots
+      - Washing Machine
+      - Waterfall
+      - Waverly
+      - Wavesins
+      - Waving Cell
       - Wipe
       - Wipe Random
       supported_color_modes:
@@ -572,6 +627,7 @@
       state: unavailable
     select.christmas_preset:
       options:
+      - Benedict off
       - 'Off'
       - 'On'
       icon: mdi:playlist-play
@@ -708,14 +764,14 @@
       - 203
       - 219
       - 255
+      xy_color:
+      - 0.279
+      - 0.288
       rgbw_color:
       - 203
       - 219
       - 255
       - 0
-      xy_color:
-      - 0.279
-      - 0.288
       effect: Solid
       icon: mdi:led-strip-variant
       friendly_name: Christmas-5
@@ -737,38 +793,38 @@
   name: Christmas Off
   entities:
     switch.socket_1:
-      friendly_name: Pool Heat
+      friendly_name: Pool Control Pool Heat
       state: 'off'
     switch.socket_2:
-      friendly_name: Pool Main Pump
+      friendly_name: Pool Control Pool Main Pump
       state: 'off'
     switch.socket_3:
-      friendly_name: Pool Aux Pump
+      friendly_name: Pool Control Pool Aux Pump
       state: 'off'
     switch.socket_4:
-      friendly_name: Pool Spare
+      friendly_name: Pool Control Pool Spare
       state: 'off'
     switch.usb:
-      friendly_name: Pool USB
+      friendly_name: Pool Control Pool USB
       state: 'off'
     switch.tasmota_2:
       friendly_name: Tasmota
-      state: 'off'
+      state: unavailable
     switch.tasmota2_2:
-      friendly_name: Tasmota2
-      state: 'off'
+      friendly_name: Tasmota Tasmota2
+      state: unavailable
     switch.tasmota3_2:
-      friendly_name: Tasmota3
-      state: 'off'
+      friendly_name: Tasmota Tasmota3
+      state: unavailable
     switch.tasmota4_2:
-      friendly_name: Tasmota4
-      state: 'off'
+      friendly_name: Tasmota Tasmota4
+      state: unavailable
     switch.tasmota5:
-      friendly_name: Tasmota5
-      state: 'off'
+      friendly_name: Tasmota Tasmota5
+      state: unavailable
     switch.tasmota_3:
       friendly_name: Plug 1
-      state: 'off'
+      state: unavailable
     switch.tasmota_4:
       friendly_name: Plug 2
       state: 'off'
@@ -781,286 +837,6 @@
       friendly_name: Plug 3
       state: 'off'
     light.front_door:
-      effect_list:
-      - Android
-      - Aurora
-      - Blends
-      - Blink
-      - Blink Rainbow
-      - Bouncing Balls
-      - Bpm
-      - Breathe
-      - Candle
-      - Candle Multi
-      - Candy Cane
-      - Chase
-      - Chase 2
-      - Chase 3
-      - Chase Flash
-      - Chase Flash Rnd
-      - Chase Rainbow
-      - Chase Random
-      - Chunchun
-      - Colorful
-      - Colorloop
-      - Colortwinkles
-      - Colorwaves
-      - Dancing Shadows
-      - Dissolve
-      - Dissolve Rnd
-      - Drip
-      - Dynamic
-      - Dynamic Smooth
-      - Fade
-      - Fairy
-      - Fairytwinkle
-      - Fill Noise
-      - Fire 2012
-      - Fire Flicker
-      - Fireworks
-      - Fireworks 1D
-      - Fireworks Starburst
-      - Flow
-      - Glitter
-      - Gradient
-      - Halloween
-      - Halloween Eyes
-      - Heartbeat
-      - ICU
-      - Juggle
-      - Lake
-      - Lighthouse
-      - Lightning
-      - Loading
-      - Meteor
-      - Meteor Smooth
-      - Multi Comet
-      - Noise 1
-      - Noise 2
-      - Noise 3
-      - Noise 4
-      - Noise Pal
-      - Oscillate
-      - Pacifica
-      - Palette
-      - Percent
-      - Phased
-      - Phased Noise
-      - Plasma
-      - Police
-      - Popcorn
-      - Pride 2015
-      - Railway
-      - Rain
-      - Rainbow
-      - Rainbow Runner
-      - Random Colors
-      - Ripple
-      - Ripple Rainbow
-      - Running
-      - Running Dual
-      - Saw
-      - Scan
-      - Scan Dual
-      - Scanner
-      - Scanner Dual
-      - Sine
-      - Sinelon
-      - Sinelon Dual
-      - Sinelon Rainbow
-      - Solid
-      - Solid Glitter
-      - Solid Pattern
-      - Solid Pattern Tri
-      - Sparkle
-      - Sparkle Dark
-      - Sparkle+
-      - Spots
-      - Spots Fade
-      - Stream
-      - Stream 2
-      - Strobe
-      - Strobe Mega
-      - Strobe Rainbow
-      - Sunrise
-      - Sweep
-      - Sweep Random
-      - TV Simulator
-      - Tetrix
-      - Theater
-      - Theater Rainbow
-      - Traffic Light
-      - Tri Fade
-      - Tri Wipe
-      - Twinkle
-      - Twinklecat
-      - Twinklefox
-      - Twinkleup
-      - Two Dots
-      - Washing Machine
-      - Wipe
-      - Wipe Random
-      supported_color_modes:
-      - rgb
-      icon: mdi:led-strip-variant
-      friendly_name: Front Door
-      supported_features: 36
-      state: 'off'
-    select.front_door_playlist:
-      options: []
-      icon: mdi:play-speed
-      friendly_name: Front Door Playlist
-      state: unavailable
-    select.front_door_preset:
-      options:
-      - 'Candles '
-      - Eyes
-      - Fireworks
-      - Green
-      - 'Lighting '
-      - 'Off'
-      - 'Sparkle '
-      icon: mdi:playlist-play
-      friendly_name: Front Door Preset
-      state: 'Off'
-    light.night_tree:
-      effect_list:
-      - Android
-      - Aurora
-      - Blends
-      - Blink
-      - Blink Rainbow
-      - Bouncing Balls
-      - Bpm
-      - Breathe
-      - Candle
-      - Candle Multi
-      - Candy Cane
-      - Chase
-      - Chase 2
-      - Chase 3
-      - Chase Flash
-      - Chase Flash Rnd
-      - Chase Rainbow
-      - Chase Random
-      - Chunchun
-      - Colorful
-      - Colorloop
-      - Colortwinkles
-      - Colorwaves
-      - Dancing Shadows
-      - Dissolve
-      - Dissolve Rnd
-      - Drip
-      - Dynamic
-      - Dynamic Smooth
-      - Fade
-      - Fairy
-      - Fairytwinkle
-      - Fill Noise
-      - Fire 2012
-      - Fire Flicker
-      - Fireworks
-      - Fireworks 1D
-      - Fireworks Starburst
-      - Flow
-      - Glitter
-      - Gradient
-      - Halloween
-      - Halloween Eyes
-      - Heartbeat
-      - ICU
-      - Juggle
-      - Lake
-      - Lighthouse
-      - Lightning
-      - Loading
-      - Meteor
-      - Meteor Smooth
-      - Multi Comet
-      - Noise 1
-      - Noise 2
-      - Noise 3
-      - Noise 4
-      - Noise Pal
-      - Oscillate
-      - Pacifica
-      - Palette
-      - Percent
-      - Phased
-      - Phased Noise
-      - Plasma
-      - Police
-      - Popcorn
-      - Pride 2015
-      - Railway
-      - Rain
-      - Rainbow
-      - Rainbow Runner
-      - Random Colors
-      - Ripple
-      - Ripple Rainbow
-      - Running
-      - Running Dual
-      - Saw
-      - Scan
-      - Scan Dual
-      - Scanner
-      - Scanner Dual
-      - Sine
-      - Sinelon
-      - Sinelon Dual
-      - Sinelon Rainbow
-      - Solid
-      - Solid Glitter
-      - Solid Pattern
-      - Solid Pattern Tri
-      - Sparkle
-      - Sparkle Dark
-      - Sparkle+
-      - Spots
-      - Spots Fade
-      - Stream
-      - Stream 2
-      - Strobe
-      - Strobe Mega
-      - Strobe Rainbow
-      - Sunrise
-      - Sweep
-      - Sweep Random
-      - TV Simulator
-      - Tetrix
-      - Theater
-      - Theater Rainbow
-      - Traffic Light
-      - Tri Fade
-      - Tri Wipe
-      - Twinkle
-      - Twinklecat
-      - Twinklefox
-      - Twinkleup
-      - Two Dots
-      - Washing Machine
-      - Wipe
-      - Wipe Random
-      supported_color_modes:
-      - rgb
-      icon: mdi:led-strip-variant
-      friendly_name: Night Tree
-      supported_features: 36
-      state: 'off'
-    select.night_tree_playlist:
-      options: []
-      icon: mdi:play-speed
-      friendly_name: Night Tree Playlist
-      state: unavailable
-    select.night_tree_preset:
-      options:
-      - Christmas
-      icon: mdi:playlist-play
-      friendly_name: Night Tree Preset
-      state: Christmas
-    light.christmas:
       effect_list:
       - Akemi
       - Android
@@ -1096,6 +872,7 @@
       - Dancing Shadows
       - Dissolve
       - Dissolve Rnd
+      - Distortion Waves
       - Drift
       - Drift Rose
       - Drip
@@ -1156,6 +933,7 @@
       - Noisefire
       - Noisemeter
       - Noisemove
+      - Octopus
       - Oscillate
       - Pacifica
       - Palette
@@ -1182,11 +960,6 @@
       - RSVD
       - RSVD
       - RSVD
-      - RSVD
-      - RSVD
-      - RSVD
-      - RSVD
-      - RSVD
       - Railway
       - Rain
       - Rainbow
@@ -1196,6 +969,7 @@
       - Ripple Peak
       - Ripple Rainbow
       - Rocktaves
+      - Rolling Balls
       - Running
       - Running Dual
       - Saw
@@ -1209,6 +983,7 @@
       - Sinelon
       - Sinelon Dual
       - Sinelon Rainbow
+      - Soap
       - Solid
       - Solid Glitter
       - Solid Pattern
@@ -1247,6 +1022,368 @@
       - Waterfall
       - Waverly
       - Wavesins
+      - Waving Cell
+      - Wipe
+      - Wipe Random
+      supported_color_modes:
+      - rgb
+      color_mode: rgb
+      brightness: 1
+      hs_color:
+      - 0
+      - 0
+      rgb_color:
+      - 0
+      - 0
+      - 0
+      xy_color:
+      - 0
+      - 0
+      effect: Solid
+      icon: mdi:led-strip-variant
+      friendly_name: Front Door
+      supported_features: 36
+      state: 'on'
+    select.front_door_playlist:
+      options: []
+      icon: mdi:play-speed
+      friendly_name: Front Door Playlist
+      state: unavailable
+    select.front_door_preset:
+      options:
+      - 'Off'
+      - Twinkle
+      icon: mdi:playlist-play
+      friendly_name: Front Door Preset
+      state: 'Off'
+    light.night_tree:
+      restored: true
+      effect_list:
+      - Android
+      - Aurora
+      - Blends
+      - Blink
+      - Blink Rainbow
+      - Bouncing Balls
+      - Bpm
+      - Breathe
+      - Candle
+      - Candle Multi
+      - Candy Cane
+      - Chase
+      - Chase 2
+      - Chase 3
+      - Chase Flash
+      - Chase Flash Rnd
+      - Chase Rainbow
+      - Chase Random
+      - Chunchun
+      - Colorful
+      - Colorloop
+      - Colortwinkles
+      - Colorwaves
+      - Dancing Shadows
+      - Dissolve
+      - Dissolve Rnd
+      - Drip
+      - Dynamic
+      - Dynamic Smooth
+      - Fade
+      - Fairy
+      - Fairytwinkle
+      - Fill Noise
+      - Fire 2012
+      - Fire Flicker
+      - Fireworks
+      - Fireworks 1D
+      - Fireworks Starburst
+      - Flow
+      - Glitter
+      - Gradient
+      - Halloween
+      - Halloween Eyes
+      - Heartbeat
+      - ICU
+      - Juggle
+      - Lake
+      - Lighthouse
+      - Lightning
+      - Loading
+      - Meteor
+      - Meteor Smooth
+      - Multi Comet
+      - Noise 1
+      - Noise 2
+      - Noise 3
+      - Noise 4
+      - Noise Pal
+      - Oscillate
+      - Pacifica
+      - Palette
+      - Percent
+      - Phased
+      - Phased Noise
+      - Plasma
+      - Police
+      - Popcorn
+      - Pride 2015
+      - Railway
+      - Rain
+      - Rainbow
+      - Rainbow Runner
+      - Random Colors
+      - Ripple
+      - Ripple Rainbow
+      - Running
+      - Running Dual
+      - Saw
+      - Scan
+      - Scan Dual
+      - Scanner
+      - Scanner Dual
+      - Sine
+      - Sinelon
+      - Sinelon Dual
+      - Sinelon Rainbow
+      - Solid
+      - Solid Glitter
+      - Solid Pattern
+      - Solid Pattern Tri
+      - Sparkle
+      - Sparkle Dark
+      - Sparkle+
+      - Spots
+      - Spots Fade
+      - Stream
+      - Stream 2
+      - Strobe
+      - Strobe Mega
+      - Strobe Rainbow
+      - Sunrise
+      - Sweep
+      - Sweep Random
+      - TV Simulator
+      - Tetrix
+      - Theater
+      - Theater Rainbow
+      - Traffic Light
+      - Tri Fade
+      - Tri Wipe
+      - Twinkle
+      - Twinklecat
+      - Twinklefox
+      - Twinkleup
+      - Two Dots
+      - Washing Machine
+      - Wipe
+      - Wipe Random
+      supported_color_modes:
+      - rgb
+      icon: mdi:led-strip-variant
+      supported_features: 36
+      state: unavailable
+    select.night_tree_playlist:
+      restored: true
+      options: []
+      icon: mdi:play-speed
+      friendly_name: Playlist
+      supported_features: 0
+      state: unavailable
+    select.night_tree_preset:
+      restored: true
+      options:
+      - Christmas
+      icon: mdi:playlist-play
+      friendly_name: Preset
+      supported_features: 0
+      state: unavailable
+    light.christmas:
+      effect_list:
+      - Akemi
+      - Android
+      - Aurora
+      - Black Hole
+      - Blends
+      - Blink
+      - Blink Rainbow
+      - Blobs
+      - Blurz
+      - Bouncing Balls
+      - Bpm
+      - Breathe
+      - Candle
+      - Candle Multi
+      - Chase
+      - Chase 2
+      - Chase 3
+      - Chase Flash
+      - Chase Flash Rnd
+      - Chase Rainbow
+      - Chase Random
+      - Chunchun
+      - Colored Bursts
+      - Colorful
+      - Colorloop
+      - Colortwinkles
+      - Colorwaves
+      - Crazy Bees
+      - DJ Light
+      - DNA
+      - DNA Spiral
+      - Dancing Shadows
+      - Dissolve
+      - Dissolve Rnd
+      - Distortion Waves
+      - Drift
+      - Drift Rose
+      - Drip
+      - Dynamic
+      - Dynamic Smooth
+      - Fade
+      - Fairy
+      - Fairytwinkle
+      - Fill Noise
+      - Fire 2012
+      - Fire Flicker
+      - Firenoise
+      - Fireworks
+      - Fireworks 1D
+      - Fireworks Starburst
+      - Flow
+      - Flow Stripe
+      - Freqmap
+      - Freqmatrix
+      - Freqpixels
+      - Freqwave
+      - Frizzles
+      - Funky Plank
+      - GEQ
+      - Game Of Life
+      - Ghost Rider
+      - Glitter
+      - Gradient
+      - Gravcenter
+      - Gravcentric
+      - Gravfreq
+      - Gravimeter
+      - Halloween Eyes
+      - Heartbeat
+      - Hiphotic
+      - ICU
+      - Juggle
+      - Juggles
+      - Julia
+      - Lake
+      - Lighthouse
+      - Lightning
+      - Lissajous
+      - Loading
+      - Matripix
+      - Matrix
+      - Metaballs
+      - Meteor
+      - Meteor Smooth
+      - Midnoise
+      - Multi Comet
+      - Noise 1
+      - Noise 2
+      - Noise 3
+      - Noise 4
+      - Noise Pal
+      - Noise2D
+      - Noisefire
+      - Noisemeter
+      - Noisemove
+      - Octopus
+      - Oscillate
+      - Pacifica
+      - Palette
+      - Percent
+      - Perlin Move
+      - Phased
+      - Phased Noise
+      - Pixels
+      - Pixelwave
+      - Plasma
+      - Plasma Ball
+      - Plasmoid
+      - Polar Lights
+      - Popcorn
+      - Pride 2015
+      - Puddlepeak
+      - Puddles
+      - Pulser
+      - RSVD
+      - RSVD
+      - RSVD
+      - RSVD
+      - RSVD
+      - RSVD
+      - RSVD
+      - RSVD
+      - Railway
+      - Rain
+      - Rainbow
+      - Rainbow Runner
+      - Random Colors
+      - Ripple
+      - Ripple Peak
+      - Ripple Rainbow
+      - Rocktaves
+      - Rolling Balls
+      - Running
+      - Running Dual
+      - Saw
+      - Scan
+      - Scan Dual
+      - Scanner
+      - Scanner Dual
+      - Scrolling Text
+      - Sindots
+      - Sine
+      - Sinelon
+      - Sinelon Dual
+      - Sinelon Rainbow
+      - Soap
+      - Solid
+      - Solid Glitter
+      - Solid Pattern
+      - Solid Pattern Tri
+      - Spaceships
+      - Sparkle
+      - Sparkle Dark
+      - Sparkle+
+      - Spots
+      - Spots Fade
+      - Squared Swirl
+      - Stream
+      - Stream 2
+      - Strobe
+      - Strobe Mega
+      - Strobe Rainbow
+      - Sun Radiation
+      - Sunrise
+      - Sweep
+      - Sweep Random
+      - Swirl
+      - TV Simulator
+      - Tartan
+      - Tetrix
+      - Theater
+      - Theater Rainbow
+      - Traffic Light
+      - Tri Fade
+      - Tri Wipe
+      - Twinkle
+      - Twinklecat
+      - Twinklefox
+      - Twinkleup
+      - Two Dots
+      - Washing Machine
+      - Waterfall
+      - Waverly
+      - Wavesins
+      - Waving Cell
       - Wipe
       - Wipe Random
       supported_color_modes:
@@ -1275,11 +1412,12 @@
       state: unavailable
     select.christmas_preset:
       options:
+      - Benedict off
       - 'Off'
       - 'On'
       icon: mdi:playlist-play
       friendly_name: Christmas Preset
-      state: 'Off'
+      state: unknown
     light.christmas_5:
       effect_list:
       - Android
@@ -1402,6 +1540,13 @@
       - Wipe Random
       supported_color_modes:
       - rgbw
+      color_mode:
+      brightness:
+      hs_color:
+      rgb_color:
+      xy_color:
+      rgbw_color:
+      effect:
       icon: mdi:led-strip-variant
       friendly_name: Christmas-5
       supported_features: 36
@@ -1422,19 +1567,19 @@
   name: Christmas Inside
   entities:
     switch.socket_1:
-      friendly_name: Pool Heat
+      friendly_name: Pool Control Pool Heat
       state: 'off'
     switch.socket_2:
-      friendly_name: Pool Main Pump
+      friendly_name: Pool Control Pool Main Pump
       state: 'off'
     switch.socket_3:
-      friendly_name: Pool Aux Pump
+      friendly_name: Pool Control Pool Aux Pump
       state: 'off'
     switch.socket_4:
-      friendly_name: Pool Spare
+      friendly_name: Pool Control Pool Spare
       state: 'off'
     switch.usb:
-      friendly_name: Pool USB
+      friendly_name: Pool Control Pool USB
       state: 'off'
     switch.plug1:
       restored: true
@@ -1443,6 +1588,7 @@
       supported_features: 0
       state: unavailable
     light.night_tree:
+      restored: true
       effect_list:
       - Android
       - Aurora
@@ -1564,35 +1710,26 @@
       - Wipe Random
       supported_color_modes:
       - rgb
-      color_mode: rgb
-      brightness: 255
-      hs_color:
-      - 118.118
-      - 100
-      rgb_color:
-      - 8
-      - 255
-      - 0
-      xy_color:
-      - 0.174
-      - 0.746
-      effect: Fade
       icon: mdi:led-strip-variant
-      friendly_name: Night Tree
       supported_features: 36
-      state: 'on'
+      state: unavailable
     select.night_tree_playlist:
+      restored: true
       options: []
       icon: mdi:play-speed
-      friendly_name: Night Tree Playlist
+      friendly_name: Playlist
+      supported_features: 0
       state: unavailable
     select.night_tree_preset:
+      restored: true
       options:
       - Christmas
       icon: mdi:playlist-play
-      friendly_name: Night Tree Preset
-      state: Christmas
+      friendly_name: Preset
+      supported_features: 0
+      state: unavailable
     select.night_tree_color_palette:
+      restored: true
       options:
       - '* Color 1'
       - '* Color Gradient'
@@ -1666,58 +1803,64 @@
       - Yellowout
       - Yelmag
       icon: mdi:palette-outline
-      friendly_name: Night Tree Color palette
-      state: Default
+      friendly_name: Color palette
+      supported_features: 0
+      state: unavailable
     switch.night_tree_nightlight:
-      duration: 60
-      fade: true
-      target_brightness: 0
+      restored: true
       icon: mdi:weather-night
-      friendly_name: Night Tree Nightlight
-      state: 'off'
+      friendly_name: Nightlight
+      supported_features: 0
+      state: unavailable
     switch.night_tree_sync_send:
-      udp_port: 21324
+      restored: true
       icon: mdi:upload-network-outline
-      friendly_name: Night Tree Sync send
-      state: 'off'
+      friendly_name: Sync send
+      supported_features: 0
+      state: unavailable
     switch.night_tree_sync_receive:
-      udp_port: 21324
+      restored: true
       icon: mdi:download-network-outline
-      friendly_name: Night Tree Sync receive
-      state: 'on'
+      friendly_name: Sync receive
+      supported_features: 0
+      state: unavailable
     number.night_tree_speed:
+      restored: true
       min: 0
       max: 255
       step: 1
       mode: auto
       icon: mdi:speedometer
-      friendly_name: Night Tree Speed
-      state: '18'
+      friendly_name: Speed
+      supported_features: 0
+      state: unavailable
     number.night_tree_intensity:
+      restored: true
       min: 0
       max: 255
       step: 1
       mode: auto
-      friendly_name: Night Tree Intensity
-      state: '7'
+      friendly_name: Intensity
+      supported_features: 0
+      state: unavailable
     switch.tasmota_2:
       friendly_name: Tasmota
-      state: 'off'
+      state: unavailable
     switch.tasmota2_2:
-      friendly_name: Tasmota2
-      state: 'off'
+      friendly_name: Tasmota Tasmota2
+      state: unavailable
     switch.tasmota3_2:
-      friendly_name: Tasmota3
-      state: 'off'
+      friendly_name: Tasmota Tasmota3
+      state: unavailable
     switch.tasmota4_2:
-      friendly_name: Tasmota4
-      state: 'on'
+      friendly_name: Tasmota Tasmota4
+      state: unavailable
     switch.tasmota5:
-      friendly_name: Tasmota5
-      state: 'off'
+      friendly_name: Tasmota Tasmota5
+      state: unavailable
     switch.tasmota_3:
       friendly_name: Plug 1
-      state: 'on'
+      state: unavailable
     switch.tasmota_4:
       friendly_name: Plug 2
       state: 'on'
@@ -1765,6 +1908,7 @@
       - Dancing Shadows
       - Dissolve
       - Dissolve Rnd
+      - Distortion Waves
       - Drift
       - Drift Rose
       - Drip
@@ -1825,6 +1969,7 @@
       - Noisefire
       - Noisemeter
       - Noisemove
+      - Octopus
       - Oscillate
       - Pacifica
       - Palette
@@ -1851,11 +1996,6 @@
       - RSVD
       - RSVD
       - RSVD
-      - RSVD
-      - RSVD
-      - RSVD
-      - RSVD
-      - RSVD
       - Railway
       - Rain
       - Rainbow
@@ -1865,6 +2005,7 @@
       - Ripple Peak
       - Ripple Rainbow
       - Rocktaves
+      - Rolling Balls
       - Running
       - Running Dual
       - Saw
@@ -1878,6 +2019,7 @@
       - Sinelon
       - Sinelon Dual
       - Sinelon Rainbow
+      - Soap
       - Solid
       - Solid Glitter
       - Solid Pattern
@@ -1916,6 +2058,7 @@
       - Waterfall
       - Waverly
       - Wavesins
+      - Waving Cell
       - Wipe
       - Wipe Random
       supported_color_modes:
@@ -1944,24 +2087,28 @@
       state: unavailable
     select.christmas_preset:
       options:
+      - Benedict off
       - 'Off'
       - 'On'
       icon: mdi:playlist-play
       friendly_name: Christmas Preset
-      state: 'On'
+      state: unknown
     light.front_door:
       effect_list:
+      - Akemi
       - Android
       - Aurora
+      - Black Hole
       - Blends
       - Blink
       - Blink Rainbow
+      - Blobs
+      - Blurz
       - Bouncing Balls
       - Bpm
       - Breathe
       - Candle
       - Candle Multi
-      - Candy Cane
       - Chase
       - Chase 2
       - Chase 3
@@ -1970,13 +2117,21 @@
       - Chase Rainbow
       - Chase Random
       - Chunchun
+      - Colored Bursts
       - Colorful
       - Colorloop
       - Colortwinkles
       - Colorwaves
+      - Crazy Bees
+      - DJ Light
+      - DNA
+      - DNA Spiral
       - Dancing Shadows
       - Dissolve
       - Dissolve Rnd
+      - Distortion Waves
+      - Drift
+      - Drift Rose
       - Drip
       - Dynamic
       - Dynamic Smooth
@@ -1986,46 +2141,92 @@
       - Fill Noise
       - Fire 2012
       - Fire Flicker
+      - Firenoise
       - Fireworks
       - Fireworks 1D
       - Fireworks Starburst
       - Flow
+      - Flow Stripe
+      - Freqmap
+      - Freqmatrix
+      - Freqpixels
+      - Freqwave
+      - Frizzles
+      - Funky Plank
+      - GEQ
+      - Game Of Life
+      - Ghost Rider
       - Glitter
       - Gradient
-      - Halloween
+      - Gravcenter
+      - Gravcentric
+      - Gravfreq
+      - Gravimeter
       - Halloween Eyes
       - Heartbeat
+      - Hiphotic
       - ICU
       - Juggle
+      - Juggles
+      - Julia
       - Lake
       - Lighthouse
       - Lightning
+      - Lissajous
       - Loading
+      - Matripix
+      - Matrix
+      - Metaballs
       - Meteor
       - Meteor Smooth
+      - Midnoise
       - Multi Comet
       - Noise 1
       - Noise 2
       - Noise 3
       - Noise 4
       - Noise Pal
+      - Noise2D
+      - Noisefire
+      - Noisemeter
+      - Noisemove
+      - Octopus
       - Oscillate
       - Pacifica
       - Palette
       - Percent
+      - Perlin Move
       - Phased
       - Phased Noise
+      - Pixels
+      - Pixelwave
       - Plasma
-      - Police
+      - Plasma Ball
+      - Plasmoid
+      - Polar Lights
       - Popcorn
       - Pride 2015
+      - Puddlepeak
+      - Puddles
+      - Pulser
+      - RSVD
+      - RSVD
+      - RSVD
+      - RSVD
+      - RSVD
+      - RSVD
+      - RSVD
+      - RSVD
       - Railway
       - Rain
       - Rainbow
       - Rainbow Runner
       - Random Colors
       - Ripple
+      - Ripple Peak
       - Ripple Rainbow
+      - Rocktaves
+      - Rolling Balls
       - Running
       - Running Dual
       - Saw
@@ -2033,28 +2234,36 @@
       - Scan Dual
       - Scanner
       - Scanner Dual
+      - Scrolling Text
+      - Sindots
       - Sine
       - Sinelon
       - Sinelon Dual
       - Sinelon Rainbow
+      - Soap
       - Solid
       - Solid Glitter
       - Solid Pattern
       - Solid Pattern Tri
+      - Spaceships
       - Sparkle
       - Sparkle Dark
       - Sparkle+
       - Spots
       - Spots Fade
+      - Squared Swirl
       - Stream
       - Stream 2
       - Strobe
       - Strobe Mega
       - Strobe Rainbow
+      - Sun Radiation
       - Sunrise
       - Sweep
       - Sweep Random
+      - Swirl
       - TV Simulator
+      - Tartan
       - Tetrix
       - Theater
       - Theater Rainbow
@@ -2067,23 +2276,27 @@
       - Twinkleup
       - Two Dots
       - Washing Machine
+      - Waterfall
+      - Waverly
+      - Wavesins
+      - Waving Cell
       - Wipe
       - Wipe Random
       supported_color_modes:
       - rgb
       color_mode: rgb
-      brightness: 255
+      brightness: 1
       hs_color:
       - 0
       - 0
       rgb_color:
-      - 89
-      - 89
-      - 89
+      - 0
+      - 0
+      - 0
       xy_color:
-      - 0.323
-      - 0.329
-      effect: Solid Glitter
+      - 0
+      - 0
+      effect: Solid
       icon: mdi:led-strip-variant
       friendly_name: Front Door
       supported_features: 36
@@ -2095,16 +2308,11 @@
       state: unavailable
     select.front_door_preset:
       options:
-      - 'Candles '
-      - Eyes
-      - Fireworks
-      - Green
-      - 'Lighting '
       - 'Off'
-      - 'Sparkle '
+      - Twinkle
       icon: mdi:playlist-play
       friendly_name: Front Door Preset
-      state: 'Sparkle '
+      state: 'Off'
     light.christmas_5:
       effect_list:
       - Android
@@ -2236,14 +2444,14 @@
       - 203
       - 219
       - 255
+      xy_color:
+      - 0.279
+      - 0.288
       rgbw_color:
       - 203
       - 219
       - 255
       - 0
-      xy_color:
-      - 0.279
-      - 0.288
       effect: Solid
       icon: mdi:led-strip-variant
       friendly_name: Christmas-5
