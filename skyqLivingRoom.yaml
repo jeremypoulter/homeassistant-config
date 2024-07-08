@@ -1,0 +1,788 @@
+    skyq_pauselivingroom:
+      value_template: '{{"off"}}'
+      friendly_name: 'pause in the Living Room'
+      turn_on:
+        - service: media_player.media_pause
+          data:
+            entity_id: media_player.sky_q_living_room
+        - delay:
+            seconds: 10
+      turn_off:
+        stop:
+    skyq_playlivingroom:
+      value_template: '{{"off"}}'
+      friendly_name: 'play in the Living Room'
+      turn_on:
+        - service: media_player.media_play
+          data:
+            entity_id: media_player.sky_q_living_room
+        - delay:
+            seconds: 10
+      turn_off:
+        stop:
+    skyq_fflivingroom:
+      value_template: '{{"off"}}'
+      friendly_name: 'fastforward in the Living Room'
+      turn_on:
+        - service: media_player.media_next_track
+          data:
+            entity_id: media_player.sky_q_living_room
+        - delay:
+            seconds: 10
+      turn_off:
+        stop:
+    skyq_rwlivingroom:
+      value_template: '{{"off"}}'
+      friendly_name: 'rewind in the Living Room'
+      turn_on:
+        - service: media_player.media_previous_track
+          data:
+            entity_id: media_player.sky_q_living_room
+        - delay:
+            seconds: 10
+      turn_off:
+        stop:
+    skyq_bbctwohdlivingroom:
+      value_template: '{{"off"}}'
+      friendly_name: 'BBC Two HD in the Living Room'
+      turn_on:
+        - service: media_player.select_source
+          data:
+            entity_id: media_player.sky_q_living_room
+            source: 'BBC Two HD'
+        - delay:
+            seconds: 10
+      turn_off:
+        stop:
+    skyq_itv1hdlivingroom:
+      value_template: '{{"off"}}'
+      friendly_name: 'ITV1 HD in the Living Room'
+      turn_on:
+        - service: media_player.select_source
+          data:
+            entity_id: media_player.sky_q_living_room
+            source: 'ITV1 HD'
+        - delay:
+            seconds: 10
+      turn_off:
+        stop:
+    skyq_channel5hdlivingroom:
+      value_template: '{{"off"}}'
+      friendly_name: 'Channel 5 HD in the Living Room'
+      turn_on:
+        - service: media_player.select_source
+          data:
+            entity_id: media_player.sky_q_living_room
+            source: 'Channel 5 HD'
+        - delay:
+            seconds: 10
+      turn_off:
+        stop:
+    skyq_channel4hdlivingroom:
+      value_template: '{{"off"}}'
+      friendly_name: 'Channel 4 HD in the Living Room'
+      turn_on:
+        - service: media_player.select_source
+          data:
+            entity_id: media_player.sky_q_living_room
+            source: 'Channel 4 HD'
+        - delay:
+            seconds: 10
+      turn_off:
+        stop:
+    skyq_skywitnesshdlivingroom:
+      value_template: '{{"off"}}'
+      friendly_name: 'Sky Witness HD in the Living Room'
+      turn_on:
+        - service: media_player.select_source
+          data:
+            entity_id: media_player.sky_q_living_room
+            source: 'Sky Witness HD'
+        - delay:
+            seconds: 10
+      turn_off:
+        stop:
+    skyq_skyshowcasehdlivingroom:
+      value_template: '{{"off"}}'
+      friendly_name: 'SkyShowcaseHD in the Living Room'
+      turn_on:
+        - service: media_player.select_source
+          data:
+            entity_id: media_player.sky_q_living_room
+            source: 'SkyShowcaseHD'
+        - delay:
+            seconds: 10
+      turn_off:
+        stop:
+    skyq_skyatlantichdlivingroom:
+      value_template: '{{"off"}}'
+      friendly_name: 'Sky Atlantic HD in the Living Room'
+      turn_on:
+        - service: media_player.select_source
+          data:
+            entity_id: media_player.sky_q_living_room
+            source: 'Sky Atlantic HD'
+        - delay:
+            seconds: 10
+      turn_off:
+        stop:
+    skyq_goldhdlivingroom:
+      value_template: '{{"off"}}'
+      friendly_name: 'GOLD HD in the Living Room'
+      turn_on:
+        - service: media_player.select_source
+          data:
+            entity_id: media_player.sky_q_living_room
+            source: 'GOLD HD'
+        - delay:
+            seconds: 10
+      turn_off:
+        stop:
+    skyq_davehdlivingroom:
+      value_template: '{{"off"}}'
+      friendly_name: 'Dave HD in the Living Room'
+      turn_on:
+        - service: media_player.select_source
+          data:
+            entity_id: media_player.sky_q_living_room
+            source: 'Dave HD'
+        - delay:
+            seconds: 10
+      turn_off:
+        stop:
+    skyq_alibihdlivingroom:
+      value_template: '{{"off"}}'
+      friendly_name: 'alibi HD in the Living Room'
+      turn_on:
+        - service: media_player.select_source
+          data:
+            entity_id: media_player.sky_q_living_room
+            source: 'alibi HD'
+        - delay:
+            seconds: 10
+      turn_off:
+        stop:
+    skyq_comedycenthdlivingroom:
+      value_template: '{{"off"}}'
+      friendly_name: 'ComedyCentHD in the Living Room'
+      turn_on:
+        - service: media_player.select_source
+          data:
+            entity_id: media_player.sky_q_living_room
+            source: 'ComedyCentHD'
+        - delay:
+            seconds: 10
+      turn_off:
+        stop:
+    skyq_skymaxhdlivingroom:
+      value_template: '{{"off"}}'
+      friendly_name: 'Sky Max HD in the Living Room'
+      turn_on:
+        - service: media_player.select_source
+          data:
+            entity_id: media_player.sky_q_living_room
+            source: 'Sky Max HD'
+        - delay:
+            seconds: 10
+      turn_off:
+        stop:
+    skyq_skycomedyhdlivingroom:
+      value_template: '{{"off"}}'
+      friendly_name: 'Sky Comedy HD in the Living Room'
+      turn_on:
+        - service: media_player.select_source
+          data:
+            entity_id: media_player.sky_q_living_room
+            source: 'Sky Comedy HD'
+        - delay:
+            seconds: 10
+      turn_off:
+        stop:
+    skyq_bbcfourhdlivingroom:
+      value_template: '{{"off"}}'
+      friendly_name: 'BBC Four HD in the Living Room'
+      turn_on:
+        - service: media_player.select_source
+          data:
+            entity_id: media_player.sky_q_living_room
+            source: 'BBC Four HD'
+        - delay:
+            seconds: 10
+      turn_off:
+        stop:
+    skyq_bbcthreehdlivingroom:
+      value_template: '{{"off"}}'
+      friendly_name: 'BBC Three HD in the Living Room'
+      turn_on:
+        - service: media_player.select_source
+          data:
+            entity_id: media_player.sky_q_living_room
+            source: 'BBC Three HD'
+        - delay:
+            seconds: 10
+      turn_off:
+        stop:
+    skyq_itv2hdlivingroom:
+      value_template: '{{"off"}}'
+      friendly_name: 'ITV2 HD in the Living Room'
+      turn_on:
+        - service: media_player.select_source
+          data:
+            entity_id: media_player.sky_q_living_room
+            source: 'ITV2 HD'
+        - delay:
+            seconds: 10
+      turn_off:
+        stop:
+    skyq_itv3hdlivingroom:
+      value_template: '{{"off"}}'
+      friendly_name: 'ITV3 HD in the Living Room'
+      turn_on:
+        - service: media_player.select_source
+          data:
+            entity_id: media_player.sky_q_living_room
+            source: 'ITV3 HD'
+        - delay:
+            seconds: 10
+      turn_off:
+        stop:
+    skyq_itv4hdlivingroom:
+      value_template: '{{"off"}}'
+      friendly_name: 'ITV4 HD in the Living Room'
+      turn_on:
+        - service: media_player.select_source
+          data:
+            entity_id: media_player.sky_q_living_room
+            source: 'ITV4 HD'
+        - delay:
+            seconds: 10
+      turn_off:
+        stop:
+    skyq_skydocmntrshdlivingroom:
+      value_template: '{{"off"}}'
+      friendly_name: 'SkyDocmntrsHD in the Living Room'
+      turn_on:
+        - service: media_player.select_source
+          data:
+            entity_id: media_player.sky_q_living_room
+            source: 'SkyDocmntrsHD'
+        - delay:
+            seconds: 10
+      turn_off:
+        stop:
+    skyq_skycrimehdlivingroom:
+      value_template: '{{"off"}}'
+      friendly_name: 'Sky Crime HD in the Living Room'
+      turn_on:
+        - service: media_player.select_source
+          data:
+            entity_id: media_player.sky_q_living_room
+            source: 'Sky Crime HD'
+        - delay:
+            seconds: 10
+      turn_off:
+        stop:
+    skyq_skyhistoryhdlivingroom:
+      value_template: '{{"off"}}'
+      friendly_name: 'Sky HistoryHD in the Living Room'
+      turn_on:
+        - service: media_player.select_source
+          data:
+            entity_id: media_player.sky_q_living_room
+            source: 'Sky HistoryHD'
+        - delay:
+            seconds: 10
+      turn_off:
+        stop:
+    skyq_skynaturehdlivingroom:
+      value_template: '{{"off"}}'
+      friendly_name: 'Sky Nature HD in the Living Room'
+      turn_on:
+        - service: media_player.select_source
+          data:
+            entity_id: media_player.sky_q_living_room
+            source: 'Sky Nature HD'
+        - delay:
+            seconds: 10
+      turn_off:
+        stop:
+    skyq_discoveryhdlivingroom:
+      value_template: '{{"off"}}'
+      friendly_name: 'Discovery HD in the Living Room'
+      turn_on:
+        - service: media_player.select_source
+          data:
+            entity_id: media_player.sky_q_living_room
+            source: 'Discovery HD'
+        - delay:
+            seconds: 10
+      turn_off:
+        stop:
+    skyq_mtvhdlivingroom:
+      value_template: '{{"off"}}'
+      friendly_name: 'MTV HD in the Living Room'
+      turn_on:
+        - service: media_player.select_source
+          data:
+            entity_id: media_player.sky_q_living_room
+            source: 'MTV HD'
+        - delay:
+            seconds: 10
+      turn_off:
+        stop:
+    skyq_comedyxtralivingroom:
+      value_template: '{{"off"}}'
+      friendly_name: 'ComedyXtra in the Living Room'
+      turn_on:
+        - service: media_player.select_source
+          data:
+            entity_id: media_player.sky_q_living_room
+            source: 'ComedyXtra'
+        - delay:
+            seconds: 10
+      turn_off:
+        stop:
+    skyq_5starlivingroom:
+      value_template: '{{"off"}}'
+      friendly_name: '5STAR in the Living Room'
+      turn_on:
+        - service: media_player.select_source
+          data:
+            entity_id: media_player.sky_q_living_room
+            source: '5STAR'
+        - delay:
+            seconds: 10
+      turn_off:
+        stop:
+    skyq_natgeohdlivingroom:
+      value_template: '{{"off"}}'
+      friendly_name: 'Nat Geo HD in the Living Room'
+      turn_on:
+        - service: media_player.select_source
+          data:
+            entity_id: media_player.sky_q_living_room
+            source: 'Nat Geo HD'
+        - delay:
+            seconds: 10
+      turn_off:
+        stop:
+    skyq_skyartshdlivingroom:
+      value_template: '{{"off"}}'
+      friendly_name: 'Sky Arts HD in the Living Room'
+      turn_on:
+        - service: media_player.select_source
+          data:
+            entity_id: media_player.sky_q_living_room
+            source: 'Sky Arts HD'
+        - delay:
+            seconds: 10
+      turn_off:
+        stop:
+    skyq_itvbelivingroom:
+      value_template: '{{"off"}}'
+      friendly_name: 'ITVBe in the Living Room'
+      turn_on:
+        - service: media_player.select_source
+          data:
+            entity_id: media_player.sky_q_living_room
+            source: 'ITVBe'
+        - delay:
+            seconds: 10
+      turn_off:
+        stop:
+    skyq_whdlivingroom:
+      value_template: '{{"off"}}'
+      friendly_name: 'W HD in the Living Room'
+      turn_on:
+        - service: media_player.select_source
+          data:
+            entity_id: media_player.sky_q_living_room
+            source: 'W HD'
+        - delay:
+            seconds: 10
+      turn_off:
+        stop:
+    skyq_tlchdlivingroom:
+      value_template: '{{"off"}}'
+      friendly_name: 'TLC HD in the Living Room'
+      turn_on:
+        - service: media_player.select_source
+          data:
+            entity_id: media_player.sky_q_living_room
+            source: 'TLC HD'
+        - delay:
+            seconds: 10
+      turn_off:
+        stop:
+    skyq_s4chdlivingroom:
+      value_template: '{{"off"}}'
+      friendly_name: 'S4C HD in the Living Room'
+      turn_on:
+        - service: media_player.select_source
+          data:
+            entity_id: media_player.sky_q_living_room
+            source: 'S4C HD'
+        - delay:
+            seconds: 10
+      turn_off:
+        stop:
+    skyq_e4hdlivingroom:
+      value_template: '{{"off"}}'
+      friendly_name: 'E4 HD in the Living Room'
+      turn_on:
+        - service: media_player.select_source
+          data:
+            entity_id: media_player.sky_q_living_room
+            source: 'E4 HD'
+        - delay:
+            seconds: 10
+      turn_off:
+        stop:
+    skyq_more4hdlivingroom:
+      value_template: '{{"off"}}'
+      friendly_name: 'More4 HD in the Living Room'
+      turn_on:
+        - service: media_player.select_source
+          data:
+            entity_id: media_player.sky_q_living_room
+            source: 'More4 HD'
+        - delay:
+            seconds: 10
+      turn_off:
+        stop:
+    skyq_4sevenlivingroom:
+      value_template: '{{"off"}}'
+      friendly_name: '4seven in the Living Room'
+      turn_on:
+        - service: media_player.select_source
+          data:
+            entity_id: media_player.sky_q_living_room
+            source: '4seven'
+        - delay:
+            seconds: 10
+      turn_off:
+        stop:
+    skyq_e4extralivingroom:
+      value_template: '{{"off"}}'
+      friendly_name: 'E4 Extra in the Living Room'
+      turn_on:
+        - service: media_player.select_source
+          data:
+            entity_id: media_player.sky_q_living_room
+            source: 'E4 Extra'
+        - delay:
+            seconds: 10
+      turn_off:
+        stop:
+    skyq_skysci_fihdlivingroom:
+      value_template: '{{"off"}}'
+      friendly_name: 'Sky Sci-Fi HD in the Living Room'
+      turn_on:
+        - service: media_player.select_source
+          data:
+            entity_id: media_player.sky_q_living_room
+            source: 'Sky Sci-Fi HD'
+        - delay:
+            seconds: 10
+      turn_off:
+        stop:
+    skyq_5usalivingroom:
+      value_template: '{{"off"}}'
+      friendly_name: '5 USA in the Living Room'
+      turn_on:
+        - service: media_player.select_source
+          data:
+            entity_id: media_player.sky_q_living_room
+            source: '5 USA'
+        - delay:
+            seconds: 10
+      turn_off:
+        stop:
+    skyq_foodnetworklivingroom:
+      value_template: '{{"off"}}'
+      friendly_name: 'Food Network in the Living Room'
+      turn_on:
+        - service: media_player.select_source
+          data:
+            entity_id: media_player.sky_q_living_room
+            source: 'Food Network'
+        - delay:
+            seconds: 10
+      turn_off:
+        stop:
+    skyq_5actionlivingroom:
+      value_template: '{{"off"}}'
+      friendly_name: '5ACTION in the Living Room'
+      turn_on:
+        - service: media_player.select_source
+          data:
+            entity_id: media_player.sky_q_living_room
+            source: '5ACTION'
+        - delay:
+            seconds: 10
+      turn_off:
+        stop:
+    skyq_skyreplaylivingroom:
+      value_template: '{{"off"}}'
+      friendly_name: 'Sky Replay in the Living Room'
+      turn_on:
+        - service: media_player.select_source
+          data:
+            entity_id: media_player.sky_q_living_room
+            source: 'Sky Replay'
+        - delay:
+            seconds: 10
+      turn_off:
+        stop:
+    skyq_5selectlivingroom:
+      value_template: '{{"off"}}'
+      friendly_name: '5SELECT in the Living Room'
+      turn_on:
+        - service: media_player.select_source
+          data:
+            entity_id: media_player.sky_q_living_room
+            source: '5SELECT'
+        - delay:
+            seconds: 10
+      turn_off:
+        stop:
+    skyq_ehdlivingroom:
+      value_template: '{{"off"}}'
+      friendly_name: 'E! HD in the Living Room'
+      turn_on:
+        - service: media_player.select_source
+          data:
+            entity_id: media_player.sky_q_living_room
+            source: 'E! HD'
+        - delay:
+            seconds: 10
+      turn_off:
+        stop:
+    skyq_skyhistory2hdlivingroom:
+      value_template: '{{"off"}}'
+      friendly_name: 'SkyHistory2HD in the Living Room'
+      turn_on:
+        - service: media_player.select_source
+          data:
+            entity_id: media_player.sky_q_living_room
+            source: 'SkyHistory2HD'
+        - delay:
+            seconds: 10
+      turn_off:
+        stop:
+    skyq_natgeowildhdlivingroom:
+      value_template: '{{"off"}}'
+      friendly_name: 'NatGeoWild HD in the Living Room'
+      turn_on:
+        - service: media_player.select_source
+          data:
+            entity_id: media_player.sky_q_living_room
+            source: 'NatGeoWild HD'
+        - delay:
+            seconds: 10
+      turn_off:
+        stop:
+    skyq_dischistorylivingroom:
+      value_template: '{{"off"}}'
+      friendly_name: 'Disc.History in the Living Room'
+      turn_on:
+        - service: media_player.select_source
+          data:
+            entity_id: media_player.sky_q_living_room
+            source: 'Disc.History'
+        - delay:
+            seconds: 10
+      turn_off:
+        stop:
+    skyq_skypremierehdlivingroom:
+      value_template: '{{"off"}}'
+      friendly_name: 'SkyPremiereHD in the Living Room'
+      turn_on:
+        - service: media_player.select_source
+          data:
+            entity_id: media_player.sky_q_living_room
+            source: 'SkyPremiereHD'
+        - delay:
+            seconds: 10
+      turn_off:
+        stop:
+    skyq_skyhitshdlivingroom:
+      value_template: '{{"off"}}'
+      friendly_name: 'Sky Hits HD in the Living Room'
+      turn_on:
+        - service: media_player.select_source
+          data:
+            entity_id: media_player.sky_q_living_room
+            source: 'Sky Hits HD'
+        - delay:
+            seconds: 10
+      turn_off:
+        stop:
+    skyq_skygreatshdlivingroom:
+      value_template: '{{"off"}}'
+      friendly_name: 'Sky Greats HD in the Living Room'
+      turn_on:
+        - service: media_player.select_source
+          data:
+            entity_id: media_player.sky_q_living_room
+            source: 'Sky Greats HD'
+        - delay:
+            seconds: 10
+      turn_off:
+        stop:
+    skyq_skyfamilyhdlivingroom:
+      value_template: '{{"off"}}'
+      friendly_name: 'Sky Family HD in the Living Room'
+      turn_on:
+        - service: media_player.select_source
+          data:
+            entity_id: media_player.sky_q_living_room
+            source: 'Sky Family HD'
+        - delay:
+            seconds: 10
+      turn_off:
+        stop:
+    skyq_skyactionhdlivingroom:
+      value_template: '{{"off"}}'
+      friendly_name: 'Sky Action HD in the Living Room'
+      turn_on:
+        - service: media_player.select_source
+          data:
+            entity_id: media_player.sky_q_living_room
+            source: 'Sky Action HD'
+        - delay:
+            seconds: 10
+      turn_off:
+        stop:
+    skyq_skyanimationhdlivingroom:
+      value_template: '{{"off"}}'
+      friendly_name: 'SkyAnimationHD in the Living Room'
+      turn_on:
+        - service: media_player.select_source
+          data:
+            entity_id: media_player.sky_q_living_room
+            source: 'SkyAnimationHD'
+        - delay:
+            seconds: 10
+      turn_off:
+        stop:
+    skyq_skythrillerhdlivingroom:
+      value_template: '{{"off"}}'
+      friendly_name: 'Sky Thriller HD in the Living Room'
+      turn_on:
+        - service: media_player.select_source
+          data:
+            entity_id: media_player.sky_q_living_room
+            source: 'Sky Thriller HD'
+        - delay:
+            seconds: 10
+      turn_off:
+        stop:
+    skyq_skydramahdlivingroom:
+      value_template: '{{"off"}}'
+      friendly_name: 'Sky Drama HD in the Living Room'
+      turn_on:
+        - service: media_player.select_source
+          data:
+            entity_id: media_player.sky_q_living_room
+            source: 'Sky Drama HD'
+        - delay:
+            seconds: 10
+      turn_off:
+        stop:
+    skyq_skypremiere_1livingroom:
+      value_template: '{{"off"}}'
+      friendly_name: 'SkyPremiere+1 in the Living Room'
+      turn_on:
+        - service: media_player.select_source
+          data:
+            entity_id: media_player.sky_q_living_room
+            source: 'SkyPremiere+1'
+        - delay:
+            seconds: 10
+      turn_off:
+        stop:
+    skyq_film4hdlivingroom:
+      value_template: '{{"off"}}'
+      friendly_name: 'Film4 HD in the Living Room'
+      turn_on:
+        - service: media_player.select_source
+          data:
+            entity_id: media_player.sky_q_living_room
+            source: 'Film4 HD'
+        - delay:
+            seconds: 10
+      turn_off:
+        stop:
+    skyq_horrorxtralivingroom:
+      value_template: '{{"off"}}'
+      friendly_name: 'HorrorXtra in the Living Room'
+      turn_on:
+        - service: media_player.select_source
+          data:
+            entity_id: media_player.sky_q_living_room
+            source: 'HorrorXtra'
+        - delay:
+            seconds: 10
+      turn_off:
+        stop:
+    skyq_greatromancelivingroom:
+      value_template: '{{"off"}}'
+      friendly_name: 'GREAT! romance in the Living Room'
+      turn_on:
+        - service: media_player.select_source
+          data:
+            entity_id: media_player.sky_q_living_room
+            source: 'GREAT! romance'
+        - delay:
+            seconds: 10
+      turn_off:
+        stop:
+    skyq_greatmovieslivingroom:
+      value_template: '{{"off"}}'
+      friendly_name: 'GREAT! movies in the Living Room'
+      turn_on:
+        - service: media_player.select_source
+          data:
+            entity_id: media_player.sky_q_living_room
+            source: 'GREAT! movies'
+        - delay:
+            seconds: 10
+      turn_off:
+        stop:
+    skyq_greatactionlivingroom:
+      value_template: '{{"off"}}'
+      friendly_name: 'GREAT! action in the Living Room'
+      turn_on:
+        - service: media_player.select_source
+          data:
+            entity_id: media_player.sky_q_living_room
+            source: 'GREAT! action'
+        - delay:
+            seconds: 10
+      turn_off:
+        stop:
+    skyq_movies24livingroom:
+      value_template: '{{"off"}}'
+      friendly_name: 'Movies24 in the Living Room'
+      turn_on:
+        - service: media_player.select_source
+          data:
+            entity_id: media_player.sky_q_living_room
+            source: 'Movies24'
+        - delay:
+            seconds: 10
+      turn_off:
+        stop:
+    skyq_skyspf1hdlivingroom:
+      value_template: '{{"off"}}'
+      friendly_name: 'SkySp F1 HD in the Living Room'
+      turn_on:
+        - service: media_player.select_source
+          data:
+            entity_id: media_player.sky_q_living_room
+            source: 'SkySp F1 HD'
+        - delay:
+            seconds: 10
+      turn_off:
+        stop:

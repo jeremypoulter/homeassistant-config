@@ -11,15 +11,6 @@ tts:
 
 stream:
 
-media_player:
-  - platform: lg_netcast
-    host: 172.16.1.206
-    access_token: 827247
-    turn_on_action:
-      service: wake_on_lan.send_magic_packet
-      data:
-        mac: E8-F2-E2-AC-02-D8
-
 http:
   use_x_forwarded_for: true
   trusted_proxies:
@@ -29,6 +20,19 @@ http:
 
 recorder:
   purge_keep_days: 30
+
+climate:
+  - unique_id: pool_heater_thermostat
+    platform: generic_thermostat
+    name: Pool heater
+    heater: switch.socket_1
+    target_sensor: sensor.pool_temperature
+    cold_tolerance: 1
+    min_cycle_duration:
+      minutes: 5
+    min_temp: 18
+    max_temp: 40
+    precision: 0.5
 
 sensor: !include sensors.yaml
 group: !include groups.yaml
