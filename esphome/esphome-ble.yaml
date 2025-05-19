@@ -25,10 +25,15 @@ ota:
 
 # Enable Home Assistant bluetooth proxy
 esp32_ble_tracker:
+  max_connections: 3
   scan_parameters:
     interval: 1100ms
     window: 1100ms
     active: true
+
+text_sensor:
+  - platform: ble_scanner
+    name: "BLE Devices Scanner"
 
 bluetooth_proxy:
   active: true
