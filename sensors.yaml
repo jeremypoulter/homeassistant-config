@@ -1,4 +1,0 @@
-- platform: emoncms
-  api_key: !secret emoncms_api_key
-  url: https://emoncms.org
-  id: 1
