@@ -26,7 +26,7 @@ climate:
     platform: generic_thermostat
     name: Pool heater
     heater: switch.socket_1
-    target_sensor: sensor.pool_temperature
+    target_sensor: sensor.pool_temperature_temperature
     cold_tolerance: 1
     min_cycle_duration:
       minutes: 5

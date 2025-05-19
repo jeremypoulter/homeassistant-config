@@ -41,15 +41,19 @@
 - id: '1628113145425'
   alias: Bedroom TV on
   description: ''
-  trigger:
-  - platform: device
-    device_id: 14f6a5afc0a043491406010c89dd919d
+  triggers:
+  - device_id: 14f6a5afc0a043491406010c89dd919d
     domain: media_player
     entity_id: 8345d906622e29e4aacddf8a694e7853
-    type: playing
-  condition: []
-  action:
-  - scene: scene.bedroom_tv_on
+    type: turned_on
+    trigger: device
+  conditions: []
+  actions:
+  - action: cover.open_cover
+    metadata: {}
+    data: {}
+    target:
+      device_id: f6a1f9e41155b73a7d330021e6815e35
   mode: single
 - id: '1628113225529'
   alias: Bedroom TV off
@@ -67,17 +71,17 @@
 - id: '1638922858499'
   alias: Christmas on
   description: ''
-  trigger:
-  - platform: sun
-    event: sunset
+  triggers:
+  - event: sunset
     offset: '0'
-  - platform: state
-    entity_id: input_boolean.christmas_lights
+    trigger: sun
+  - entity_id: input_boolean.christmas_lights
     to: 'on'
-  - platform: time
-    at: 07:00
-  condition: []
-  action:
+    trigger: state
+  - at: 06:00:00
+    trigger: time
+  conditions: []
+  actions:
   - scene: scene.christmas_on
   mode: single
 - id: '1638922910713'
@@ -107,53 +111,53 @@
 - id: '1674337992210'
   alias: Turn heating off when away
   description: ''
-  trigger:
-  - platform: state
-    entity_id:
+  triggers:
+  - entity_id:
     - input_boolean.google_home_away
     from: 'off'
     to: 'on'
-  condition: []
-  action:
-  - service: climate.set_hvac_mode
-    data:
+    trigger: state
+  conditions: []
+  actions:
+  - data:
       hvac_mode: 'off'
     target:
       entity_id:
-      - climate.bathroom
-      - climate.benedict_room
-      - climate.conservatory
       - climate.hive
-      - climate.lillis_room
-      - climate.master_bedroom
-      - climate.tys_room
+      - climate.bathroom_2
+      - climate.benedict_room_2
+      - climate.conservatory_2
+      - climate.lillis_room_2
+      - climate.master_bedroom_2
+      - climate.tys_room_2
+    action: climate.set_hvac_mode
   mode: single
 - id: '1674338354468'
   alias: Turn heating on when at home
   description: ''
-  trigger:
-  - platform: state
-    entity_id:
+  triggers:
+  - entity_id:
     - input_boolean.google_home_away
     from: 'on'
     to: 'off'
-  condition: []
-  action:
-  - service: climate.set_hvac_mode
-    data:
+    trigger: state
+  conditions: []
+  actions:
+  - data:
       hvac_mode: heat
+    action: climate.set_hvac_mode
     target:
       entity_id:
-      - climate.conservatory
-      - climate.master_bedroom
-      - climate.tys_room
-      - climate.benedict_room
-      - climate.lillis_room
-  - service: climate.set_hvac_mode
-    data:
+      - climate.benedict_room_2
+      - climate.conservatory_2
+      - climate.lillis_room_2
+      - climate.master_bedroom_2
+      - climate.tys_room_2
+  - data:
       hvac_mode: auto
     target:
       entity_id: climate.hive
+    action: climate.set_hvac_mode
   mode: single
 - id: '1693946035795'
   alias: Turn on pool pump with heater
@@ -186,4 +190,129 @@
     data: {}
     target:
       entity_id: switch.socket_2
+  mode: single
+- id: '1736115690462'
+  alias: Turn on Office
+  description: ''
+  triggers:
+  - trigger: state
+    entity_id:
+    - binary_sensor.athom_presence_sensor_9cec1e_occupancy
+    from: 'off'
+    to: 'on'
+  - type: occupied
+    device_id: c50e0ef49f0a4d3b9003d5f632bd09d3
+    entity_id: f6ec5c4f7b97ac970c84d6f330933e5d
+    domain: binary_sensor
+    trigger: device
+  conditions: []
+  actions:
+  - action: light.turn_on
+    metadata: {}
+    data: {}
+    target:
+      device_id:
+      - 6d4d9808fead3c98396637c0b68c17ca
+      - 917b6fc1319e7e8953d966beb626ace6
+      entity_id: light.office_lights_office_desk_lights
+  - condition: sun
+    after: sunset
+    before: sunrise
+  - action: light.turn_on
+    metadata: {}
+    data: {}
+    target:
+      entity_id: light.office_lights_office_room_lights
+  mode: single
+- id: '1736115840306'
+  alias: Turn off Office
+  description: ''
+  triggers:
+  - type: not_occupied
+    device_id: c50e0ef49f0a4d3b9003d5f632bd09d3
+    entity_id: f6ec5c4f7b97ac970c84d6f330933e5d
+    domain: binary_sensor
+    trigger: device
+    for:
+      hours: 0
+      minutes: 5
+      seconds: 0
+  conditions: []
+  actions:
+  - action: light.turn_off
+    metadata: {}
+    data: {}
+    target:
+      area_id: conservatory
+  - action: light.turn_on
+    metadata: {}
+    data:
+      brightness_pct: 25
+    target:
+      entity_id: light.office_lights_office_light_switch_backlight
+  mode: single
+- id: '1736289204020'
+  alias: 'Turn off front lights '
+  description: ''
+  triggers:
+  - trigger: sun
+    event: sunrise
+    offset: 0
+  conditions: []
+  actions:
+  - action: light.turn_off
+    metadata: {}
+    data: {}
+    target:
+      label_id: front_lights
+  mode: single
+- id: '1736289356449'
+  alias: 'Turn on front lights '
+  description: ''
+  triggers:
+  - trigger: sun
+    event: sunset
+    offset: 0
+  - trigger: state
+    entity_id:
+    - timer.front_door_motion_timeout
+    from:
+    to: idle
+  conditions: []
+  actions:
+  - action: light.turn_on
+    metadata: {}
+    data:
+      brightness_pct: 35
+    target:
+      label_id: front_lights
+  - device_id: 7df8ebf318cfc102891cb24d4a287901
+    domain: select
+    entity_id: 58525e7dea4da38f32c74d4f1a392d60
+    type: select_option
+    option: Purple
+  mode: single
+- id: '1738101981116'
+  alias: Front Door motion detected
+  description: ''
+  triggers:
+  - device_id: 37a8b5b650a5772c9a0b82dd4b24b912
+    domain: nest
+    type: camera_person
+    trigger: device
+  conditions:
+  - condition: sun
+    before: sunrise
+    after: sunset
+  actions:
+  - action: timer.start
+    metadata: {}
+    data: {}
+    target:
+      entity_id: timer.front_door_motion_timeout
+  - device_id: 7df8ebf318cfc102891cb24d4a287901
+    domain: select
+    entity_id: 58525e7dea4da38f32c74d4f1a392d60
+    type: select_option
+    option: White door
   mode: single
