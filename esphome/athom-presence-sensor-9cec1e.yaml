@@ -1,0 +1,18 @@
+substitutions:
+  name: athom-presence-sensor-9cec1e
+  friendly_name: Athom Presence Sensor 9cec1e
+packages:
+  Athom Technology.Athom Presence Sensor: github://athom-tech/athom-configs/athom-presence-sensor.yaml
+esphome:
+  name: ${name}
+  name_add_mac_suffix: false
+  friendly_name: ${friendly_name}
+api:
+  encryption:
+    key: FPmsbdVZgzm/JrQWaxvpM3Tn8ULSKZT54Z1ivLHR06g=
+
+
+wifi:
+  ssid: !secret wifi_ssid
+  password: !secret wifi_password
+  domain: .lan
