@@ -151,9 +151,13 @@ wifi:
 
 captive_portal:
 
+web_server:
+  port: 80
+
 time:
   - platform: homeassistant
     id: ha_time
+    timezone: "Europe/London"
     on_time_sync:
       - script.execute: time_update
     on_time:
@@ -3677,7 +3681,7 @@ lvgl:
                         width: 50
                         range_from: 16
                         range_to: 31
-                        step: 1
+                        selected_digit: 1
                         rollover: false
                         digits: 3
                         decimal_places: 1
@@ -3737,7 +3741,7 @@ lvgl:
                     grid_rows: [FR(10), FR(40), FR(10), FR(40)]
                   widgets:
                     - label:
-                        text: "Light 1" ## Light 1 Name
+                        text: "Office Desk" ## Light 1 Name
                         align: CENTER
                         text_align: CENTER
                         text_color: 0xFFFFFF
@@ -3760,13 +3764,13 @@ lvgl:
                               text: "\U000F0335"
                         ## Light 1 toggle
                         ## This uses a switch toggle as it controls a smart switch 
-                        # on_press:
-                        # - homeassistant.action:
-                            # action: switch.toggle
-                            # data:
-                              # entity_id: switch.light1 ## replace with entity to toggle
+                        on_press:
+                        - homeassistant.action:
+                            action: switch.toggle
+                            data:
+                              entity_id: light.office_lights_office_desk_lights
                     - label:
-                        text: "Light 2" ## Light 2 Name
+                        text: "Office Room" ## Light 2 Name
                         align: CENTER
                         text_align: CENTER
                         text_color: 0xFFFFFF
@@ -3789,13 +3793,13 @@ lvgl:
                               text: "\U000F0335"
                         ## Light 2 toggle
                         ## This uses a switch toggle as it controls a smart switch 
-                        # on_press:
-                        # - homeassistant.action:
-                            # action: switch.toggle
-                            # data:
-                              # entity_id: switch.light2 ## replace with entity to toggle
+                        on_press:
+                        - homeassistant.action:
+                           action: switch.toggle
+                           data:
+                              entity_id: light.office_lights_office_room_lights
                     - label:
-                        text: "Light 3" ## Light 3 Name
+                        text: "Festoon" ## Light 3 Name
                         align: CENTER
                         text_align: CENTER
                         text_color: 0xFFFFFF
@@ -3818,11 +3822,11 @@ lvgl:
                               text: "\U000F0335"
                         ## Light 3 toggle
                         ## This uses a light toggle as it controls a smart globe 
-                        # on_press:
-                        # - homeassistant.action:
-                            # action: light.toggle
-                            # data:
-                              # entity_id: light.light3 ## replace with entity to toggle
+                        on_press:
+                        - homeassistant.action:
+                            action: light.toggle
+                            data:
+                              entity_id: light.festoon
                     - label:
                         text: "Light 4" ## Light 4 Name
                         align: CENTER
@@ -5578,7 +5582,7 @@ lvgl:
                                width: 50
                                range_from: 10
                                range_to: 999999
-                               step: 5
+                               selected_digit: 2
                                rollover: false
                                digits: 4
                                decimal_places: 0
@@ -5638,7 +5642,7 @@ lvgl:
                                width: 50
                                range_from: 10
                                range_to: 999999
-                               step: 5
+                               selected_digit: 2
                                rollover: false
                                digits: 4
                                decimal_places: 0
