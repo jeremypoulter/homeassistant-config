@@ -68,8 +68,8 @@ one_wire:
   
 esp32_ble_tracker:
 
-#bluetooth_proxy:
-#  active: true
+bluetooth_proxy:
+  active: true
 
 sensor:
   # WiFi Signal Sensor
