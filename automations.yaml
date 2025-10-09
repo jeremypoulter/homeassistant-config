@@ -124,12 +124,12 @@
     target:
       entity_id:
       - climate.hive
-      - climate.bathroom_2
-      - climate.benedict_room_2
-      - climate.conservatory_2
-      - climate.lillis_room_2
-      - climate.master_bedroom_2
-      - climate.tys_room_2
+      - climate.benedict_room
+      - climate.conservatory
+      - climate.lillis_room
+      - climate.master_bedroom
+      - climate.tys_room
+      - climate.bathroom
     action: climate.set_hvac_mode
   mode: single
 - id: '1674338354468'
@@ -148,11 +148,11 @@
     action: climate.set_hvac_mode
     target:
       entity_id:
-      - climate.benedict_room_2
-      - climate.conservatory_2
-      - climate.lillis_room_2
-      - climate.master_bedroom_2
-      - climate.tys_room_2
+      - climate.benedict_room
+      - climate.conservatory
+      - climate.lillis_room
+      - climate.master_bedroom
+      - climate.tys_room
   - data:
       hvac_mode: auto
     target:
@@ -235,8 +235,8 @@
     trigger: device
     for:
       hours: 0
-      minutes: 5
-      seconds: 0
+      minutes: 0
+      seconds: 30
   conditions: []
   actions:
   - action: light.turn_off
