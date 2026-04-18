@@ -131,6 +131,7 @@
       - climate.tys_room
       - climate.bathroom
     action: climate.set_hvac_mode
+    continue_on_error: true
   mode: single
 - id: '1674338354468'
   alias: Turn heating on when at home
@@ -153,6 +154,7 @@
       - climate.lillis_room
       - climate.master_bedroom
       - climate.tys_room
+    continue_on_error: true
   - data:
       hvac_mode: auto
     target:
@@ -290,7 +292,7 @@
     domain: select
     entity_id: 58525e7dea4da38f32c74d4f1a392d60
     type: select_option
-    option: Purple
+    option: Green
   mode: single
 - id: '1738101981116'
   alias: Front Door motion detected
@@ -315,4 +317,66 @@
     entity_id: 58525e7dea4da38f32c74d4f1a392d60
     type: select_option
     option: White door
+  mode: single
+- id: '1760784224132'
+  alias: Halloween Door
+  description: ''
+  triggers:
+  - trigger: state
+    entity_id:
+    - input_boolean.door_bell
+    to: 'on'
+  conditions:
+  - condition: sun
+    after: sunset
+  actions:
+  - device_id: 7df8ebf318cfc102891cb24d4a287901
+    domain: select
+    entity_id: 58525e7dea4da38f32c74d4f1a392d60
+    type: select_option
+    option: Lightning
+  - delay:
+      hours: 0
+      minutes: 1
+      seconds: 0
+      milliseconds: 0
+  - device_id: 7df8ebf318cfc102891cb24d4a287901
+    domain: select
+    entity_id: 58525e7dea4da38f32c74d4f1a392d60
+    type: select_option
+    option: Green
+  mode: single
+- id: '1765707675364'
+  alias: 'No screens '
+  description: ''
+  triggers:
+  - trigger: time_pattern
+    minutes: /1
+  conditions: []
+  actions:
+  - action: media_player.turn_off
+    metadata: {}
+    target:
+      entity_id:
+      - media_player.lg_tv_remote
+      - media_player.kitchen_tv
+      - media_player.lg_webos_smart_tv
+      - media_player.office_tv
+      - media_player.living_room_tv
+      - media_player.kitchen_display
+      - media_player.sky_q_living_room
+      - media_player.sky_q_office
+      - media_player.sharp_2k_eu_android_tv
+      - media_player.sky_q_kitchen
+      - media_player.sky_q_bedroom
+      device_id:
+      - 7948116e14021512bc52c4e3e9762202
+      - 94a17aaf5b3d4d665069680686af6bf0
+      - e062becc9a558f92cd2c22ac684387ec
+      - 17c662ce9fd9651fe5e5de753f384381
+      - 698d5b01e842da5b5b02db4cb2afcedf
+      - 7ce2e64aaca78b550d19bf83a605c7f1
+      - 72835671e4cb8266a5a285e943b2c61e
+      - 14f6a5afc0a043491406010c89dd919d
+    data: {}
   mode: single
