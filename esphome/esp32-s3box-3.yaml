@@ -49,13 +49,13 @@ substitutions:
   controls3_icon_off: "\U000F097E" #icon from icon_glyphs
   controls3_icon_on: "\U000F097E" #icon from icon_glyphs
   controls4_name: "Washing Machine"
-  controls4_entity: switch.washing_machine_bubble_soak #toggle - switch,light,media_player,climate,fan,humidifier,cover,script,siren
-  controls4_state: sensor.washing_machine_job_state #status - switch,light,fan,cover,sensor,binary_sensor
+  controls4_entity: switch.xxxx # washing_machine_bubble_soak #toggle - switch,light,media_player,climate,fan,humidifier,cover,script,siren
+  controls4_state: sensor.xxxx # washing_machine_job_state #status - switch,light,fan,cover,sensor,binary_sensor
   controls4_icon_off: "\U000F12D3" #icon from icon_glyphs
   controls4_icon_on: "\U000F12D4" #icon from icon_glyphs
   controls5_name: "Dryer"
-  controls5_entity: switch.dryer_power #toggle - switch,light,media_player,climate,fan,humidifier,cover,script,siren
-  controls5_state: sensor.dryer_operation_state #status - switch,light,fan,cover,sensor,binary_sensor
+  controls5_entity: switch.xxxx # dryer_power #toggle - switch,light,media_player,climate,fan,humidifier,cover,script,siren
+  controls5_state: sensor.xxxx # dryer_operation_state #status - switch,light,fan,cover,sensor,binary_sensor
   controls5_icon_off: "\U000F0AAC" #icon from icon_glyphs
   controls5_icon_on: "\U000F11B8" #icon from icon_glyphs
   controls6_name: "Vacuum"
