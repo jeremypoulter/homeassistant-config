@@ -19,20 +19,18 @@
 - id: '1627494316118'
   alias: Pool pump stop
   description: Turn off the pool pump when sufficient water has been filtered
-  trigger:
-  - type: value
-    platform: device
-    device_id: 5ae23a566eda0ad757b32e1baeb1e36c
-    entity_id: sensor.daily_flow
-    domain: sensor
-    above: 8000
-  condition:
+  triggers:
+  - trigger: numeric_state
+    entity_id:
+    - sensor.daily_flow
+    above: input_number.pool_size
+  conditions:
   - condition: device
     type: is_off
     device_id: c150f10fc417947965ddcf7d93f11533
     entity_id: switch.socket_1
     domain: switch
-  action:
+  actions:
   - type: turn_off
     device_id: c150f10fc417947965ddcf7d93f11533
     entity_id: switch.socket_2
@@ -378,5 +376,127 @@
       - 7ce2e64aaca78b550d19bf83a605c7f1
       - 72835671e4cb8266a5a285e943b2c61e
       - 14f6a5afc0a043491406010c89dd919d
+    data: {}
+  mode: single
+- id: '1780740766587'
+  alias: Check Weather
+  description: ''
+  triggers:
+  - trigger: time
+    at: '20:00:00'
+    weekday:
+    - mon
+    - tue
+    - wed
+    - thu
+    - fri
+    - sat
+    - sun
+  conditions: []
+  actions:
+  - action: weather.get_forecasts
+    metadata: {}
+    target:
+      entity_id: weather.home
+    data:
+      type: daily
+    response_variable: weather
+  - action: ai_task.generate_data
+    metadata: {}
+    data:
+      task_name: Look at the weather
+      instructions: 'Look at the weather for RG5 4TJ in the upcomming days and see
+        if the wearther is going to be relatively good, eg mostly warm and sunny.
+        I am going to then use this to deside if I am going to heat the pool. I only
+        want to do that is it is likely that it will be used.
+
+
+        Things to consider:
+
+
+        - if it is a weekend the pool is more likely to be used
+
+        - looking for strings of sunny/warm days 20°C or more
+
+
+        ## Weather forcast
+
+
+        {{ weather }}'
+      structure:
+        good:
+          description: true if the wearther is likely to be good for the next few
+            days, else false
+          required: true
+          selector:
+            boolean:
+        summary:
+          description: Quick summary of the weather, no more than 100 chars
+          required: true
+          selector:
+            text:
+      entity_id: ai_task.google_ai_task
+    response_variable: result
+  - action: input_text.set_value
+    metadata: {}
+    target:
+      entity_id: input_text.weather_summary
+    data:
+      value: '{{ result.data.summary }}'
+  - action: notify.mobile_app_fold7
+    metadata: {}
+    data:
+      message: '{{ "Good" if result.data.good else "Bad" }}: {{ result.data.summary
+        }}'
+      title: 'Pool Weather Update '
+  - choose:
+    - conditions:
+      - condition: template
+        value_template: '{{ result.data.good }}'
+      sequence:
+      - action: input_boolean.turn_on
+        metadata: {}
+        target:
+          entity_id: input_boolean.weather_good
+        data: {}
+    default:
+    - action: input_boolean.turn_off
+      metadata: {}
+      target:
+        entity_id: input_boolean.weather_good
+      data: {}
+  mode: single
+- id: '1781341632428'
+  alias: Turn on Pool Heater when weather is good
+  description: ''
+  triggers:
+  - trigger: state
+    entity_id:
+    - input_boolean.weather_good
+    to:
+    - 'on'
+  conditions: []
+  actions:
+  - action: climate.turn_on
+    metadata: {}
+    target:
+      entity_id: climate.pool_heater
+    data: {}
+  mode: single
+- id: '1781341775410'
+  alias: Turn off Pool Heater when weather is bad
+  description: ''
+  triggers:
+  - trigger: state
+    entity_id:
+    - input_boolean.weather_good
+    to:
+    - 'off'
+  conditions: []
+  actions:
+  - action: climate.turn_off
+    metadata: {}
+    target:
+      entity_id: climate.pool_heater
     data: {}
   mode: single
