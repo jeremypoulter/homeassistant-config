@@ -49,3 +49,6 @@ wifi:
     password: !secret hotspot_wifi_password
 
 captive_portal:
+
+web_server:
+  port: 80
