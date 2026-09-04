@@ -1,0 +1,98 @@
+laundry_announce:
+  alias: "Announce laundry on all speakers"
+  description: "Sends a TTS message to Google Home speakers, respecting time restrictions"
+  fields:
+    message:
+      description: "The message to announce"
+      required: true
+      selector:
+        text:
+  sequence:
+    # No announcements before 9am
+    - condition: template
+      value_template: "{{ now().hour >= 9 }}"
+    - choose:
+        # After 10pm: skip entirely
+        - conditions:
+            - condition: template
+              value_template: "{{ now().hour >= 22 }}"
+          sequence: []
+        # 7pm-10pm: downstairs only
+        - conditions:
+            - condition: template
+              value_template: "{{ now().hour >= 19 }}"
+          sequence:
+            - parallel:
+                - action: tts.speak
+                  continue_on_error: true
+                  target:
+                    entity_id: tts.home_assistant_cloud
+                  data:
+                    media_player_entity_id: media_player.conservatory_speaker
+                    message: "{{ message }}"
+                - action: tts.speak
+                  continue_on_error: true
+                  target:
+                    entity_id: tts.home_assistant_cloud
+                  data:
+                    media_player_entity_id: media_player.chromecastaudio6719
+                    message: "{{ message }}"
+                - action: tts.speak
+                  continue_on_error: true
+                  target:
+                    entity_id: tts.home_assistant_cloud
+                  data:
+                    media_player_entity_id: media_player.nestmini0356
+                    message: "{{ message }}"
+      default:
+        # 9am-7pm: all speakers
+        - parallel:
+            - action: tts.speak
+              continue_on_error: true
+              target:
+                entity_id: tts.home_assistant_cloud
+              data:
+                media_player_entity_id: media_player.googlehome1894
+                message: "{{ message }}"
+            - action: tts.speak
+              continue_on_error: true
+              target:
+                entity_id: tts.home_assistant_cloud
+              data:
+                media_player_entity_id: media_player.nestmini2776
+                message: "{{ message }}"
+            - action: tts.speak
+              continue_on_error: true
+              target:
+                entity_id: tts.home_assistant_cloud
+              data:
+                media_player_entity_id: media_player.conservatory_speaker
+                message: "{{ message }}"
+            - action: tts.speak
+              continue_on_error: true
+              target:
+                entity_id: tts.home_assistant_cloud
+              data:
+                media_player_entity_id: media_player.chromecastaudio6719
+                message: "{{ message }}"
+            - action: tts.speak
+              continue_on_error: true
+              target:
+                entity_id: tts.home_assistant_cloud
+              data:
+                media_player_entity_id: media_player.nestmini0356
+                message: "{{ message }}"
+            - action: tts.speak
+              continue_on_error: true
+              target:
+                entity_id: tts.home_assistant_cloud
+              data:
+                media_player_entity_id: media_player.bedroom_home
+                message: "{{ message }}"
+            - action: tts.speak
+              continue_on_error: true
+              target:
+                entity_id: tts.home_assistant_cloud
+              data:
+                media_player_entity_id: media_player.lillis_home
+                message: "{{ message }}"
