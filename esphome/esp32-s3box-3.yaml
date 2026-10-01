@@ -59,7 +59,7 @@ substitutions:
   lights3_name: "Festoons"
   lights3_entity: light.festoon #switch,light,media_player,climate,fan,humidifier,cover,script,siren
   lights4_name: "Tiki Bar"
-  lights4_entity: switch.tiki_bar #switch,light,media_player,climate,fan,humidifier,cover,script,siren
+  lights4_entity: light.tiki_bar #switch,light,media_player,climate,fan,humidifier,cover,script,siren
   lights5_name: "Light 5"
   lights5_entity: switch.light5 #switch,light,media_player,climate,fan,humidifier,cover,script,siren
   lights6_name: "Light 6"
@@ -75,8 +75,8 @@ substitutions:
   controls2_entity: switch.socket_2 #switch,light,media_player,climate,fan,humidifier,cover,script,siren
   controls2_icon_off: "\U000F097E" #icon from icon_glyphs
   controls2_icon_on: "\U000F097E" #icon from icon_glyphs
-  controls3_name: "Control 3"
-  controls3_entity: switch.switch3 #switch,light,media_player,climate,fan,humidifier,cover,script,siren
+  controls3_name: "Pool Aux"
+  controls3_entity: switch.socket_3 #switch,light,media_player,climate,fan,humidifier,cover,script,siren
   controls3_icon_off: "\U000F097E" #icon from icon_glyphs
   controls3_icon_on: "\U000F097E" #icon from icon_glyphs
   controls4_name: "Washing Machine"
