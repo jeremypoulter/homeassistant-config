@@ -1,618 +1,872 @@
-- id: "1627494208126"
+- id: '1627494208126'
   alias: Pool pump start
   description: Turn the Main pool pump on if the heater is not on
   trigger:
-    - platform: time
-      at: 0:00
+  - platform: time
+    at: 0:00
   condition:
-    - condition: device
-      type: is_off
-      device_id: c150f10fc417947965ddcf7d93f11533
-      entity_id: switch.socket_1
-      domain: switch
+  - condition: device
+    type: is_off
+    device_id: c150f10fc417947965ddcf7d93f11533
+    entity_id: switch.socket_1
+    domain: switch
   action:
-    - type: turn_on
-      device_id: c150f10fc417947965ddcf7d93f11533
-      entity_id: switch.socket_2
-      domain: switch
+  - type: turn_on
+    device_id: c150f10fc417947965ddcf7d93f11533
+    entity_id: switch.socket_2
+    domain: switch
   mode: single
-- id: "1627494316118"
+- id: '1627494316118'
   alias: Pool pump stop
   description: Turn off the pool pump when sufficient water has been filtered
   triggers:
-    - trigger: numeric_state
-      entity_id:
-        - sensor.daily_flow
-      above: input_number.pool_size
+  - trigger: numeric_state
+    entity_id:
+    - sensor.daily_flow
+    above: input_number.pool_size
   conditions:
-    - condition: device
-      type: is_off
-      device_id: c150f10fc417947965ddcf7d93f11533
-      entity_id: switch.socket_1
-      domain: switch
+  - condition: device
+    type: is_off
+    device_id: c150f10fc417947965ddcf7d93f11533
+    entity_id: switch.socket_1
+    domain: switch
   actions:
-    - type: turn_off
-      device_id: c150f10fc417947965ddcf7d93f11533
-      entity_id: switch.socket_2
-      domain: switch
+  - type: turn_off
+    device_id: c150f10fc417947965ddcf7d93f11533
+    entity_id: switch.socket_2
+    domain: switch
   mode: single
-- id: "1628113145425"
+- id: '1628113145425'
   alias: Bedroom TV on
-  description: ""
+  description: ''
   triggers:
-    - device_id: 14f6a5afc0a043491406010c89dd919d
-      domain: media_player
-      entity_id: 8345d906622e29e4aacddf8a694e7853
-      type: turned_on
-      trigger: device
+  - device_id: 14f6a5afc0a043491406010c89dd919d
+    domain: media_player
+    entity_id: 8345d906622e29e4aacddf8a694e7853
+    type: turned_on
+    trigger: device
   conditions: []
   actions:
-    - action: cover.open_cover
-      metadata: {}
-      data: {}
-      target:
-        device_id: f6a1f9e41155b73a7d330021e6815e35
+  - action: cover.open_cover
+    metadata: {}
+    data: {}
+    target:
+      device_id: f6a1f9e41155b73a7d330021e6815e35
   mode: single
-- id: "1628113225529"
+- id: '1628113225529'
   alias: Bedroom TV off
-  description: ""
+  description: ''
   trigger:
-    - platform: device
-      device_id: 14f6a5afc0a043491406010c89dd919d
-      domain: media_player
-      entity_id: media_player.sky_q_bedroom
-      type: turned_off
+  - platform: device
+    device_id: 14f6a5afc0a043491406010c89dd919d
+    domain: media_player
+    entity_id: media_player.sky_q_bedroom
+    type: turned_off
   condition: []
   action:
-    - scene: scene.bedroom_tv_off
+  - scene: scene.bedroom_tv_off
   mode: single
-- id: "1638922858499"
+- id: '1638922858499'
   alias: Christmas on
-  description: ""
+  description: ''
   triggers:
-    - event: sunset
-      offset: "0"
-      trigger: sun
-    - entity_id: input_boolean.christmas_lights
-      to: "on"
-      trigger: state
-    - at: 06:00:00
-      trigger: time
+  - event: sunset
+    offset: '0'
+    trigger: sun
+  - entity_id: input_boolean.christmas_lights
+    to: 'on'
+    trigger: state
+  - at: 06:00:00
+    trigger: time
   conditions: []
   actions:
-    - scene: scene.christmas_on
+  - scene: scene.christmas_on
   mode: single
-- id: "1638922910713"
+- id: '1638922910713'
   alias: Christmas off
-  description: ""
+  description: ''
   trigger:
-    - platform: time
-      at: "23:30"
-    - platform: state
-      entity_id: input_boolean.christmas_lights
-      to: "off"
+  - platform: time
+    at: '23:30'
+  - platform: state
+    entity_id: input_boolean.christmas_lights
+    to: 'off'
   condition: []
   action:
-    - scene: scene.christmas_off
+  - scene: scene.christmas_off
   mode: single
-- id: "1640167513478"
+- id: '1640167513478'
   alias: Christmas inside
-  description: ""
+  description: ''
   trigger:
-    - platform: sun
-      event: sunrise
-      offset: "0"
+  - platform: sun
+    event: sunrise
+    offset: '0'
   condition: []
   action:
-    - scene: scene.christmas_inside
+  - scene: scene.christmas_inside
   mode: single
-- id: "1674337992210"
+- id: '1674337992210'
   alias: Turn heating off when away
-  description: ""
+  description: ''
   triggers:
-    - entity_id:
-        - input_boolean.google_home_away
-      from: "off"
-      to: "on"
-      trigger: state
+  - entity_id:
+    - input_boolean.google_home_away
+    from: 'off'
+    to: 'on'
+    trigger: state
   conditions: []
   actions:
-    - data:
-        hvac_mode: "off"
-      target:
-        entity_id:
-          - climate.hive
-          - climate.benedict_room
-          - climate.conservatory
-          - climate.lillis_room
-          - climate.master_bedroom
-          - climate.tys_room
-          - climate.bathroom
-      action: climate.set_hvac_mode
-      continue_on_error: true
+  - data:
+      hvac_mode: 'off'
+    target:
+      entity_id:
+      - climate.hive
+      - climate.benedict_room
+      - climate.conservatory
+      - climate.lillis_room
+      - climate.master_bedroom
+      - climate.tys_room
+      - climate.bathroom
+    action: climate.set_hvac_mode
+    continue_on_error: true
   mode: single
-- id: "1674338354468"
+- id: '1674338354468'
   alias: Turn heating on when at home
-  description: ""
+  description: ''
   triggers:
-    - entity_id:
-        - input_boolean.google_home_away
-      from: "on"
-      to: "off"
-      trigger: state
+  - entity_id:
+    - input_boolean.google_home_away
+    from: 'on'
+    to: 'off'
+    trigger: state
   conditions: []
   actions:
-    - data:
-        hvac_mode: heat
-      action: climate.set_hvac_mode
-      target:
-        entity_id:
-          - climate.benedict_room
-          - climate.conservatory
-          - climate.lillis_room
-          - climate.master_bedroom
-          - climate.tys_room
-      continue_on_error: true
-    - data:
-        hvac_mode: auto
-      target:
-        entity_id: climate.hive
-      action: climate.set_hvac_mode
+  - data:
+      hvac_mode: heat
+    action: climate.set_hvac_mode
+    target:
+      entity_id:
+      - climate.benedict_room
+      - climate.conservatory
+      - climate.lillis_room
+      - climate.master_bedroom
+      - climate.tys_room
+    continue_on_error: true
+  - data:
+      hvac_mode: auto
+    target:
+      entity_id: climate.hive
+    action: climate.set_hvac_mode
   mode: single
-- id: "1693946035795"
+- id: '1693946035795'
   alias: Turn on pool pump with heater
-  description: ""
+  description: ''
   trigger:
-    - platform: state
-      entity_id:
-        - switch.socket_1
-      from: "off"
-      to: "on"
+  - platform: state
+    entity_id:
+    - switch.socket_1
+    from: 'off'
+    to: 'on'
   condition: []
   action:
-    - service: switch.turn_on
-      data: {}
-      target:
-        entity_id: switch.socket_2
+  - service: switch.turn_on
+    data: {}
+    target:
+      entity_id: switch.socket_2
   mode: single
-- id: "1693946083586"
+- id: '1693946083586'
   alias: Turn Pool Pump off with heater
-  description: ""
+  description: ''
   trigger:
-    - platform: state
-      entity_id:
-        - switch.socket_1
-      from: "on"
-      to: "off"
+  - platform: state
+    entity_id:
+    - switch.socket_1
+    from: 'on'
+    to: 'off'
   condition: []
   action:
-    - service: switch.turn_off
-      data: {}
-      target:
-        entity_id: switch.socket_2
+  - service: switch.turn_off
+    data: {}
+    target:
+      entity_id: switch.socket_2
   mode: single
-- id: "1736115690462"
+- id: '1736115690462'
   alias: Turn on Office
-  description: ""
+  description: ''
   triggers:
-    - trigger: state
-      entity_id:
-        - binary_sensor.athom_presence_sensor_9cec1e_occupancy
-      from: "off"
-      to: "on"
-    - type: occupied
-      device_id: 750bc07f471dec7c427bea8edac142fc
-      entity_id: f6ec5c4f7b97ac970c84d6f330933e5d
-      domain: binary_sensor
-      trigger: device
+  - trigger: state
+    entity_id:
+    - binary_sensor.athom_presence_sensor_9cec1e_occupancy
+    from: 'off'
+    to: 'on'
+  - type: occupied
+    device_id: 750bc07f471dec7c427bea8edac142fc
+    entity_id: f6ec5c4f7b97ac970c84d6f330933e5d
+    domain: binary_sensor
+    trigger: device
   conditions: []
   actions:
-    - action: light.turn_on
-      metadata: {}
-      data: {}
-      target:
-        device_id:
-          - 483adab26aca62ca4fd795e12449b3d0
-          - 3567c9130d348178bf587c3b16c9fee4
-        entity_id: light.office_lights_office_desk_lights
-    - condition: sun
-      after: sunset
-      before: sunrise
-    - action: light.turn_on
-      metadata: {}
-      data: {}
-      target:
-        entity_id: light.office_lights_office_room_lights
+  - action: light.turn_on
+    metadata: {}
+    data: {}
+    target:
+      device_id:
+      - 483adab26aca62ca4fd795e12449b3d0
+      - 3567c9130d348178bf587c3b16c9fee4
+      entity_id: light.office_lights_office_desk_lights
+  - condition: sun
+    after: sunset
+    before: sunrise
+  - action: light.turn_on
+    metadata: {}
+    data: {}
+    target:
+      entity_id: light.office_lights_office_room_lights
   mode: single
-- id: "1736115840306"
+- id: '1736115840306'
   alias: Turn off Office
-  description: ""
+  description: ''
   triggers:
-    - type: not_occupied
-      device_id: 750bc07f471dec7c427bea8edac142fc
-      entity_id: f6ec5c4f7b97ac970c84d6f330933e5d
-      domain: binary_sensor
-      trigger: device
+  - type: not_occupied
+    device_id: 750bc07f471dec7c427bea8edac142fc
+    entity_id: f6ec5c4f7b97ac970c84d6f330933e5d
+    domain: binary_sensor
+    trigger: device
   conditions: []
   actions:
-    - action: light.turn_off
-      metadata: {}
-      data: {}
-      target:
-        area_id: conservatory
+  - action: light.turn_off
+    metadata: {}
+    data: {}
+    target:
+      area_id: conservatory
   mode: single
-- id: "1736289204020"
-  alias: "Turn off front lights "
-  description: ""
+- id: '1736289204020'
+  alias: 'Turn off front lights '
+  description: ''
   triggers:
-    - trigger: sun
-      event: sunrise
-      offset: 0
+  - trigger: sun
+    event: sunrise
+    offset: 0
   conditions: []
   actions:
-    - action: light.turn_off
-      metadata: {}
-      data: {}
-      target:
-        label_id: front_lights
+  - action: light.turn_off
+    metadata: {}
+    data: {}
+    target:
+      label_id: front_lights
   mode: single
-- id: "1736289356449"
-  alias: "Turn on front lights "
-  description: ""
+- id: '1736289356449'
+  alias: 'Turn on front lights '
+  description: ''
   triggers:
-    - trigger: sun
-      event: sunset
-      offset: 0
-    - trigger: state
-      entity_id:
-        - timer.front_door_motion_timeout
-      from:
-      to: idle
+  - trigger: sun
+    event: sunset
+    offset: 0
+  - trigger: state
+    entity_id:
+    - timer.front_door_motion_timeout
+    from:
+    to: idle
   conditions: []
   actions:
-    - action: light.turn_on
-      metadata: {}
-      data:
-        brightness_pct: 35
-      target:
-        label_id: front_lights
-    - device_id: 7df8ebf318cfc102891cb24d4a287901
-      domain: select
-      entity_id: 58525e7dea4da38f32c74d4f1a392d60
-      type: select_option
-      option: Green
+  - action: light.turn_on
+    metadata: {}
+    data:
+      brightness_pct: 35
+    target:
+      label_id: front_lights
+  - device_id: 7df8ebf318cfc102891cb24d4a287901
+    domain: select
+    entity_id: 58525e7dea4da38f32c74d4f1a392d60
+    type: select_option
+    option: Green
   mode: single
-- id: "1738101981116"
+- id: '1738101981116'
   alias: Front Door motion detected
-  description: ""
+  description: ''
   triggers:
-    - device_id: 37a8b5b650a5772c9a0b82dd4b24b912
-      domain: nest
-      type: camera_person
-      trigger: device
+  - device_id: 37a8b5b650a5772c9a0b82dd4b24b912
+    domain: nest
+    type: camera_person
+    trigger: device
   conditions:
-    - condition: sun
-      before: sunrise
-      after: sunset
+  - condition: sun
+    before: sunrise
+    after: sunset
   actions:
-    - action: timer.start
-      metadata: {}
-      data: {}
-      target:
-        entity_id: timer.front_door_motion_timeout
-    - device_id: 7df8ebf318cfc102891cb24d4a287901
-      domain: select
-      entity_id: 58525e7dea4da38f32c74d4f1a392d60
-      type: select_option
-      option: White door
+  - action: timer.start
+    metadata: {}
+    data: {}
+    target:
+      entity_id: timer.front_door_motion_timeout
+  - device_id: 7df8ebf318cfc102891cb24d4a287901
+    domain: select
+    entity_id: 58525e7dea4da38f32c74d4f1a392d60
+    type: select_option
+    option: White door
   mode: single
-- id: "1760784224132"
+- id: '1760784224132'
   alias: Halloween Door
-  description: ""
+  description: ''
   triggers:
-    - trigger: state
-      entity_id:
-        - input_boolean.door_bell
-      to: "on"
+  - trigger: state
+    entity_id:
+    - input_boolean.door_bell
+    to: 'on'
   conditions:
-    - condition: sun
-      after: sunset
+  - condition: sun
+    after: sunset
   actions:
-    - device_id: 7df8ebf318cfc102891cb24d4a287901
-      domain: select
-      entity_id: 58525e7dea4da38f32c74d4f1a392d60
-      type: select_option
-      option: Lightning
-    - delay:
-        hours: 0
-        minutes: 1
-        seconds: 0
-        milliseconds: 0
-    - device_id: 7df8ebf318cfc102891cb24d4a287901
-      domain: select
-      entity_id: 58525e7dea4da38f32c74d4f1a392d60
-      type: select_option
-      option: Green
+  - device_id: 7df8ebf318cfc102891cb24d4a287901
+    domain: select
+    entity_id: 58525e7dea4da38f32c74d4f1a392d60
+    type: select_option
+    option: Lightning
+  - delay:
+      hours: 0
+      minutes: 1
+      seconds: 0
+      milliseconds: 0
+  - device_id: 7df8ebf318cfc102891cb24d4a287901
+    domain: select
+    entity_id: 58525e7dea4da38f32c74d4f1a392d60
+    type: select_option
+    option: Green
   mode: single
-- id: "1765707675364"
-  alias: "No screens "
-  description: ""
+- id: '1765707675364'
+  alias: 'No screens '
+  description: ''
   triggers:
-    - trigger: time_pattern
-      minutes: /1
+  - trigger: time_pattern
+    minutes: /1
   conditions: []
   actions:
-    - action: media_player.turn_off
+  - action: media_player.turn_off
+    metadata: {}
+    target:
+      entity_id:
+      - media_player.lg_tv_remote
+      - media_player.kitchen_tv
+      - media_player.lg_webos_smart_tv
+      - media_player.office_tv
+      - media_player.living_room_tv
+      - media_player.kitchen_display
+      - media_player.sky_q_living_room
+      - media_player.sky_q_office
+      - media_player.sharp_2k_eu_android_tv
+      - media_player.sky_q_kitchen
+      - media_player.sky_q_bedroom
+      device_id:
+      - 7948116e14021512bc52c4e3e9762202
+      - 94a17aaf5b3d4d665069680686af6bf0
+      - e062becc9a558f92cd2c22ac684387ec
+      - 17c662ce9fd9651fe5e5de753f384381
+      - 698d5b01e842da5b5b02db4cb2afcedf
+      - 7ce2e64aaca78b550d19bf83a605c7f1
+      - 72835671e4cb8266a5a285e943b2c61e
+      - 14f6a5afc0a043491406010c89dd919d
+    data: {}
+  mode: single
+- id: '1780740766587'
+  alias: Check Weather
+  description: ''
+  triggers:
+  - trigger: time
+    at: '20:00:00'
+    weekday:
+    - mon
+    - tue
+    - wed
+    - thu
+    - fri
+    - sat
+    - sun
+  conditions: []
+  actions:
+  - action: weather.get_forecasts
+    metadata: {}
+    target:
+      entity_id: weather.openweathermap
+    data:
+      type: daily
+    response_variable: weather
+  - action: ai_task.generate_data
+    metadata: {}
+    data:
+      task_name: Look at the weather
+      instructions: "You must decide if pool heating should be ON or OFF based on
+        the forecast below. Output good: true or good: false.\nRULE: Count how many
+        consecutive days have good weather over the next few days. 3 or more days
+        within  the next day or two is good = true, fewer than 3  → bad: false\n\na
+        good day would be 2 or more of the following \n- high temperature of 22°C
+        or above\n- no rain, clouds, or wind.\n\nThe pool holds heat well, so a few
+        rainy or cloudy days in a warm week do not matter.\n\nForecast data:\n## Weather
+        forecast\n{{ weather }}"
+      structure:
+        good:
+          description: true if the wearther is likely to be good for the next few
+            days, else false
+          required: true
+          selector:
+            boolean:
+        summary:
+          description: Quick summary of the weather, no more than 100 chars
+          required: true
+          selector:
+            text:
+      entity_id: ai_task.google_ai_task
+    response_variable: result
+  - action: input_text.set_value
+    metadata: {}
+    target:
+      entity_id: input_text.weather_summary
+    data:
+      value: '{{ result.data.summary }}'
+  - action: notify.mobile_app_fold7
+    metadata: {}
+    data:
+      message: '{{ "Good" if result.data.good else "Bad" }}: {{ result.data.summary
+        }}'
+      title: 'Pool Weather Update '
+  - choose:
+    - conditions:
+      - condition: template
+        value_template: '{{ result.data.good }}'
+      sequence:
+      - action: input_boolean.turn_on
+        metadata: {}
+        target:
+          entity_id: input_boolean.weather_good
+        data: {}
+    default:
+    - action: input_boolean.turn_off
       metadata: {}
       target:
-        entity_id:
-          - media_player.lg_tv_remote
-          - media_player.kitchen_tv
-          - media_player.lg_webos_smart_tv
-          - media_player.office_tv
-          - media_player.living_room_tv
-          - media_player.kitchen_display
-          - media_player.sky_q_living_room
-          - media_player.sky_q_office
-          - media_player.sharp_2k_eu_android_tv
-          - media_player.sky_q_kitchen
-          - media_player.sky_q_bedroom
-        device_id:
-          - 7948116e14021512bc52c4e3e9762202
-          - 94a17aaf5b3d4d665069680686af6bf0
-          - e062becc9a558f92cd2c22ac684387ec
-          - 17c662ce9fd9651fe5e5de753f384381
-          - 698d5b01e842da5b5b02db4cb2afcedf
-          - 7ce2e64aaca78b550d19bf83a605c7f1
-          - 72835671e4cb8266a5a285e943b2c61e
-          - 14f6a5afc0a043491406010c89dd919d
+        entity_id: input_boolean.weather_good
       data: {}
   mode: single
-- id: "1780740766587"
-  alias: Check Weather
-  description: ""
-  triggers:
-    - trigger: time
-      at: "20:00:00"
-      weekday:
-        - mon
-        - tue
-        - wed
-        - thu
-        - fri
-        - sat
-        - sun
-  conditions: []
-  actions:
-    - action: weather.get_forecasts
-      metadata: {}
-      target:
-        entity_id: weather.openweathermap
-      data:
-        type: daily
-      response_variable: weather
-    - action: ai_task.generate_data
-      metadata: {}
-      data:
-        task_name: Look at the weather
-        instructions: "You must decide if pool heating should be ON or OFF based on
-          the forecast below. Output good: true or good: false.\nRULE: Count how many
-          consecutive days have good weather over the next few days. 3 or more days
-          within  the next day or two is good = true, fewer than 3  → bad: false\n\na
-          good day would be 2 or more of the following \n- high temperature of 22°C
-          or above\n- no rain, clouds, or wind.\n\nThe pool holds heat well, so a few
-          rainy or cloudy days in a warm week do not matter.\n\nForecast data:\n## Weather
-          forecast\n{{ weather }}"
-        structure:
-          good:
-            description: true if the wearther is likely to be good for the next few
-              days, else false
-            required: true
-            selector:
-              boolean:
-          summary:
-            description: Quick summary of the weather, no more than 100 chars
-            required: true
-            selector:
-              text:
-        entity_id: ai_task.google_ai_task
-      response_variable: result
-    - action: input_text.set_value
-      metadata: {}
-      target:
-        entity_id: input_text.weather_summary
-      data:
-        value: "{{ result.data.summary }}"
-    - action: notify.mobile_app_fold7
-      metadata: {}
-      data:
-        message: '{{ "Good" if result.data.good else "Bad" }}: {{ result.data.summary
-          }}'
-        title: "Pool Weather Update "
-    - choose:
-        - conditions:
-            - condition: template
-              value_template: "{{ result.data.good }}"
-          sequence:
-            - action: input_boolean.turn_on
-              metadata: {}
-              target:
-                entity_id: input_boolean.weather_good
-              data: {}
-      default:
-        - action: input_boolean.turn_off
-          metadata: {}
-          target:
-            entity_id: input_boolean.weather_good
-          data: {}
-  mode: single
-- id: "1781400000001"
-  alias: "Laundry: Washer finished"
+- id: '1781400000001'
+  alias: 'Laundry: Washer finished'
   description: When the washing machine finishes, check if the dryer is still running.
     If so, wait for the dryer to finish before announcing both. Otherwise, announce
     just the washer.
   triggers:
-    - trigger: state
-      entity_id: sensor.washing_machine_job_state
-      to: finish
+  - trigger: state
+    entity_id: sensor.washing_machine_job_state
+    to: finish
   conditions:
-    - condition: state
-      entity_id: input_boolean.laundry_announcing
-      state: "off"
+  - condition: state
+    entity_id: input_boolean.laundry_announcing
+    state: 'off'
   actions:
-    - action: input_boolean.turn_on
-      metadata: {}
-      target:
-        entity_id: input_boolean.laundry_announcing
-      data: {}
-    - choose:
+  - action: input_boolean.turn_on
+    metadata: {}
+    target:
+      entity_id: input_boolean.laundry_announcing
+    data: {}
+  - choose:
+    - conditions:
+      - condition: state
+        entity_id: sensor.dryer_operation_state
+        state: run
+      sequence:
+      - wait_for_trigger:
+        - platform: state
+          entity_id: sensor.dryer_operation_state
+          to: finished
+        timeout:
+          hours: 4
+      - choose:
         - conditions:
-            - condition: state
-              entity_id: sensor.dryer_operation_state
-              state: run
+          - condition: template
+            value_template: '{{ wait.completed }}'
           sequence:
-            - wait_for_trigger:
-                - platform: state
-                  entity_id: sensor.dryer_operation_state
-                  to: finished
-              timeout:
-                hours: 4
-            - choose:
-                - conditions:
-                    - condition: template
-                      value_template: "{{ wait.completed }}"
-                  sequence:
-                    - action: script.laundry_announce
-                      continue_on_error: true
-                      metadata: {}
-                      data:
-                        message: Both the washer and dryer have finished
-              default:
-                - action: script.laundry_announce
-                  continue_on_error: true
-                  metadata: {}
-                  data:
-                    message: The washer has finished its cycle
-      default:
+          - action: script.laundry_announce
+            continue_on_error: true
+            metadata: {}
+            data:
+              message: Both the washer and dryer have finished
+        default:
         - action: script.laundry_announce
           continue_on_error: true
           metadata: {}
           data:
             message: The washer has finished its cycle
-    - delay:
-        seconds: 30
-    - action: input_boolean.turn_off
+    default:
+    - action: script.laundry_announce
+      continue_on_error: true
       metadata: {}
-      target:
-        entity_id: input_boolean.laundry_announcing
-      data: {}
+      data:
+        message: The washer has finished its cycle
+  - delay:
+      seconds: 30
+  - action: input_boolean.turn_off
+    metadata: {}
+    target:
+      entity_id: input_boolean.laundry_announcing
+    data: {}
   mode: single
-- id: "1781400000002"
-  alias: "Laundry: Dryer finished"
+- id: '1781400000002'
+  alias: 'Laundry: Dryer finished'
   description: When the dryer finishes, check if the washer is still running. If so,
     wait for the washer to finish before announcing both. Otherwise, announce just
     the dryer.
   triggers:
-    - trigger: state
-      entity_id: sensor.dryer_operation_state
-      to: finished
+  - trigger: state
+    entity_id: sensor.dryer_operation_state
+    to: finished
   conditions:
-    - condition: state
-      entity_id: input_boolean.laundry_announcing
-      state: "off"
+  - condition: state
+    entity_id: input_boolean.laundry_announcing
+    state: 'off'
   actions:
-    - action: input_boolean.turn_on
-      metadata: {}
-      target:
-        entity_id: input_boolean.laundry_announcing
-      data: {}
-    - choose:
+  - action: input_boolean.turn_on
+    metadata: {}
+    target:
+      entity_id: input_boolean.laundry_announcing
+    data: {}
+  - choose:
+    - conditions:
+      - condition: template
+        value_template: '{{ states(''sensor.washing_machine_job_state'') not in [''none'',
+          ''finish''] }}'
+      sequence:
+      - wait_for_trigger:
+        - platform: state
+          entity_id: sensor.washing_machine_job_state
+          to: finish
+        timeout:
+          hours: 4
+      - choose:
         - conditions:
-            - condition: template
-              value_template: "{{ states('sensor.washing_machine_job_state') not in ['none',
-                'finish'] }}"
+          - condition: template
+            value_template: '{{ wait.completed }}'
           sequence:
-            - wait_for_trigger:
-                - platform: state
-                  entity_id: sensor.washing_machine_job_state
-                  to: finish
-              timeout:
-                hours: 4
-            - choose:
-                - conditions:
-                    - condition: template
-                      value_template: "{{ wait.completed }}"
-                  sequence:
-                    - action: script.laundry_announce
-                      continue_on_error: true
-                      metadata: {}
-                      data:
-                        message: Both the washer and dryer have finished
-              default:
-                - action: script.laundry_announce
-                  continue_on_error: true
-                  metadata: {}
-                  data:
-                    message: The dryer has finished its cycle
-      default:
+          - action: script.laundry_announce
+            continue_on_error: true
+            metadata: {}
+            data:
+              message: Both the washer and dryer have finished
+        default:
         - action: script.laundry_announce
           continue_on_error: true
           metadata: {}
           data:
             message: The dryer has finished its cycle
-    - delay:
-        seconds: 30
-    - action: input_boolean.turn_off
+    default:
+    - action: script.laundry_announce
+      continue_on_error: true
       metadata: {}
-      target:
-        entity_id: input_boolean.laundry_announcing
-      data: {}
+      data:
+        message: The dryer has finished its cycle
+  - delay:
+      seconds: 30
+  - action: input_boolean.turn_off
+    metadata: {}
+    target:
+      entity_id: input_boolean.laundry_announcing
+    data: {}
   mode: single
-- id: "1781400000003"
-  alias: "Laundry: Reset announcing lock on startup"
+- id: '1781400000003'
+  alias: 'Laundry: Reset announcing lock on startup'
   description: Clear the laundry announcement lock after Home Assistant restarts.
   triggers:
-    - trigger: homeassistant
-      event: start
+  - trigger: homeassistant
+    event: start
   conditions: []
   actions:
-    - action: input_boolean.turn_off
-      metadata: {}
-      target:
-        entity_id: input_boolean.laundry_announcing
-      data: {}
+  - action: input_boolean.turn_off
+    metadata: {}
+    target:
+      entity_id: input_boolean.laundry_announcing
+    data: {}
   mode: single
-- id: "1781341632428"
+- id: '1781341632428'
   alias: Turn on Pool Heater when weather is good
-  description: ""
+  description: ''
   triggers:
-    - trigger: state
-      entity_id:
-        - input_boolean.weather_good
-      to:
-        - "on"
+  - trigger: state
+    entity_id:
+    - input_boolean.weather_good
+    to:
+    - 'on'
   conditions: []
   actions:
-    - action: climate.turn_on
-      metadata: {}
-      target:
-        entity_id: climate.pool_heater
-      data: {}
+  - action: climate.turn_on
+    metadata: {}
+    target:
+      entity_id: climate.pool_heater
+    data: {}
   mode: single
-- id: "1781341775410"
+- id: '1781341775410'
   alias: Turn off Pool Heater when weather is bad
-  description: ""
+  description: ''
   triggers:
-    - trigger: state
-      entity_id:
-        - input_boolean.weather_good
-      to:
-        - "off"
+  - trigger: state
+    entity_id:
+    - input_boolean.weather_good
+    to:
+    - 'off'
   conditions: []
   actions:
-    - action: climate.turn_off
-      metadata: {}
+  - action: climate.turn_off
+    metadata: {}
+    target:
+      entity_id: climate.pool_heater
+    data: {}
+  mode: single
+- id: octopus_auto_join_power_down
+  alias: 'Octopus: Auto-join Power Down'
+  description: Automatically join newly offered Octoplus Power Down events.
+  triggers:
+  - entity_id: event.octopus_energy_a_e350409d_octoplus_power_down_events
+    trigger: state
+  conditions:
+  - condition: template
+    value_template: '{{ state_attr("event.octopus_energy_a_e350409d_octoplus_power_down_events",
+      "available_events") | default([], true) | count > 0 }}'
+  actions:
+  - action: octopus_energy.join_octoplus_power_down_session_event
+    data:
+      event_code: '{{ (state_attr("event.octopus_energy_a_e350409d_octoplus_power_down_events",
+        "available_events") | first)["code"] }}'
+    target:
+      entity_id: event.octopus_energy_a_e350409d_octoplus_power_down_events
+  max: 10
+  mode: queued
+- id: octopus_lux_event_charge
+  alias: 'Octopus: Schedule Lux event charging'
+  description: Uses Lux AC charge slot 2 for Power Down and Free Electricity sessions.
+  triggers:
+  - attribute: start_time
+    entity_id: calendar.octopus_energy_a_e350409d_octoplus_power_down
+    id: power_down
+    trigger: state
+  - entity_id: calendar.octopus_energy_a_e350409d_octoplus_free_electricity_session
+    event: start
+    id: free_electricity
+    offset: -00:01:00
+    trigger: calendar
+  conditions:
+  - condition: template
+    value_template: '{{ trigger.id != "power_down" or (trigger.to_state.attributes.start_time
+      is not none and as_timestamp(trigger.to_state.attributes.start_time) > as_timestamp(now()))
+      }}'
+  actions:
+  - variables:
+      charge_end: '{{ as_local(as_datetime(state_attr("calendar.octopus_energy_a_e350409d_octoplus_power_down",
+        "start_time"))).strftime("%H:%M:%S") if trigger.id == "power_down" else as_local(as_datetime(trigger.calendar_event.end)).strftime("%H:%M:%S")
+        }}'
+      charge_start: '{{ (now() if now() > as_local(as_datetime(state_attr("calendar.octopus_energy_a_e350409d_octoplus_power_down",
+        "start_time"))) - timedelta(hours=3) else as_local(as_datetime(state_attr("calendar.octopus_energy_a_e350409d_octoplus_power_down",
+        "start_time"))) - timedelta(hours=3)).strftime("%H:%M:%S") if trigger.id ==
+        "power_down" else as_local(as_datetime(trigger.calendar_event.start)).strftime("%H:%M:%S")
+        }}'
+      session_end: '{{ as_local(as_datetime(state_attr("calendar.octopus_energy_a_e350409d_octoplus_power_down",
+        "end_time"))) if trigger.id == "power_down" else as_local(as_datetime(trigger.calendar_event.end))
+        }}'
+      session_name: '{{ "Power Down" if trigger.id == "power_down" else "Free Electricity"
+        }}'
+      session_start: '{{ as_local(as_datetime(state_attr("calendar.octopus_energy_a_e350409d_octoplus_power_down",
+        "start_time"))) if trigger.id == "power_down" else as_local(as_datetime(trigger.calendar_event.start))
+        }}'
+  - action: time.set_value
+    data:
+      time: '{{ charge_start }}'
+    target:
+      entity_id: time.lux_ac_charge_start2
+  - action: time.set_value
+    data:
+      time: '{{ charge_end }}'
+    target:
+      entity_id: time.lux_ac_charge_end2
+  - action: notify.mobile_app_fold7
+    data:
+      message: '{% if trigger.id == "power_down" %}Power Down acknowledged. Lux slot
+        2 is set to charge from {{ charge_start[:5] }} to {{ charge_end[:5] }} before
+        the {{ as_local(as_datetime(state_attr("calendar.octopus_energy_a_e350409d_octoplus_power_down",
+        "start_time"))).strftime("%H:%M") }}-{{ as_local(as_datetime(state_attr("calendar.octopus_energy_a_e350409d_octoplus_power_down",
+        "end_time"))).strftime("%H:%M") }} session.{% else %}Free Electricity session
+        found. Lux slot 2 is set to charge from {{ charge_start[:5] }} to {{ charge_end[:5]
+        }}.{% endif %}'
+      title: Octopus session scheduled
+  - delay:
+      seconds: '{{ [0, (as_timestamp(session_start) - as_timestamp(now())) | int]
+        | max }}'
+  - variables:
+      battery_charge_start: '{{ states("sensor.lux_battery_charge_total") | float(0)
+        }}'
+      battery_soc_start: '{{ states("sensor.lux_battery") | int(0) }}'
+      import_start: '{{ states("sensor.octopus_energy_electricity_18l2141578_2000010841543_current_total_consumption")
+        | float(0) }}'
+  - delay:
+      seconds: '{{ [0, (as_timestamp(session_end) - as_timestamp(now())) | int] |
+        max }}'
+  - delay:
+      seconds: 60
+  - action: time.set_value
+    data:
+      time: 00:00:00
+    target:
+      entity_id: time.lux_ac_charge_start2
+  - action: time.set_value
+    data:
+      time: 00:00:00
+    target:
+      entity_id: time.lux_ac_charge_end2
+  - action: notify.mobile_app_fold7
+    data:
+      message: '{{ session_name }} complete. Lux slot 2 has been removed. Grid import
+        during the session: {{ (states("sensor.octopus_energy_electricity_18l2141578_2000010841543_current_total_consumption")
+        | float(0) - import_start | float(0)) | round(3) }} kWh. Battery charged:
+        {{ (states("sensor.lux_battery_charge_total") | float(0) - battery_charge_start
+        | float(0)) | round(3) }} kWh. Battery SoC: {{ battery_soc_start }}% to {{
+        states("sensor.lux_battery") | int(0) }}%.'
+      title: Octopus session complete
+  max: 2
+  mode: parallel
+- id: octopus_lux_power_down_cleanup_20260921
+  alias: 'Octopus: Power Down cleanup 2026-09-21'
+  description: One-off completion report for the Power Down session after its scheduling
+    automation was updated.
+  triggers:
+  - at: '18:00:00'
+    trigger: time
+  conditions:
+  - condition: template
+    value_template: '{{ now().strftime("%Y-%m-%d") == "2026-09-21" }}'
+  actions:
+  - variables:
+      battery_charge_start: '{{ states("sensor.lux_battery_charge_total") | float(0)
+        }}'
+      import_start: '{{ states("sensor.octopus_energy_electricity_18l2141578_2000010841543_current_total_consumption")
+        | float(0) }}'
+  - delay:
+      hours: 1
+      minutes: 1
+  - action: time.set_value
+    data:
+      time: 00:00:00
+    target:
+      entity_id: time.lux_ac_charge_start2
+  - action: time.set_value
+    data:
+      time: 00:00:00
+    target:
+      entity_id: time.lux_ac_charge_end2
+  - action: notify.mobile_app_fold7
+    data:
+      message: 'Power Down complete. Lux slot 2 has been removed. Grid import during
+        the session: {{ (states("sensor.octopus_energy_electricity_18l2141578_2000010841543_current_total_consumption")
+        | float(0) - import_start | float(0)) | round(3) }} kWh. Battery charged:
+        {{ (states("sensor.lux_battery_charge_total") | float(0) - battery_charge_start
+        | float(0)) | round(3) }} kWh.'
+      title: Power Down complete
+  - action: automation.turn_off
+    target:
+      entity_id: automation.octopus_power_down_cleanup_2026_09_21
+  mode: single
+- id: '1790590080228'
+  alias: Controller - IKEA E2201 RODRET Dimmer
+  description: ''
+  use_blueprint:
+    path: EPMatt/ikea_e2201.yaml
+    input:
+      controller_device: 84f5b98849b0f09ed254fcaeea141be9
+      action_button_up_short:
+      - action: light.turn_on
+        metadata: {}
+        target:
+          area_id: kitchen
+        data: {}
+      action_button_down_short:
+      - action: light.turn_off
+        metadata: {}
+        target:
+          area_id: kitchen
+        data: {}
+      action_button_down_double: []
+      action_button_down_long:
+      - action: light.turn_off
+        metadata: {}
+        target:
+          floor_id: downstairs
+        data: {}
+      - action: media_player.turn_off
+        metadata: {}
+        target:
+          floor_id: downstairs
+        data: {}
+      action_button_up_long:
+      - action: light.turn_on
+        metadata: {}
+        target:
+          floor_id: downstairs
+        data: {}
+      button_up_long_max_loop_repeats: 1
+      button_down_long_max_loop_repeats: 1
+- id: kitchen_other_light_follows_main
+  alias: Kitchen IKEA light follows main light
+  triggers:
+  - trigger: state
+    entity_id: switch.tasmota_6
+    to: 'on'
+  - trigger: state
+    entity_id: switch.tasmota_6
+    to: 'off'
+  actions:
+  - if:
+    - condition: state
+      entity_id: switch.tasmota_6
+      state: 'on'
+    then:
+    - action: light.turn_on
       target:
-        entity_id: climate.pool_heater
-      data: {}
+        entity_id: light.0x60b647fffe3d5f89
+    else:
+    - action: light.turn_off
+      target:
+        entity_id: light.0x60b647fffe3d5f89
+  mode: restart
+- id: weather_station_hourly_local_outlook
+  alias: 'Weather Station: Hourly local outlook'
+  description: Updates a short-range station-only outlook every hour.
+  triggers:
+  - hours: /1
+    minutes: '0'
+    trigger: time_pattern
+  conditions: []
+  actions:
+  - action: input_text.set_value
+    data:
+      value: "{%- set pressure_change = states(\"sensor.conservatory_weather_station_weather_station_pressure_change_3h\")
+        | float(none) -%} {%- set rain = states(\"sensor.weather_station_rain_last_hour\")
+        | float(none) -%} {%- set humidity = states(\"sensor.weather_station_outdoor_humidity\")
+        | float(none) -%} {%- set outdoor_temp = states(\"sensor.weather_station_outdoor_temperature\")
+        | float(none) -%} {%- set dew_point = states(\"sensor.weather_station_outdoor_dew_point\")
+        | float(none) -%} {%- set gust = states(\"sensor.weather_station_wind_gust\")
+        | float(none) -%} {%- if pressure_change is none -%}\n  {%- set pressure_text
+        = \"pressure trend unavailable\" -%}\n{%- elif pressure_change <= -0.7 -%}\n
+        \ {%- set pressure_text = \"pressure falling (\" ~ (pressure_change | round(1))
+        ~ \" hPa/3h): unsettled tendency\" -%}\n{%- elif pressure_change >= 0.7 -%}\n
+        \ {%- set pressure_text = \"pressure rising (\" ~ (pressure_change | round(1))
+        ~ \" hPa/3h): improving tendency\" -%}\n{%- else -%}\n  {%- set pressure_text
+        = \"pressure steady (\" ~ (pressure_change | round(1)) ~ \" hPa/3h)\" -%}\n{%-
+        endif -%} {%- if rain is none -%}\n  {%- set rain_text = \"rain reading unavailable\"
+        -%}\n{%- elif rain > 0 -%}\n  {%- set rain_text = \"rain measured in the last
+        hour\" -%}\n{%- else -%}\n  {%- set rain_text = \"no rain measured in the
+        last hour\" -%}\n{%- endif -%} {%- if humidity is none or outdoor_temp is
+        none or dew_point is none -%}\n  {%- set moisture_text = \"mist/fog signal
+        unavailable\" -%}\n{%- elif humidity >= 93 and (outdoor_temp - dew_point)
+        <= 2 -%}\n  {%- set moisture_text = \"mist/fog possible\" -%}\n{%- else -%}\n
+        \ {%- set moisture_text = \"no strong mist/fog signal\" -%}\n{%- endif -%}
+        {%- if gust is none -%}\n  {%- set wind_text = \"wind reading unavailable\"
+        -%}\n{%- elif gust >= 30 -%}\n  {%- set wind_text = \"gusty (\" ~ (gust |
+        round(0)) ~ \" km/h)\" -%}\n{%- else -%}\n  {%- set wind_text = \"no strong
+        gust signal (\" ~ (gust | round(0)) ~ \" km/h)\" -%}\n{%- endif -%} {{ now().strftime(\"%H:%M\")
+        }} station-only 1-3h outlook: {{ pressure_text }}; {{ rain_text }}; {{ moisture_text
+        }}; {{ wind_text }}."
+    target:
+      entity_id: input_text.weather_station_outlook
   mode: single
