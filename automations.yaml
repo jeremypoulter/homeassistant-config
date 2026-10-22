@@ -276,11 +276,11 @@
       brightness_pct: 35
     target:
       label_id: front_lights
-  - device_id: 7df8ebf318cfc102891cb24d4a287901
-    domain: select
-    entity_id: 58525e7dea4da38f32c74d4f1a392d60
-    type: select_option
-    option: Green
+  - action: select.select_option
+    target:
+      entity_id: select.outside_front1_preset
+    data:
+      option: Green
   mode: single
 - id: '1738101981116'
   alias: Front Door motion detected
@@ -300,11 +300,11 @@
     data: {}
     target:
       entity_id: timer.front_door_motion_timeout
-  - device_id: 7df8ebf318cfc102891cb24d4a287901
-    domain: select
-    entity_id: 58525e7dea4da38f32c74d4f1a392d60
-    type: select_option
-    option: White door
+  - action: select.select_option
+    target:
+      entity_id: select.outside_front1_preset
+    data:
+      option: White door
   mode: single
 - id: '1760784224132'
   alias: Halloween Door
@@ -318,21 +318,21 @@
   - condition: sun
     after: sunset
   actions:
-  - device_id: 7df8ebf318cfc102891cb24d4a287901
-    domain: select
-    entity_id: 58525e7dea4da38f32c74d4f1a392d60
-    type: select_option
-    option: Lightning
+  - action: select.select_option
+    target:
+      entity_id: select.outside_front1_preset
+    data:
+      option: Lightning
   - delay:
       hours: 0
       minutes: 1
       seconds: 0
       milliseconds: 0
-  - device_id: 7df8ebf318cfc102891cb24d4a287901
-    domain: select
-    entity_id: 58525e7dea4da38f32c74d4f1a392d60
-    type: select_option
-    option: Green
+  - action: select.select_option
+    target:
+      entity_id: select.outside_front1_preset
+    data:
+      option: Green
   mode: single
 - id: '1765707675364'
   alias: 'No screens '
@@ -840,33 +840,7 @@
   actions:
   - action: input_text.set_value
     data:
-      value: "{%- set pressure_change = states(\"sensor.conservatory_weather_station_weather_station_pressure_change_3h\")
-        | float(none) -%} {%- set rain = states(\"sensor.weather_station_rain_last_hour\")
-        | float(none) -%} {%- set humidity = states(\"sensor.weather_station_outdoor_humidity\")
-        | float(none) -%} {%- set outdoor_temp = states(\"sensor.weather_station_outdoor_temperature\")
-        | float(none) -%} {%- set dew_point = states(\"sensor.weather_station_outdoor_dew_point\")
-        | float(none) -%} {%- set gust = states(\"sensor.weather_station_wind_gust\")
-        | float(none) -%} {%- if pressure_change is none -%}\n  {%- set pressure_text
-        = \"pressure trend unavailable\" -%}\n{%- elif pressure_change <= -0.7 -%}\n
-        \ {%- set pressure_text = \"pressure falling (\" ~ (pressure_change | round(1))
-        ~ \" hPa/3h): unsettled tendency\" -%}\n{%- elif pressure_change >= 0.7 -%}\n
-        \ {%- set pressure_text = \"pressure rising (\" ~ (pressure_change | round(1))
-        ~ \" hPa/3h): improving tendency\" -%}\n{%- else -%}\n  {%- set pressure_text
-        = \"pressure steady (\" ~ (pressure_change | round(1)) ~ \" hPa/3h)\" -%}\n{%-
-        endif -%} {%- if rain is none -%}\n  {%- set rain_text = \"rain reading unavailable\"
-        -%}\n{%- elif rain > 0 -%}\n  {%- set rain_text = \"rain measured in the last
-        hour\" -%}\n{%- else -%}\n  {%- set rain_text = \"no rain measured in the
-        last hour\" -%}\n{%- endif -%} {%- if humidity is none or outdoor_temp is
-        none or dew_point is none -%}\n  {%- set moisture_text = \"mist/fog signal
-        unavailable\" -%}\n{%- elif humidity >= 93 and (outdoor_temp - dew_point)
-        <= 2 -%}\n  {%- set moisture_text = \"mist/fog possible\" -%}\n{%- else -%}\n
-        \ {%- set moisture_text = \"no strong mist/fog signal\" -%}\n{%- endif -%}
-        {%- if gust is none -%}\n  {%- set wind_text = \"wind reading unavailable\"
-        -%}\n{%- elif gust >= 30 -%}\n  {%- set wind_text = \"gusty (\" ~ (gust |
-        round(0)) ~ \" km/h)\" -%}\n{%- else -%}\n  {%- set wind_text = \"no strong
-        gust signal (\" ~ (gust | round(0)) ~ \" km/h)\" -%}\n{%- endif -%} {{ now().strftime(\"%H:%M\")
-        }} station-only 1-3h outlook: {{ pressure_text }}; {{ rain_text }}; {{ moisture_text
-        }}; {{ wind_text }}."
+      value: "{%- set pressure_change = states(\"sensor.conservatory_weather_station_weather_station_pressure_change_3h\") | float(none) -%} {%- set rain = states(\"sensor.weather_station_rain_last_hour\") | float(none) -%} {%- set humidity = states(\"sensor.weather_station_outdoor_humidity\") | float(none) -%} {%- set outdoor_temp = states(\"sensor.weather_station_outdoor_temperature\") | float(none) -%} {%- set dew_point = states(\"sensor.weather_station_outdoor_dew_point\") | float(none) -%} {%- set gust = states(\"sensor.weather_station_wind_gust\") | float(none) -%} {%- if pressure_change is none -%}\n  {%- set pressure_text = \"pressure trend unavailable\" -%}\n{%- elif pressure_change <= -0.7 -%}\n  {%- set pressure_text = \"pressure falling (\" ~ (pressure_change | round(1)) ~ \" hPa/3h): unsettled tendency\" -%}\n{%- elif pressure_change >= 0.7 -%}\n  {%- set pressure_text = \"pressure rising (\" ~ (pressure_change | round(1)) ~ \" hPa/3h): improving tendency\" -%}\n{%- else -%}\n  {%- set pressure_text = \"pressure steady (\" ~ (pressure_change | round(1)) ~ \" hPa/3h)\" -%}\n{%- endif -%} {%- if rain is none -%}\n  {%- set rain_text = \"rain reading unavailable\" -%}\n{%- elif rain > 0 -%}\n  {%- set rain_text = \"rain measured in the last hour\" -%}\n{%- else -%}\n  {%- set rain_text = \"no rain measured in the last hour\" -%}\n{%- endif -%} {%- if humidity is none or outdoor_temp is none or dew_point is none -%}\n  {%- set moisture_text = \"mist/fog signal unavailable\" -%}\n{%- elif humidity >= 93 and (outdoor_temp - dew_point) <= 2 -%}\n  {%- set moisture_text = \"mist/fog possible\" -%}\n{%- else -%}\n  {%- set moisture_text = \"no strong mist/fog signal\" -%}\n{%- endif -%} {%- if gust is none -%}\n  {%- set wind_text = \"wind reading unavailable\" -%}\n{%- elif gust >= 30 -%}\n  {%- set wind_text = \"gusty (\" ~ (gust | round(0)) ~ \" km/h)\" -%}\n{%- else -%}\n  {%- set wind_text = \"no strong gust signal (\" ~ (gust | round(0)) ~ \" km/h)\" -%}\n{%- endif -%} {{ now().strftime(\"%H:%M\") }} station-only 1-3h outlook: {{ pressure_text }}; {{ rain_text }}; {{ moisture_text }}; {{ wind_text }}."
     target:
       entity_id: input_text.weather_station_outlook
   mode: single
