@@ -1,0 +1,85 @@
+substitutions:
+  name: weather-station
+  log_level: DEBUG
+
+esphome:
+  name: ${name}
+  platformio_options:
+    board_build.flash_mode: dio
+
+esp32:
+  board: esp32-s3-devkitc-1
+  flash_size: 8MB
+  framework:
+    type: esp-idf
+
+external_components:
+  - source: github://jeremypoulter/weather_station@main
+    components: [ft0203]
+
+logger:
+  level: ${log_level}
+  hardware_uart: UART0
+
+api:
+  encryption:
+    key: !secret weather_station_api_encryption_key
+
+ota:
+  - platform: esphome
+    password: !secret ota_password
+
+wifi:
+  ssid: !secret wifi_ssid
+  password: !secret wifi_password
+
+usb_host:
+
+ft0203:
+  id: station
+  update_interval: 16s
+
+binary_sensor:
+  - platform: ft0203
+    connected:
+      name: "Weather station USB"
+
+captive_portal:
+
+web_server:
+  port: 80
+
+sensor:
+  - platform: ft0203
+    indoor_temperature:
+      name: "Indoor temperature"
+    indoor_humidity:
+      name: "Indoor humidity"
+    ch1_temperature:
+      name: "Outdoor temperature"
+    ch1_humidity:
+      name: "Outdoor humidity"
+    ch1_dew_point:
+      name: "Outdoor dew point"
+    ch1_feels_like:
+      name: "Outdoor feels like"
+    relative_pressure:
+      name: "Pressure"
+    absolute_pressure:
+      name: "Absolute pressure"
+    wind_speed:
+      name: "Wind speed"
+    wind_gust:
+      name: "Wind gust"
+    wind_direction:
+      name: "Wind direction"
+    rain_last_hour:
+      name: "Rain last hour"
+    rain_today:
+      name: "Rain today"
+    rain_week:
+      name: "Rain this week"
+    rain_month:
+      name: "Rain this month"
+    rain_total:
+      name: "Rain total"
